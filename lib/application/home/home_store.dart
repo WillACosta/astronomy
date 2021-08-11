@@ -13,17 +13,22 @@ abstract class _HomeStoreBase with Store {
   final IHomeUseCase _usecase;
 
   _HomeStoreBase(this._usecase) {
-    getMedia();
+    // getMedia();
   }
 
   @observable
   HomeState state = InitialState();
+
+  @observable
+  bool isMediaLoaded = false;
 
   @action
   setState(HomeState value) => state = value;
 
   @action
   getMedia() async {
+    if (isMediaLoaded) return;
+
     setState(LoadingState());
 
     final result = await _usecase.getMediaOfTheDay();
@@ -32,9 +37,10 @@ abstract class _HomeStoreBase with Store {
       (error) => setState(
         ErrorState(error),
       ),
-      (result) => setState(
-        SuccessState(result),
-      ),
+      (result) {
+        setState(SuccessState(result));
+        isMediaLoaded = true;
+      },
     );
   }
 }

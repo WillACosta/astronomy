@@ -24,6 +24,21 @@ mixin _$HomeStore on _HomeStoreBase, Store {
     });
   }
 
+  final _$isMediaLoadedAtom = Atom(name: '_HomeStoreBase.isMediaLoaded');
+
+  @override
+  bool get isMediaLoaded {
+    _$isMediaLoadedAtom.reportRead();
+    return super.isMediaLoaded;
+  }
+
+  @override
+  set isMediaLoaded(bool value) {
+    _$isMediaLoadedAtom.reportWrite(value, super.isMediaLoaded, () {
+      super.isMediaLoaded = value;
+    });
+  }
+
   final _$getMediaAsyncAction = AsyncAction('_HomeStoreBase.getMedia');
 
   @override
@@ -48,7 +63,8 @@ mixin _$HomeStore on _HomeStoreBase, Store {
   @override
   String toString() {
     return '''
-state: ${state}
+state: ${state},
+isMediaLoaded: ${isMediaLoaded}
     ''';
   }
 }

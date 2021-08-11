@@ -26,4 +26,8 @@ final appTheme = ThemeData(
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     displayColor: AppColors.secondary,
   ),
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColors.primary,
+  ),
+  scaffoldBackgroundColor: AppColors.primary,
 );

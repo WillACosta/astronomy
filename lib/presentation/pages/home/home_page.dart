@@ -20,6 +20,18 @@ class _HomePageState extends State<HomePage> {
   final _store = locator<HomeStore>();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    _store.getMedia();
+  }
+
+  @override
   Widget build(BuildContext context) {
     AppSizeConfig().init(context);
 
