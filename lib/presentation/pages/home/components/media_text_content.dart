@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../domain/entities/media.entity.dart';
+import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
 
 class MediaTextContent extends StatelessWidget {

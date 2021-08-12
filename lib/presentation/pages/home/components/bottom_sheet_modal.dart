@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../domain/entities/media.entity.dart';
+import '../../../../domain/entities/media.dart';
 import '../../../widgets/widgets.dart';
 import 'media_text_content.dart';
 

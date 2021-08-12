@@ -2,7 +2,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../core/exception/apod_server_failure.dart';
-import '../../domain/repositories/i_apod.repository.dart';
+import '../../domain/repositories/i_apod_repository.dart';
 import '../datasources/i_apod_data_source.dart';
 import '../../core/types/types.dart';
 

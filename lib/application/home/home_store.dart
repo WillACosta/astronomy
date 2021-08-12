@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../domain/usecases/home/i_home.usecase.dart';
+import '../../domain/usecases/home/i_home_usecase.dart';
 import 'home_state.dart';
 
 part 'home_store.g.dart';

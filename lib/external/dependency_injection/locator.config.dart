@@ -9,11 +9,11 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../../application/home/home_store.dart' as _i9;
 import '../../data/apod_data_source.dart' as _i4;
-import '../../domain/repositories/i_apod.repository.dart' as _i5;
-import '../../domain/usecases/home/home.usecase.dart' as _i8;
-import '../../domain/usecases/home/i_home.usecase.dart' as _i7;
+import '../../domain/repositories/i_apod_repository.dart' as _i5;
+import '../../domain/usecases/home/home_usecase.dart' as _i8;
+import '../../domain/usecases/home/i_home_usecase.dart' as _i7;
 import '../../infraestructure/datasources/i_apod_data_source.dart' as _i3;
-import '../../infraestructure/repositories/apod.repository.dart'
+import '../../infraestructure/repositories/apod_repository.dart'
     as _i6; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

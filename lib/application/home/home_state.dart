@@ -1,5 +1,5 @@
 import '../../core/exception/failure.exception.dart';
-import '../../domain/entities/media.entity.dart';
+import '../../domain/entities/media.dart';
 
 abstract class HomeState {}
 

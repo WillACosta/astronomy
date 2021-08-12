@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bottom_sheet_modal.dart';
-import '../../../../domain/entities/media.entity.dart';
+import '../../../../domain/entities/media.dart';
 
 class BottomSheetButton extends StatelessWidget {
   final Media media;

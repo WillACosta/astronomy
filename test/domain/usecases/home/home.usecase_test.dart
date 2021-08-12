@@ -1,7 +1,7 @@
 import 'package:astronomy/core/exception/apod_repository.exception.dart';
 import 'package:astronomy/core/exception/failure.exception.dart';
-import 'package:astronomy/domain/entities/media.entity.dart';
-import 'package:astronomy/domain/usecases/home/home.usecase.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/usecases/home/home_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
