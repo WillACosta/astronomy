@@ -1,4 +1,5 @@
-import 'package:astronomy/domain/repositories/i_apod_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
-class FakeApodRepository extends Mock implements IApodRepository {}
+import 'package:astronomy/domain/repositories/apod_repository.dart';
+
+class FakeApodRepository extends Mock implements ApodRepository {}

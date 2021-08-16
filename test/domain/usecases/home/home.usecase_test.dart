@@ -1,16 +1,17 @@
-import 'package:astronomy/core/exception/apod_repository.exception.dart';
-import 'package:astronomy/core/exception/failure.exception.dart';
-import 'package:astronomy/domain/entities/media.dart';
-import 'package:astronomy/domain/usecases/home/home_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
+
+import 'package:astronomy/core/exception/apod_repository.exception.dart';
+import 'package:astronomy/core/exception/failure.exception.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/usecases/home/c_home_usecase.dart';
 
 import '../../../mocks/mocktail_class.dart';
 
 void main() {
   final apodRepository = FakeApodRepository();
-  final usecase = HomeUseCase(apodRepository);
+  final usecase = CHomeUseCase(apodRepository);
 
   test('Should request a media of the day to APOD Repository and return Right', () async {
     final fakeMedia = Media(

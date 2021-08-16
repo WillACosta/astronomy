@@ -37,42 +37,47 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       extendBody: true,
-      body: Observer(
-        builder: (_) {
-          var state = _store.state;
-
-          if (state is ErrorState) {
-            return Text('Error');
-          }
-
-          if (state is InitialState) {}
-
-          if (state is LoadingState) {
-            return Center(child: CircularProgressIndicator());
-          }
-
-          if (state is SuccessState) {
-            return Stack(
-              fit: StackFit.expand,
-              children: [
-                Image.network(
-                  state.media.url,
-                  fit: BoxFit.cover,
-                ),
-                SafeArea(
-                  child: Column(
-                    children: [
-                      Spacer(),
-                      BottomSheetButton(media: state.media),
-                    ],
-                  ),
-                ),
-              ],
-            );
-          }
-
-          return Container();
+      body: RefreshIndicator(
+        onRefresh: () async {
+          await Future.delayed(Duration(seconds: 4));
         },
+        child: Observer(
+          builder: (_) {
+            var state = _store.state;
+
+            if (state is ErrorState) {
+              return Text('Error');
+            }
+
+            if (state is InitialState) {}
+
+            if (state is LoadingState) {
+              return Center(child: CircularProgressIndicator());
+            }
+
+            if (state is SuccessState) {
+              return Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.network(
+                    state.media.url,
+                    fit: BoxFit.cover,
+                  ),
+                  SafeArea(
+                    child: Column(
+                      children: [
+                        Spacer(),
+                        BottomSheetButton(media: state.media),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            }
+
+            return Container();
+          },
+        ),
       ),
       bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.home),
     );

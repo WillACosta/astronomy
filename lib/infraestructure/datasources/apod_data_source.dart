@@ -1,5 +1,6 @@
 import '../models/media_model.dart';
 
-abstract class IApodDataSource {
+abstract class ApodDataSource {
   Future<MediaModel> getMediaOfTheDay();
+  Future<List<MediaModel>> getMediaList();
 }

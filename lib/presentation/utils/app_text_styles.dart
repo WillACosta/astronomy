@@ -40,9 +40,9 @@ class AppTextStyles {
     color: AppColors.secondary,
   );
 
-  static TextStyle bodySmall({Color color = AppColors.secondary}) {
+  static TextStyle bodySmall({Color color = AppColors.secondary, double fontSize = 14}) {
     return _getPoppinsFont(
-      fontSize: 14,
+      fontSize: fontSize,
       fontWeight: FontWeight.w400,
       color: color,
     );

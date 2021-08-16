@@ -1,5 +1,6 @@
 import '../../core/types/types.dart';
 
-abstract class IApodRepository {
+abstract class ApodRepository {
   MediaOfTheDayType getMediaOfTheDay();
+  ListOfMediaType getMediaList();
 }

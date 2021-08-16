@@ -47,5 +47,11 @@ class MediaModel extends Media {
 
   String toJson() => json.encode(toMap());
 
-  factory MediaModel.fromJson(String source) => MediaModel.fromMap(json.decode(source));
+  factory MediaModel.fromJson(String source) =>
+      MediaModel.fromMap(json.decode(source));
+
+  static List<MediaModel> fromJsonList(String source) {
+    var sourceList = json.decode(source) as List;
+    return sourceList.map((e) => MediaModel.fromMap(e)).toList();
+  }
 }

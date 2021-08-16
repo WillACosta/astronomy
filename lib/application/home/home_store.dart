@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../domain/usecases/home/i_home_usecase.dart';
+import '../../domain/usecases/home/home_usecase.dart';
 import 'home_state.dart';
 
 part 'home_store.g.dart';
@@ -10,7 +10,7 @@ part 'home_store.g.dart';
 class HomeStore = _HomeStoreBase with _$HomeStore;
 
 abstract class _HomeStoreBase with Store {
-  final IHomeUseCase _usecase;
+  final HomeUseCase _usecase;
 
   _HomeStoreBase(this._usecase) {
     // getMedia();
@@ -42,5 +42,9 @@ abstract class _HomeStoreBase with Store {
         isMediaLoaded = true;
       },
     );
+  }
+
+  Future refresh() async {
+    await getMedia();
   }
 }
