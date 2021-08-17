@@ -19,6 +19,10 @@ abstract class _GridPageStoreBase with Store {
 
   _GridPageStoreBase(this._usecase) {
     getMediaList();
+
+    reaction((_) => _dateTimeRange, (value) {
+      getMediaList();
+    });
   }
 
   @observable

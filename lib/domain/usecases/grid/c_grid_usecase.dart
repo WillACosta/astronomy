@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 
 import '../../repositories/apod_repository.dart';
 import '../../../core/types/types.dart';
@@ -14,6 +15,11 @@ class CGridUseCase implements GridUseCase {
 
   @override
   ListOfMediaType getMediaList(GridPageDto dto) async {
-    return await _repository.getMediaList();
+    final dateFormat = DateFormat('yyyy-MM-dd');
+
+    return await _repository.getMediaList(
+      startDate: dateFormat.format(dto.dateTimeRange.start),
+      endDate: dateFormat.format(dto.dateTimeRange.end),
+    );
   }
 }

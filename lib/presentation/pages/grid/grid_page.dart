@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../utils/utils.dart' show AppTextStyles, MenuState;
-import '../../widgets/widgets.dart' show BottomNavigation;
+import '../../widgets/widgets.dart' show BottomNavigation, ErrorStateWidget;
 
 import '../../../application/grid/grid_page_state.dart';
 import '../../../external/dependency_injection/locator.dart';
@@ -42,16 +42,12 @@ class GridPage extends StatelessWidget {
 
               _store.setDateRange(dateRangeUser);
             },
-            icon: Icon(
-              Icons.calendar_today,
-            ),
+            icon: Icon(Icons.calendar_today),
           ),
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: () async {
-          await Future.delayed(Duration(seconds: 4));
-        },
+        onRefresh: () => _store.getMediaList(),
         child: Observer(
           builder: (_) {
             var state = _store.state;
@@ -65,17 +61,10 @@ class GridPage extends StatelessWidget {
             }
 
             if (state is ErrorState) {
-              return Center(
-                child: Container(
-                  child: Text(
-                    'Ops! An error has occurred :(\nTry refresh the page.',
-                    style: AppTextStyles.headline,
-                  ),
-                ),
-              );
+              return ErrorStateWidget();
             }
 
-            return Container();
+            return ErrorStateWidget();
           },
         ),
       ),

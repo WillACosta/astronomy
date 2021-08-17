@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/utils.dart' show MenuState;
-import '../../widgets/widgets.dart' show BottomNavigation;
+import '../../widgets/widgets.dart' show BottomNavigation, ErrorStateWidget;
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: ErrorStateWidget(),
       bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.settings),
     );
   }

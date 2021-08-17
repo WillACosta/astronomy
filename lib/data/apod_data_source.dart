@@ -22,10 +22,10 @@ class CApodDataSource implements ApodDataSource {
   }
 
   @override
-  Future<List<MediaModel>> getMediaList() async {
-    var startDate = '2021-08-08';
-    var endDate = '2021-08-15';
-
+  Future<List<MediaModel>> getMediaList({
+    required String startDate,
+    required String endDate,
+  }) async {
     final response = await http.get(
       Uri.parse(
           'https://api.nasa.gov/planetary/apod?api_key=$apiKey&start_date=$startDate&end_date=$endDate'),

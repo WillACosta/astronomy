@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
@@ -24,15 +26,24 @@ class GridPageBody extends StatelessWidget {
             elevation: 0,
             borderOnForeground: false,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(40),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.network(
-                  list[index].url,
-                  fit: BoxFit.cover,
-                ),
+                list[index].mediaType == 'image'
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: CachedNetworkImage(
+                          imageUrl: list[index].url,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : Image.asset(
+                        AppImages.videoIllustration,
+                        fit: BoxFit.contain,
+                        width: 120,
+                      ),
                 Container(
                   color: Colors.black.withOpacity(0.3),
                   child: Padding(

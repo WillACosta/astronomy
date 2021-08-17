@@ -7,7 +7,7 @@ class MediaModel extends Media {
     String? copyright,
     required DateTime date,
     required String explanation,
-    required String hdurl,
+    String? hdurl,
     required String mediaType,
     required String title,
     required String url,

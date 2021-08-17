@@ -23,9 +23,16 @@ class CApodRepository implements ApodRepository {
   }
 
   @override
-  ListOfMediaType getMediaList() async {
-     try {
-      final response = await _dataSource.getMediaList();
+  ListOfMediaType getMediaList({
+    required String startDate,
+    required String endDate,
+  }) async {
+    try {
+      final response = await _dataSource.getMediaList(
+        startDate: startDate,
+        endDate: endDate,
+      );
+
       return Right(response);
     } catch (e) {
       return Left(ServerFailure(message: 'An error as occurred!'));

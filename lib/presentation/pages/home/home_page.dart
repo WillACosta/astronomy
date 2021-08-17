@@ -1,10 +1,12 @@
+import 'package:astronomy/presentation/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../application/home/home_state.dart';
 import '../../../application/home/home_store.dart';
 import '../../../external/dependency_injection/locator.dart';
-import '../../widgets/bottom_navigation.dart';
+import '../../widgets/widgets.dart';
 
 import '../../utils/utils.dart' show AppSizeConfig, MenuState;
 import 'components/bottom_sheet_button.dart';
@@ -46,7 +48,7 @@ class _HomePageState extends State<HomePage> {
             var state = _store.state;
 
             if (state is ErrorState) {
-              return Text('Error');
+              return ErrorStateWidget();
             }
 
             if (state is InitialState) {}
@@ -59,10 +61,12 @@ class _HomePageState extends State<HomePage> {
               return Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    state.media.url,
-                    fit: BoxFit.cover,
-                  ),
+                  state.media.mediaType == 'image'
+                      ? CachedNetworkImage(
+                          imageUrl: state.media.url,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.asset(AppImages.videoIllustration),
                   SafeArea(
                     child: Column(
                       children: [
