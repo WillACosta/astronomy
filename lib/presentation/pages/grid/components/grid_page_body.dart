@@ -1,3 +1,4 @@
+import 'package:astronomy/presentation/routes/route_navigator.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
@@ -21,50 +22,54 @@ class GridPageBody extends StatelessWidget {
         ),
         itemCount: list.length,
         itemBuilder: (_, int index) {
-          return Card(
-            color: AppColors.accent,
-            elevation: 0,
-            borderOnForeground: false,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                list[index].mediaType == 'image'
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: CachedNetworkImage(
-                          imageUrl: list[index].url,
-                          fit: BoxFit.cover,
+          return InkWell(
+            borderRadius: BorderRadius.circular(30),
+            onTap: () => navigateTo(context, AppRoutes.gridDetail),
+            child: Card(
+              color: AppColors.accent,
+              elevation: 0,
+              borderOnForeground: false,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  list[index].mediaType == 'image'
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: CachedNetworkImage(
+                            imageUrl: list[index].url,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      : Image.asset(
+                          AppImages.videoIllustration,
+                          fit: BoxFit.contain,
+                          width: 120,
                         ),
-                      )
-                    : Image.asset(
-                        AppImages.videoIllustration,
-                        fit: BoxFit.contain,
-                        width: 120,
+                  Container(
+                    color: Colors.black.withOpacity(0.3),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            list[index].title,
+                            style: AppTextStyles.bodySmall(fontSize: 12),
+                          ),
+                          Text(
+                            dateFormat.format(list[index].date),
+                            style: AppTextStyles.bodySmallest,
+                          ),
+                        ],
                       ),
-                Container(
-                  color: Colors.black.withOpacity(0.3),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          list[index].title,
-                          style: AppTextStyles.bodySmall(fontSize: 12),
-                        ),
-                        Text(
-                          dateFormat.format(list[index].date),
-                          style: AppTextStyles.bodySmallest,
-                        ),
-                      ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },

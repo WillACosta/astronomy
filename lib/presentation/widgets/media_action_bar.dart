@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_share/social_share.dart';
 
 import '../utils/utils.dart';
 
@@ -20,9 +21,17 @@ class MediaActionBar extends StatelessWidget {
           ),
         ),
         SizedBox(width: getProportionateScreenWidth(15)),
-        Icon(Icons.fullscreen_outlined, size: 35),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.fullscreen_outlined, size: 35),
+        ),
         SizedBox(width: getProportionateScreenWidth(3)),
-        Icon(Icons.share_outlined, size: 30),
+        IconButton(
+          onPressed: () {
+            SocialShare.shareOptions('Check the awesome picture');
+          },
+          icon: Icon(Icons.share_outlined, size: 30),
+        ),
       ],
     );
   }

@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>instagram-stories</string>
+	<string>facebook-stories</string>
+	<string>facebook</string>
+	<string>instagram</string>
+	<string>twitter</string>
+	<string>whatsapp</string>
+    <string>tg</string>
+	</array>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

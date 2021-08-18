@@ -1,9 +1,8 @@
-import 'package:astronomy/domain/entities/grid_page_dto.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:astronomy/domain/entities/grid_page_dto.dart';
 import 'package:astronomy/core/exception/apod_repository.exception.dart';
 import 'package:astronomy/core/exception/failure.exception.dart';
 import 'package:astronomy/domain/entities/media.dart';
