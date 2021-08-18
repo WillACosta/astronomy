@@ -1,6 +1,6 @@
-import 'package:astronomy/presentation/routes/route_navigator.dart';
 import 'package:flutter/material.dart';
 
+import '../routes/route_navigator.dart';
 import '../utils/utils.dart' show AppColors, AppRoutes, MenuState;
 
 class BottomNavigation extends StatelessWidget {
@@ -28,21 +28,21 @@ class BottomNavigation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              onPressed: () => navigateTo(context, AppRoutes.home),
+              onPressed: () => navigateTo(context, routeName: AppRoutes.home),
               icon: Icon(Icons.home_outlined),
               color: MenuState.home == selectedMenu
                   ? AppColors.secondary
                   : AppColors.accent,
             ),
             IconButton(
-              onPressed: () => navigateTo(context, AppRoutes.grid),
+              onPressed: () => navigateTo(context, routeName: AppRoutes.grid),
               icon: Icon(Icons.grid_view_outlined),
               color: MenuState.grid == selectedMenu
                   ? AppColors.secondary
                   : AppColors.accent,
             ),
             IconButton(
-              onPressed: () => navigateTo(context, AppRoutes.settings),
+              onPressed: () => navigateTo(context, routeName: AppRoutes.settings),
               icon: Icon(Icons.settings_outlined),
               color: MenuState.settings == selectedMenu
                   ? AppColors.secondary

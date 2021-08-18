@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'routes/routes.dart';
 import 'utils/app_routes.dart';
+import 'routes/route_generator.dart';
 
 import '../app_theme.dart';
 
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: appTheme,
       initialRoute: AppRoutes.initial,
-      routes: routes,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

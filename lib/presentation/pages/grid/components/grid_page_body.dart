@@ -24,7 +24,11 @@ class GridPageBody extends StatelessWidget {
         itemBuilder: (_, int index) {
           return InkWell(
             borderRadius: BorderRadius.circular(30),
-            onTap: () => navigateTo(context, AppRoutes.gridDetail),
+            onTap: () => navigateTo(
+              context,
+              routeName: AppRoutes.gridDetail,
+              args: list[index],
+            ),
             child: Card(
               color: AppColors.accent,
               elevation: 0,
@@ -62,7 +66,7 @@ class GridPageBody extends StatelessWidget {
                           ),
                           Text(
                             dateFormat.format(list[index].date),
-                            style: AppTextStyles.bodySmallest,
+                            style: AppTextStyles.bodySmallest(),
                           ),
                         ],
                       ),

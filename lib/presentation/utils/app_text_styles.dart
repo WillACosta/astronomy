@@ -34,13 +34,15 @@ class AppTextStyles {
     color: AppColors.secondary,
   );
 
-  static final bodySmallest = _getPoppinsFont(
-    fontSize: 10,
-    fontWeight: FontWeight.w400,
-    color: AppColors.secondary,
-  );
-
   static TextStyle bodySmall({Color color = AppColors.secondary, double fontSize = 14}) {
+    return _getPoppinsFont(
+      fontSize: fontSize,
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
+
+  static TextStyle bodySmallest({Color color = AppColors.secondary, double fontSize = 10}) {
     return _getPoppinsFont(
       fontSize: fontSize,
       fontWeight: FontWeight.w400,
