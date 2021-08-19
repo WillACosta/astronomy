@@ -47,10 +47,10 @@ O projeto possui um guia de estilo para manter a consistência de padrões esté
 
 ```bash
 ## Clone este repositório
-$ git clone https://github.com/rocketseat-education/nlw-06-flutter
+$ git clone https://github.com/WillACosta/astronomy
 
 ## Entre no diretório
-$ cd nlw-06-flutter
+$ cd astronomy
 
 ## Instale as dependências
 $ flutter pub get
