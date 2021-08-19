@@ -13,7 +13,7 @@ abstract class _HomeStoreBase with Store {
   final HomeUseCase _usecase;
 
   _HomeStoreBase(this._usecase) {
-    // getMedia();
+    getMedia();
   }
 
   @observable

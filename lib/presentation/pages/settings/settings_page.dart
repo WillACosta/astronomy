@@ -72,7 +72,7 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.settings),
+      // bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.settings),
     );
   }
 }

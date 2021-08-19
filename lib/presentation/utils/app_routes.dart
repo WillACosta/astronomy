@@ -4,4 +4,5 @@ class AppRoutes {
   static const grid = '/grid';
   static const gridDetail = '/grid-detail';
   static const settings = '/settings';
+  static const container = '/container';
 }

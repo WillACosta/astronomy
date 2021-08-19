@@ -68,7 +68,7 @@ class GridPage extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.grid),
+      // bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.grid),
     );
   }
 }

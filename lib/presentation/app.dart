@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       title: 'Astronomy',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      initialRoute: AppRoutes.initial,
+      initialRoute: AppRoutes.container,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

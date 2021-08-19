@@ -14,19 +14,9 @@ class RouteGenerator {
           builder: (_) => SplashPage(),
         );
 
-      case AppRoutes.home:
+      case AppRoutes.container:
         return MaterialPageRoute(
-          builder: (_) => HomePage(),
-        );
-
-      case AppRoutes.grid:
-        return MaterialPageRoute(
-          builder: (_) => GridPage(),
-        );
-
-      case AppRoutes.settings:
-        return MaterialPageRoute(
-          builder: (_) => SettingsPage(),
+          builder: (_) => ContainerPage(),
         );
 
       case AppRoutes.gridDetail:
