@@ -33,13 +33,28 @@ class GridScrollableSheet extends StatelessWidget {
               controller: sController,
               children: [
                 SheetHandle(),
-                SizedBox(
-                  height: getProportionateScreenHeight(25),
-                ),
+                SizedBox(height: getProportionateScreenHeight(25)),
                 Text(
                   media.explanation,
                   style: AppTextStyles.body,
                 ),
+                SizedBox(height: getProportionateScreenHeight(25)),
+                media.copyright != null
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Copyright',
+                            style: AppTextStyles.bodyHead,
+                          ),
+                          SizedBox(height: getProportionateScreenHeight(10)),
+                          Text(
+                            media.copyright!,
+                            style: AppTextStyles.body,
+                          ),
+                        ],
+                      )
+                    : Container(),
               ],
             ),
           ),
