@@ -1,4 +1,4 @@
-Language: English | Português
+Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
 ## Astronomy Project
 
@@ -60,7 +60,7 @@ touch .env
 
 ## Adicione sua chave de API da NASA
 
-## Execute o projeto 
+## Execute o projeto
 $ flutter run
 ```
 
