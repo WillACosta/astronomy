@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../../utils/utils.dart' show AppTextStyles, MenuState;
-import '../../widgets/widgets.dart' show BottomNavigation, ErrorStateWidget;
+import '../../utils/utils.dart' show AppTextStyles;
+import '../../widgets/widgets.dart' show ErrorStateWidget;
 
 import '../../../application/grid/grid_page_state.dart';
 import '../../../external/dependency_injection/locator.dart';

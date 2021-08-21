@@ -9,6 +9,7 @@ import '../../../external/dependency_injection/locator.dart';
 import '../../widgets/widgets.dart';
 import '../../utils/utils.dart' show AppSizeConfig, AppImages;
 
+import 'components/show_sheet_modal.dart';
 import 'components/bottom_sheet_button.dart';
 
 class HomePage extends StatelessWidget {
@@ -38,24 +39,30 @@ class HomePage extends StatelessWidget {
             }
 
             if (state is SuccessState) {
-              return Stack(
-                fit: StackFit.expand,
-                children: [
-                  state.media.mediaType == 'image'
-                      ? CachedNetworkImage(
-                          imageUrl: state.media.url,
-                          fit: BoxFit.cover,
-                        )
-                      : Image.asset(AppImages.videoIllustration),
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        Spacer(),
-                        BottomSheetButton(media: state.media),
-                      ],
+              return GestureDetector(
+                onVerticalDragUpdate: (dragUpdateDetails) => showSheetModal(
+                  context,
+                  state.media,
+                ),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    state.media.mediaType == 'image'
+                        ? CachedNetworkImage(
+                            imageUrl: state.media.url,
+                            fit: BoxFit.cover,
+                          )
+                        : Image.asset(AppImages.videoIllustration),
+                    SafeArea(
+                      child: Column(
+                        children: [
+                          Spacer(),
+                          BottomSheetButton(media: state.media),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             }
 

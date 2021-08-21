@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'external/dependency_injection/locator.dart';
+import 'external/initi_configurations.dart';
 import 'presentation/app.dart';
 
-void main() {
-  configureInjection();
+void main() async {
+  initConfigurations();
   runApp(App());
 }

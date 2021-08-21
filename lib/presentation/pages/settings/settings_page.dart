@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/widgets.dart' show BottomNavigation;
-
 import '../../utils/utils.dart'
     show
         AppSizeConfig,
-        MenuState,
         getProportionateScreenHeight,
         getProportionateScreenWidth,
         AppTextStyles;

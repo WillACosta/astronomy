@@ -1,3 +1,1 @@
-abstract class IHttpClient {
-
-}
+abstract class IHttpClient {}

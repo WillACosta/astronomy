@@ -1,10 +1,10 @@
-import 'package:astronomy/presentation/routes/route_navigator.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../../domain/entities/media.dart';
+import '../../../routes/route_navigator.dart';
 import '../../../utils/utils.dart';
 
 class GridPageBody extends StatelessWidget {

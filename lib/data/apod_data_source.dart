@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import '../infraestructure/models/media_model.dart';
@@ -6,13 +7,12 @@ import '../infraestructure/datasources/apod_data_source.dart';
 
 @Injectable(as: ApodDataSource)
 class CApodDataSource implements ApodDataSource {
-  String apiKey = 'ipWNMrnX1YdHoXwjgzVeCeeb8bySpQ2RdYlq8OWJ';
+  final baseUrl = 'https://api.nasa.gov/planetary/apod';
+  final apiKey = dotenv.env['API_KEY']!;
 
   @override
   Future<MediaModel> getMediaOfTheDay() async {
-    final response = await http.get(
-      Uri.parse('https://api.nasa.gov/planetary/apod?api_key=$apiKey'),
-    );
+    final response = await http.get(Uri.parse('$baseUrl?api_key=$apiKey'));
 
     if (response.statusCode == 200) {
       return MediaModel.fromJson(response.body);
@@ -28,7 +28,8 @@ class CApodDataSource implements ApodDataSource {
   }) async {
     final response = await http.get(
       Uri.parse(
-          'https://api.nasa.gov/planetary/apod?api_key=$apiKey&start_date=$startDate&end_date=$endDate'),
+        '$baseUrl?api_key=$apiKey&start_date=$startDate&end_date=$endDate',
+      ),
     );
 
     if (response.statusCode == 200) {

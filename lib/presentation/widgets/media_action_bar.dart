@@ -20,17 +20,16 @@ class MediaActionBar extends StatelessWidget {
             style: AppTextStyles.body,
           ),
         ),
-        SizedBox(width: getProportionateScreenWidth(15)),
+        SizedBox(width: getProportionateScreenWidth(10)),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.fullscreen_outlined, size: 35),
+          icon: Icon(Icons.fullscreen_outlined, size: 30),
         ),
-        SizedBox(width: getProportionateScreenWidth(3)),
         IconButton(
           onPressed: () {
             SocialShare.shareOptions('Check the awesome picture');
           },
-          icon: Icon(Icons.share_outlined, size: 30),
+          icon: Icon(Icons.share_outlined, size: 25),
         ),
       ],
     );
