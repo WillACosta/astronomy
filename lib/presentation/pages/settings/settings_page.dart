@@ -1,4 +1,8 @@
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
+
+import '../../../application/settings/settings_store.dart';
+import '../../../external/dependency_injection/locator.dart';
 
 import '../../utils/utils.dart'
     show
@@ -9,6 +13,8 @@ import '../../utils/utils.dart'
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
+
+  static final store = locator<SettingsStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -37,34 +43,36 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Darkmode'),
-                    Switch(
-                      activeColor: Colors.white,
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                  ],
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Use HD images'),
-                    Switch(
-                      activeColor: Colors.white,
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                  ],
-                ),
-              ),
+              Observer(builder: (_) {
+                return SwitchListTile(
+                  value: store.userPreferences.useHdImages,
+                  onChanged: (value) {
+                    store.setPreferences(
+                      isLightTheme: store.userPreferences.useDarkMode,
+                      useHdImages: value,
+                    );
+                  },
+                  title: Text(
+                    'Use HD images',
+                    style: AppTextStyles.body,
+                  ),
+                );
+              }),
+              Observer(builder: (_) {
+                return SwitchListTile(
+                  value: store.userPreferences.useDarkMode,
+                  onChanged: (value) {
+                    store.setPreferences(
+                      isLightTheme: value,
+                      useHdImages: store.userPreferences.useHdImages,
+                    );
+                  },
+                  title: Text(
+                    'Dark mode',
+                    style: AppTextStyles.body,
+                  ),
+                );
+              }),
             ],
           ),
         ),

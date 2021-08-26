@@ -45,7 +45,10 @@ class Body extends StatelessWidget {
                     alignment: FractionalOffset.bottomRight,
                     child: PrimaryButton(
                       label: 'Get Started',
-                      onPressed: () => navigateTo(context, routeName: AppRoutes.home),
+                      onPressed: () => navigateTo(
+                        context,
+                        routeName: AppRoutes.container,
+                      ),
                     ),
                   ),
                 ),

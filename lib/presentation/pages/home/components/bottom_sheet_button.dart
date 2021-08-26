@@ -1,4 +1,5 @@
 import 'package:astronomy/presentation/pages/home/components/show_sheet_modal.dart';
+import 'package:astronomy/presentation/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../domain/entities/media.dart';
@@ -19,6 +20,7 @@ class BottomSheetButton extends StatelessWidget {
         onTap: () => showSheetModal(context, media),
         child: Icon(
           Icons.expand_less_outlined,
+          color: AppColors.secondary,
           size: 30,
         ),
       ),

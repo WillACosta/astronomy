@@ -1,4 +1,6 @@
+import '../../domain/entities/user_preferences.dart';
+
 abstract class LocalDataSource {
-  void setPreferences({required String key, required String value});
-  void readPreferences();
+  Future<UserPreferences> readPreferences();
+  void setPreferences({required UserPreferences value});
 }

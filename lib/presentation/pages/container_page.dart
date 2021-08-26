@@ -28,7 +28,7 @@ class ContainerPage extends StatelessWidget {
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(top: getProportionateScreenHeight(15)),
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
@@ -45,21 +45,21 @@ class ContainerPage extends StatelessWidget {
                     onPressed: () => _store.toPage(0),
                     icon: Icon(Icons.home_outlined),
                     color: _store.currentPage == 0
-                        ? AppColors.secondary
+                        ? Theme.of(context).accentColor
                         : AppColors.accent,
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(1),
                     icon: Icon(Icons.grid_view_outlined),
                     color: _store.currentPage == 1
-                        ? AppColors.secondary
+                        ? Theme.of(context).accentColor
                         : AppColors.accent,
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(2),
                     icon: Icon(Icons.settings_outlined),
                     color: _store.currentPage == 2
-                        ? AppColors.secondary
+                        ? Theme.of(context).accentColor
                         : AppColors.accent,
                   ),
                 ],
