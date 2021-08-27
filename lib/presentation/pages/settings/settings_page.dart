@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../application/settings/settings_store.dart';
 import '../../../external/dependency_injection/locator.dart';
+import '../../widgets/widgets.dart';
 
 import '../../utils/utils.dart'
     show
@@ -32,44 +33,28 @@ class SettingsPage extends StatelessWidget {
             children: [
               Text('Settings', style: AppTextStyles.head()),
               SizedBox(height: getProportionateScreenHeight(60)),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('About this project'),
-                    Icon(Icons.chevron_right_outlined),
-                  ],
-                ),
+              SettingsListTile(
+                label: 'About this project',
+                onTap: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
               Observer(builder: (_) {
-                return SwitchListTile(
+                return SwitchListButton(
+                  label: 'Use HD images',
                   value: store.userPreferences.useHdImages,
-                  onChanged: (value) {
-                    store.setPreferences(
-                      useDarkMode: store.userPreferences.useDarkMode,
-                      useHdImages: value,
-                    );
-                  },
-                  title: Text(
-                    'Use HD images',
-                    style: AppTextStyles.body(),
+                  onChanged: (value) => store.setPreferences(
+                    useDarkMode: store.userPreferences.useDarkMode,
+                    useHdImages: value,
                   ),
                 );
               }),
               Observer(builder: (_) {
-                return SwitchListTile(
+                return SwitchListButton(
+                  label: 'Dark Mode',
                   value: store.userPreferences.useDarkMode,
-                  onChanged: (value) {
-                    store.setPreferences(
-                      useDarkMode: value,
-                      useHdImages: store.userPreferences.useHdImages,
-                    );
-                  },
-                  title: Text(
-                    'Dark mode',
-                    style: AppTextStyles.body(),
+                  onChanged: (value) => store.setPreferences(
+                    useDarkMode: value,
+                    useHdImages: store.userPreferences.useHdImages,
                   ),
                 );
               }),

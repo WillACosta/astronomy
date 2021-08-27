@@ -8,6 +8,10 @@ O projeto foi criado com Flutter e utiliza a API pública da NASA APOD (Astronom
 
 O aplicativo possui uma proposta de design limpa e minimalista. Você também pode fazer uma cópia do design para sua conta no Figma.
 
+---
+
+<img src='https://i.imgur.com/KIzTLgV.jpg' />
+
 ## Style Guide
 
 O projeto possui um guia de estilo para manter a consistência de padrões estéticos na aplicação, você pode encontra-lo nas 'pages' do arquivo do figma.
