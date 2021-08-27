@@ -9,27 +9,19 @@ part of 'settings_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SettingsStore on _SettingsStoreBase, Store {
-  Computed<UserPreferences>? _$userPreferencesComputed;
+  final _$userPreferencesAtom =
+      Atom(name: '_SettingsStoreBase.userPreferences');
 
   @override
-  UserPreferences get userPreferences => (_$userPreferencesComputed ??=
-          Computed<UserPreferences>(() => super.userPreferences,
-              name: '_SettingsStoreBase.userPreferences'))
-      .value;
-
-  final _$_userPreferencesAtom =
-      Atom(name: '_SettingsStoreBase._userPreferences');
-
-  @override
-  UserPreferences get _userPreferences {
-    _$_userPreferencesAtom.reportRead();
-    return super._userPreferences;
+  UserPreferences get userPreferences {
+    _$userPreferencesAtom.reportRead();
+    return super.userPreferences;
   }
 
   @override
-  set _userPreferences(UserPreferences value) {
-    _$_userPreferencesAtom.reportWrite(value, super._userPreferences, () {
-      super._userPreferences = value;
+  set userPreferences(UserPreferences value) {
+    _$userPreferencesAtom.reportWrite(value, super.userPreferences, () {
+      super.userPreferences = value;
     });
   }
 

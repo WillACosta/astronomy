@@ -30,7 +30,7 @@ class SettingsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Settings', style: AppTextStyles.head),
+              Text('Settings', style: AppTextStyles.head()),
               SizedBox(height: getProportionateScreenHeight(60)),
               TextButton(
                 onPressed: () {},
@@ -48,13 +48,13 @@ class SettingsPage extends StatelessWidget {
                   value: store.userPreferences.useHdImages,
                   onChanged: (value) {
                     store.setPreferences(
-                      isLightTheme: store.userPreferences.useDarkMode,
+                      useDarkMode: store.userPreferences.useDarkMode,
                       useHdImages: value,
                     );
                   },
                   title: Text(
                     'Use HD images',
-                    style: AppTextStyles.body,
+                    style: AppTextStyles.body(),
                   ),
                 );
               }),
@@ -63,13 +63,13 @@ class SettingsPage extends StatelessWidget {
                   value: store.userPreferences.useDarkMode,
                   onChanged: (value) {
                     store.setPreferences(
-                      isLightTheme: value,
+                      useDarkMode: value,
                       useHdImages: store.userPreferences.useHdImages,
                     );
                   },
                   title: Text(
                     'Dark mode',
-                    style: AppTextStyles.body,
+                    style: AppTextStyles.body(),
                   ),
                 );
               }),
@@ -77,7 +77,6 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.settings),
     );
   }
 }

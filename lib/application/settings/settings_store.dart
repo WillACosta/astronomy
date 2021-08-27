@@ -7,7 +7,7 @@ import '../../domain/entities/user_preferences.dart';
 
 part 'settings_store.g.dart';
 
-@Injectable()
+@singleton
 class SettingsStore = _SettingsStoreBase with _$SettingsStore;
 
 abstract class _SettingsStoreBase with Store {
@@ -18,11 +18,15 @@ abstract class _SettingsStoreBase with Store {
   }
 
   @observable
-  UserPreferences _userPreferences =
-      UserPreferences(useDarkMode: false, useHdImages: false);
+  UserPreferences userPreferences = UserPreferences(
+    useDarkMode: false,
+    useHdImages: false,
+  );
 
-  @computed
-  UserPreferences get userPreferences => _userPreferences;
+  @action
+  _readPreferences() async {
+    userPreferences = await _usecase.getUserPreferences();
+  }
 
   void _init() async {
     await _initPreferences();
@@ -33,21 +37,16 @@ abstract class _SettingsStoreBase with Store {
     await Hive.openBox<UserPreferences>('user_preferences');
   }
 
-  @action
-  _readPreferences() async {
-    _userPreferences = await _usecase.getUserPreferences();
-  }
-
-  setPreferences({
-    required bool isLightTheme,
+  void setPreferences({
+    required bool useDarkMode,
     required bool useHdImages,
   }) async {
     final prefs = UserPreferences(
-      useDarkMode: isLightTheme,
+      useDarkMode: useDarkMode,
       useHdImages: useHdImages,
     );
 
-    _usecase.setUserPreferences(userPreferences: prefs);
+    await _usecase.setUserPreferences(userPreferences: prefs);
     _readPreferences();
   }
 }

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import '../../../external/dependency_injection/locator.dart';
+import '../../../application/settings/settings_store.dart';
 import '../../../application/home/home_state.dart';
 import '../../../application/home/home_store.dart';
-import '../../../external/dependency_injection/locator.dart';
 import '../../widgets/widgets.dart';
+
 import '../../utils/utils.dart' show AppSizeConfig, AppImages;
 
 import 'components/show_sheet_modal.dart';
 import 'components/bottom_sheet_button.dart';
 
 class HomePage extends StatelessWidget {
-  final _store = locator<HomeStore>();
+  static final _store = locator<HomeStore>();
+  static final _settingsStore = locator<SettingsStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,9 @@ class HomePage extends StatelessWidget {
                   children: [
                     state.media.mediaType == 'image'
                         ? CachedNetworkImage(
-                            imageUrl: state.media.url,
+                            imageUrl: _settingsStore.userPreferences.useHdImages
+                                ? state.media.hdurl!
+                                : state.media.url,
                             fit: BoxFit.cover,
                           )
                         : Image.asset(AppImages.videoIllustration),

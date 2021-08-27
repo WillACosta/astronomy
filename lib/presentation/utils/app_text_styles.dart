@@ -5,36 +5,42 @@ import 'app_colors.dart';
 
 class AppTextStyles {
   static final logo = GoogleFonts.poiretOne(
-    fontSize: 48,
-    fontWeight: FontWeight.normal,
-    color: AppColors.secondary,
-  );
+      fontSize: 48, fontWeight: FontWeight.normal, color: AppColors.secondary);
 
-  static final headline = _getPoppinsFont(
-    fontSize: 36,
-    fontWeight: FontWeight.w300,
-    color: AppColors.secondary,
-  );
+  static TextStyle headline({Color? color}) {
+    return _getPoppinsFont(
+      fontSize: 36,
+      fontWeight: FontWeight.w300,
+      color: color,
+    );
+  }
 
-  static final head = _getPoppinsFont(
-    fontSize: 24,
-    fontWeight: FontWeight.w300,
-    color: AppColors.secondary,
-  );
+  static TextStyle head({Color? color}) {
+    return _getPoppinsFont(
+      fontSize: 24,
+      fontWeight: FontWeight.w300,
+      color: color,
+    );
+  }
 
-  static final bodyHead = _getPoppinsFont(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: AppColors.secondary,
-  );
+  static TextStyle bodyHead({Color? color}) {
+    return _getPoppinsFont(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: color,
+    );
+  }
 
-  static final body = _getPoppinsFont(
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    color: AppColors.secondary,
-  );
+  static body({Color? color}) {
+    return _getPoppinsFont(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
 
-  static TextStyle bodySmall({Color color = AppColors.secondary, double fontSize = 14}) {
+  static TextStyle bodySmall(
+      {Color color = AppColors.secondary, double fontSize = 14}) {
     return _getPoppinsFont(
       fontSize: fontSize,
       fontWeight: FontWeight.w400,
@@ -42,7 +48,8 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle bodySmallest({Color color = AppColors.secondary, double fontSize = 10}) {
+  static TextStyle bodySmallest(
+      {Color color = AppColors.secondary, double fontSize = 10}) {
     return _getPoppinsFont(
       fontSize: fontSize,
       fontWeight: FontWeight.w400,
@@ -51,7 +58,7 @@ class AppTextStyles {
   }
 
   static _getPoppinsFont({
-    required Color color,
+    Color? color,
     required FontWeight fontWeight,
     required double fontSize,
   }) {

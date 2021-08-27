@@ -48,7 +48,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i18.GridPageStore>(
       () => _i18.GridPageStore(get<_i8.GridUseCase>()));
   gh.factory<_i19.HomeStore>(() => _i19.HomeStore(get<_i10.HomeUseCase>()));
-  gh.factory<_i20.SettingsStore>(
-      () => _i20.SettingsStore(get<_i16.SettingsUseCase>()));
+  gh.singleton<_i20.SettingsStore>(
+      _i20.SettingsStore(get<_i16.SettingsUseCase>()));
   return get;
 }

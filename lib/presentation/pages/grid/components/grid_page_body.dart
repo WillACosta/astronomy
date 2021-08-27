@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:intl/intl.dart';
 
+import '../../../../external/dependency_injection/locator.dart';
+import '../../../../application/settings/settings_store.dart';
 import '../../../../domain/entities/media.dart';
 import '../../../routes/route_navigator.dart';
 import '../../../utils/utils.dart';
@@ -12,6 +13,8 @@ class GridPageBody extends StatelessWidget {
   final List<Media> list;
   final dateFormat = DateFormat('dd/MM/yyyy');
 
+  static final _settingsStore = locator<SettingsStore>();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,6 +22,8 @@ class GridPageBody extends StatelessWidget {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
         ),
         itemCount: list.length,
         itemBuilder: (_, int index) {
@@ -29,13 +34,7 @@ class GridPageBody extends StatelessWidget {
               routeName: AppRoutes.gridDetail,
               args: list[index],
             ),
-            child: Card(
-              color: AppColors.accent,
-              elevation: 0,
-              borderOnForeground: false,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
+            child: GridTile(
               child: Stack(
                 fit: StackFit.expand,
                 children: [
@@ -43,7 +42,9 @@ class GridPageBody extends StatelessWidget {
                       ? ClipRRect(
                           borderRadius: BorderRadius.circular(30),
                           child: CachedNetworkImage(
-                            imageUrl: list[index].url,
+                            imageUrl: _settingsStore.userPreferences.useHdImages
+                                ? list[index].hdurl!
+                                : list[index].url,
                             fit: BoxFit.cover,
                           ),
                         )
@@ -52,23 +53,26 @@ class GridPageBody extends StatelessWidget {
                           fit: BoxFit.contain,
                           width: 120,
                         ),
-                  Container(
-                    color: Colors.black.withOpacity(0.3),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            list[index].title,
-                            style: AppTextStyles.bodySmall(fontSize: 12),
-                          ),
-                          Text(
-                            dateFormat.format(list[index].date),
-                            style: AppTextStyles.bodySmallest(),
-                          ),
-                        ],
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      color: Colors.black.withOpacity(0.3),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              list[index].title,
+                              style: AppTextStyles.bodySmall(fontSize: 12),
+                            ),
+                            Text(
+                              dateFormat.format(list[index].date),
+                              style: AppTextStyles.bodySmallest(),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -22,7 +22,7 @@ class PrimaryButton extends StatelessWidget {
         children: [
           Text(
             label,
-            style: AppTextStyles.head,
+            style: AppTextStyles.head(),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10),

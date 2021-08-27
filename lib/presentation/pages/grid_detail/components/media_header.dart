@@ -20,6 +20,7 @@ class MediaHeader extends StatelessWidget {
     final dateFormat = DateFormat('dd/MM/yyyy');
 
     return Container(
+      color: Theme.of(context).primaryColor,
       padding: EdgeInsets.symmetric(
         vertical: getProportionateScreenHeight(10),
         horizontal: getProportionateScreenWidth(20),
@@ -27,7 +28,7 @@ class MediaHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(media.title, style: AppTextStyles.bodyHead),
+          Text(media.title, style: AppTextStyles.bodyHead()),
           Text(
             dateFormat.format(media.date),
             style: AppTextStyles.bodySmallest(color: AppColors.accent),

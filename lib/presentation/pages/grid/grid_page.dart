@@ -20,14 +20,16 @@ class GridPage extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
+        centerTitle: false,
+        backgroundColor: Theme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         elevation: 0,
-        title: Observer(builder: (_) {
-          return Text(
-            _store.getDateRangeLabel,
-            style: AppTextStyles.body,
-          );
-        }),
+        title: Observer(
+          builder: (_) {
+            return Text(_store.getDateRangeLabel,
+                style: AppTextStyles.body(), textAlign: TextAlign.start);
+          },
+        ),
         actions: [
           IconButton(
             onPressed: () async {
@@ -68,7 +70,6 @@ class GridPage extends StatelessWidget {
           },
         ),
       ),
-      // bottomNavigationBar: BottomNavigation(selectedMenu: MenuState.grid),
     );
   }
 }

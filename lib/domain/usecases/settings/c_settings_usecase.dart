@@ -10,14 +10,14 @@ class CSettingsUsecase implements SettingsUseCase {
 
   CSettingsUsecase(this.repository);
 
-
   @override
   Future<UserPreferences> getUserPreferences() async {
     return await repository.getPreferences();
   }
 
   @override
-  void setUserPreferences({required UserPreferences userPreferences}) {
-    return repository.setPreferences(userPreferences: userPreferences);
+  Future<void> setUserPreferences(
+      {required UserPreferences userPreferences}) async {
+    return await repository.setPreferences(userPreferences: userPreferences);
   }
 }

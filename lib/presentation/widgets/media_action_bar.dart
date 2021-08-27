@@ -6,7 +6,10 @@ import '../utils/utils.dart';
 class MediaActionBar extends StatelessWidget {
   const MediaActionBar({
     Key? key,
+    this.isDark,
   }) : super(key: key);
+
+  final bool? isDark;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,9 @@ class MediaActionBar extends StatelessWidget {
           onPressed: () {},
           child: Text(
             'Download',
-            style: AppTextStyles.body,
+            style: isDark != null && isDark == true
+                ? AppTextStyles.body(color: AppColors.primary)
+                : AppTextStyles.body(color: AppColors.secondary),
           ),
         ),
         SizedBox(width: getProportionateScreenWidth(10)),

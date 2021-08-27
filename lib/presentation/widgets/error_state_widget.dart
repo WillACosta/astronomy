@@ -20,11 +20,11 @@ class ErrorStateWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: Text('Oops! Something went wrong', style: AppTextStyles.head),
+            child: Text('Oops! Something went wrong', style: AppTextStyles.head()),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15),
-            child: Text('try refresh the page.', style: AppTextStyles.body),
+            child: Text('try refresh the page.', style: AppTextStyles.body()),
           ),
         ],
       ),

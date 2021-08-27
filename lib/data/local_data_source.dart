@@ -9,7 +9,7 @@ const preferencesKey = 'user_preferences';
 @Injectable(as: LocalDataSource)
 class CLocalDataSource implements LocalDataSource {
   @override
-  void setPreferences({required UserPreferences value}) async {
+  Future<void> setPreferences({required UserPreferences value}) async {
     final userPreferencesBox =
         await Hive.openBox<UserPreferences>(preferencesKey);
 

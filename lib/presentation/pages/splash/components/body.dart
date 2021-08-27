@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
                 Spacer(),
                 Text(
                   'Explore the \nuniverse',
-                  style: AppTextStyles.headline,
+                  style: AppTextStyles.headline(color: AppColors.secondary),
                   textAlign: TextAlign.center,
                 ),
                 Expanded(

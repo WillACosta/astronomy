@@ -16,7 +16,7 @@ class CSettingsRepository implements SettingsRepository {
   }
 
   @override
-  void setPreferences({required UserPreferences userPreferences}) {
-    _dataSource.setPreferences(value: userPreferences);
+  Future<void> setPreferences({required UserPreferences userPreferences}) async {
+    await _dataSource.setPreferences(value: userPreferences);
   }
 }
