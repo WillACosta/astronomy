@@ -9,6 +9,7 @@ import '../../../external/dependency_injection/locator.dart';
 import '../../../application/grid/grid_page_store.dart';
 
 import 'components/grid_page_body.dart';
+import 'components/shimmer_loader.dart';
 
 class GridPage extends StatelessWidget {
   GridPage({Key? key}) : super(key: key);
@@ -26,8 +27,11 @@ class GridPage extends StatelessWidget {
         elevation: 0,
         title: Observer(
           builder: (_) {
-            return Text(_store.getDateRangeLabel,
-                style: AppTextStyles.body(), textAlign: TextAlign.start);
+            return Text(
+              _store.getDateRangeLabel,
+              style: AppTextStyles.body(),
+              textAlign: TextAlign.start,
+            );
           },
         ),
         actions: [
@@ -55,7 +59,7 @@ class GridPage extends StatelessWidget {
             var state = _store.state;
 
             if (state is LoadingState) {
-              return Center(child: CircularProgressIndicator());
+              return ShimmerLoader();
             }
 
             if (state is SuccessState) {

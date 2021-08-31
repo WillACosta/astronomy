@@ -26,7 +26,7 @@ class ContainerPage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.only(top: getProportionateScreenHeight(15)),
+        padding: EdgeInsets.all(getProportionateScreenHeight(15)),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.only(
@@ -43,21 +43,35 @@ class ContainerPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => _store.toPage(0),
-                    icon: Icon(Icons.home_outlined),
+                    icon: Icon(
+                      Icons.home_outlined,
+                      size: 25,
+                    ),
                     color: _store.currentPage == 0
                         ? Theme.of(context).accentColor
                         : AppColors.accent,
                   ),
-                  IconButton(
-                    onPressed: () => _store.toPage(1),
-                    icon: Icon(Icons.grid_view_outlined),
-                    color: _store.currentPage == 1
-                        ? Theme.of(context).accentColor
-                        : AppColors.accent,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: getProportionateScreenWidth(20),
+                    ),
+                    child: IconButton(
+                      onPressed: () => _store.toPage(1),
+                      icon: Icon(
+                        Icons.grid_view_outlined,
+                        size: 25,
+                      ),
+                      color: _store.currentPage == 1
+                          ? Theme.of(context).accentColor
+                          : AppColors.accent,
+                    ),
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(2),
-                    icon: Icon(Icons.settings_outlined),
+                    icon: Icon(
+                      Icons.settings_outlined,
+                      size: 25,
+                    ),
                     color: _store.currentPage == 2
                         ? Theme.of(context).accentColor
                         : AppColors.accent,

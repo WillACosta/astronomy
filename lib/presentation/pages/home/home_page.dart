@@ -10,6 +10,7 @@ import '../../widgets/widgets.dart';
 
 import '../../utils/utils.dart' show AppSizeConfig, AppImages;
 
+import 'components/shimmer_loader.dart';
 import 'components/show_sheet_modal.dart';
 import 'components/bottom_sheet_button.dart';
 
@@ -37,7 +38,7 @@ class HomePage extends StatelessWidget {
             if (state is InitialState) {}
 
             if (state is LoadingState) {
-              return Center(child: CircularProgressIndicator());
+              return ShimmerLoader();
             }
 
             if (state is SuccessState) {
