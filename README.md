@@ -59,10 +59,10 @@ $ cd astronomy
 ## Install the dependencies
 $ flutter pub get
 
-## Create a new '.env' file in the root directory with
-touch .env
+## Rename the '.env-example' file to '.env' in the root directory with
+$ mv .env-example .env
 
-## Add your API KEY of the APOD
+## Open the file and add your API KEY
 
 ## Run the app
 $ flutter run
