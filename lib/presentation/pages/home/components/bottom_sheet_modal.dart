@@ -20,7 +20,7 @@ class BottomSheetModal extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(right: getProportionateScreenWidth(20)),
-          child: MediaActionBar(),
+          child: MediaActionBar(media: media),
         ),
         Padding(
           padding: EdgeInsets.only(top: getProportionateScreenHeight(55)),

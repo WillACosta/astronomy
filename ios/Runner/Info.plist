@@ -13,6 +13,16 @@
     <string>tg</string>
 	</array>
 
+	<!-- <key>NSAllowsArbitraryLoads</key>
+	<true/> -->
+	<!-- <key>LSSupportsOpeningDocumentsInPlace</key> -->
+	<!-- <true/> -->
+	<!-- <key>UIFileSharingEnabled</key>
+	<true/> -->
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) photos description</string>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

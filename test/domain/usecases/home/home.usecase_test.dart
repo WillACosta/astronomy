@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:astronomy/core/exception/apod_repository.exception.dart';
+import 'package:astronomy/domain/usecases/home/c_home_usecase.dart';
+import 'package:astronomy/core/exception/apod_server_failure.dart';
 import 'package:astronomy/core/exception/failure.exception.dart';
 import 'package:astronomy/domain/entities/media.dart';
-import 'package:astronomy/domain/usecases/home/c_home_usecase.dart';
 
 import '../../../mocks/mocktail_class.dart';
 
@@ -36,7 +36,7 @@ void main() {
 
   test('Should request a media of the day to APOD Repository and return Left', () async {
     when(() => apodRepository.getMediaOfTheDay()).thenAnswer(
-      (_) async => Left(ApodRepositoryException(message: 'An error occurred while requesting media!')),
+      (_) async => Left(ServerFailure(message: 'An error occurred while requesting media!')),
     );
 
     final response = await usecase.getMediaOfTheDay();
