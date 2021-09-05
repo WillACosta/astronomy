@@ -5,4 +5,5 @@ class AppRoutes {
   static const gridDetail = '/grid-detail';
   static const settings = '/settings';
   static const container = '/container';
+  static const imageView = '/image-view';
 }

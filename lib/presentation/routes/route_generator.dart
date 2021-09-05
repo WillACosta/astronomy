@@ -25,6 +25,14 @@ class RouteGenerator {
             builder: (_) => GridDetailPage(media: args),
           );
         }
+        return _errorRoute();
+
+      case AppRoutes.imageView:
+        if (args is Media) {
+          return MaterialPageRoute(
+            builder: (_) => ImageView(media: args),
+          );
+        }
 
         return _errorRoute();
       default:

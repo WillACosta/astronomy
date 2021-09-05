@@ -20,6 +20,12 @@
 	<!-- <key>UIFileSharingEnabled</key>
 	<true/> -->
 
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https</string>
+		<string>http</string>
+	</array>
+
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) photos description</string>
 

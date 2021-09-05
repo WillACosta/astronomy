@@ -24,7 +24,7 @@ class GridDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
-        actions: [MediaActionBar(media: media)],
+        actions: [MediaActionBar(media: media, isDetailScreen: true,)],
       ),
       body: Stack(
         fit: StackFit.expand,

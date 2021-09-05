@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 part 'container_page_store.g.dart';
 
-@Injectable()
+@singleton
 class ContainerPageStore = _ContainerPageStoreBase with _$ContainerPageStore;
 
 abstract class _ContainerPageStoreBase with Store {
