@@ -29,11 +29,12 @@ final darkTheme = ThemeData(
   ),
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     displayColor: AppColors.secondary,
-    bodyColor: AppColors.secondary
+    bodyColor: AppColors.secondary,
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.primary,
   ),
+  switchTheme: SwitchThemeData(),
 );
 
 final lightTheme = ThemeData(
@@ -54,7 +55,7 @@ final lightTheme = ThemeData(
   ),
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     displayColor: AppColors.primary,
-    bodyColor: AppColors.primary
+    bodyColor: AppColors.primary,
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.primary,

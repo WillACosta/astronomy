@@ -17,7 +17,7 @@ class SettingsListTile extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.all(0),
       tileColor: Theme.of(context).primaryColor,
-      onTap: () {},
+      onTap: onTap,
       title: Text(
         label,
         style: AppTextStyles.body(),
