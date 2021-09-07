@@ -1,0 +1,18 @@
+{
+  "language": "Português",
+  "exploreTheUniverse": "Explore o \nuniverso",
+  "getStarted": "Começar",
+  "download": "Baixar",
+  "copyright": "Direitos autorais",
+  "viewing": "Visualizando",
+  "aboutThisProject": "Sobre o projeto",
+  "useHdImages": "Usar imagems em HD",
+  "darkmode": "Modo escuro",
+  "aboutContent": "Este projeto foi desenvolvido com Flutter e utiliza a APOD API  da NASA para exibir incríveis imagens e vídeos do universo todos os dias.\n\nPara obter mais informações, visite o repositório no GitHub.",
+  "close": "Fechar",
+  "errorMessage": "Oops! Alguma coisa deu errado",
+  "refreshMessage": "tente recarregar a página.",
+  "shareMessage": "Encontrei esse incrível conteúdo no aplicativo Astronomy, acho que você irá gostar também!",
+  "settings": "Configurações",
+  "selectYourLanguage": "Linguagem"
+}

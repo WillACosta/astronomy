@@ -41,7 +41,7 @@ abstract class _GridPageStoreBase with Store {
 
   @computed
   String get getDateRangeLabel =>
-      'Viewing ${dateFormat.format(getDateRange.start)} - ${dateFormat.format(getDateRange.end)}';
+      '${dateFormat.format(getDateRange.start)} - ${dateFormat.format(getDateRange.end)}';
 
   @action
   void setDateRange(DateTimeRange value) => _dateTimeRange = value;

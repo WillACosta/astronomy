@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/utils.dart' show AppTextStyles;
 import '../../widgets/widgets.dart' show ErrorStateWidget;
@@ -28,7 +29,7 @@ class GridPage extends StatelessWidget {
         title: Observer(
           builder: (_) {
             return Text(
-              _store.getDateRangeLabel,
+              '${AppLocalizations.of(context)!.viewing} ${_store.getDateRangeLabel}',
               style: AppTextStyles.body(),
               textAlign: TextAlign.start,
             );
@@ -39,8 +40,8 @@ class GridPage extends StatelessWidget {
             onPressed: () async {
               final dateRangeUser = await showDateRangePicker(
                 context: context,
-                firstDate: DateTime(DateTime.now().year - 5),
-                lastDate: DateTime(DateTime.now().year + 5),
+                firstDate: DateTime(1995, 6, 16),
+                lastDate: DateTime.now(),
                 initialDateRange: _store.getDateRange,
               );
 

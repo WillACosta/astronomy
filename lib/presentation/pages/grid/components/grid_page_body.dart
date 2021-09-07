@@ -6,6 +6,7 @@ import '../../../../external/dependency_injection/locator.dart';
 import '../../../../application/settings/settings_store.dart';
 import '../../../../domain/entities/media.dart';
 import '../../../routes/route_navigator.dart';
+import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
 class GridPageBody extends StatelessWidget {
@@ -48,11 +49,7 @@ class GridPageBody extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         )
-                      : Image.asset(
-                          AppImages.videoIllustration,
-                          fit: BoxFit.contain,
-                          width: 120,
-                        ),
+                      : VideoMediaView(),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(

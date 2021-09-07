@@ -1,10 +1,13 @@
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
 
-class MediaTextContent extends StatelessWidget {
+class MediaTextContent extends StatefulWidget {
   const MediaTextContent({
     Key? key,
     required this.dateFormat,
@@ -15,30 +18,46 @@ class MediaTextContent extends StatelessWidget {
   final Media media;
 
   @override
+  _MediaTextContentState createState() => _MediaTextContentState();
+}
+
+class _MediaTextContentState extends State<MediaTextContent> {
+  final localizationStore = locator<LocalizationStore>();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    // localizationStore.translate(widget.media.title);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: Column(
         children: [
           Text(
-            dateFormat.format(media.date),
+            widget.dateFormat.format(widget.media.date),
             style: AppTextStyles.bodySmall(color: AppColors.accent),
           ),
           SizedBox(height: getProportionateScreenHeight(10)),
-          Text(
-            media.title,
-            style: AppTextStyles.bodyHead(),
-          ),
+          Observer(builder: (_) {
+            return Text(
+              widget.media.title,
+              style: AppTextStyles.bodyHead(),
+            );
+          }),
           SizedBox(height: getProportionateScreenHeight(25)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                media.explanation,
+                widget.media.explanation,
                 style: AppTextStyles.body(),
               ),
               SizedBox(height: getProportionateScreenHeight(25)),
-              media.copyright != null
+              widget.media.copyright != null
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -48,7 +67,7 @@ class MediaTextContent extends StatelessWidget {
                         ),
                         SizedBox(height: getProportionateScreenHeight(10)),
                         Text(
-                          media.copyright!,
+                          widget.media.copyright!,
                           style: AppTextStyles.body(),
                         ),
                       ],

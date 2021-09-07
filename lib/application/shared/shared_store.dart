@@ -34,7 +34,8 @@ abstract class _SharedStoreBase with Store {
   void launchUrl(String url) async => await canLaunch(url)
       ? await launch(url)
       : FlutterToast().showToast(
-          message: "Ops! Something went wrong with this link, please try again.",
+          message:
+              "Ops! Something went wrong with this link, please try again.",
           kind: 'error',
         );
 }

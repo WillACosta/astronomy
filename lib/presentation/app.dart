@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../application/localization/localization_store.dart';
 import '../external/dependency_injection/locator.dart';
 import '../application/settings/settings_store.dart';
 import '../app_theme.dart';
@@ -10,6 +14,7 @@ import 'utils/app_routes.dart';
 
 class App extends StatelessWidget {
   static final store = locator<SettingsStore>();
+  static final localizationStore = locator<LocalizationStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +30,14 @@ class App extends StatelessWidget {
               : ThemeMode.light,
           initialRoute: AppRoutes.initial,
           onGenerateRoute: RouteGenerator.generateRoute,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: store.userPreferences.userLocale,
         );
       },
     );

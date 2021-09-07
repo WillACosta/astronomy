@@ -25,6 +25,7 @@ class CLocalDataSource implements LocalDataSource {
         UserPreferences(
           useDarkMode: false,
           useHdImages: false,
+          userLocale: null
         );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:social_share/social_share.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../external/dependency_injection/locator.dart';
 import '../../application/settings/settings_store.dart';
@@ -43,7 +44,7 @@ class MediaActionBar extends StatelessWidget {
                         : () => null,
                     child: Row(
                       children: [
-                        Text('Download'),
+                        Text(AppLocalizations.of(context)!.download),
                         _store.isDownloadingImage ? LoadingIndicator() : Row(),
                       ],
                     ),
@@ -65,7 +66,7 @@ class MediaActionBar extends StatelessWidget {
         IconButton(
           onPressed: () async {
             SocialShare.shareOptions(
-              "Found this awesome media on Astronomy app, i think you'll like it!",
+             AppLocalizations.of(context)!.shareMessage,
             );
           },
           icon: Icon(Icons.share_outlined, size: 25),

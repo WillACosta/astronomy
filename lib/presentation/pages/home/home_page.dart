@@ -8,7 +8,7 @@ import '../../../application/home/home_state.dart';
 import '../../../application/home/home_store.dart';
 import '../../widgets/widgets.dart';
 
-import '../../utils/utils.dart' show AppSizeConfig, AppImages;
+import '../../utils/utils.dart' show AppSizeConfig;
 
 import 'components/shimmer_loader.dart';
 import 'components/show_sheet_modal.dart';
@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
                                 : state.media.url,
                             fit: BoxFit.cover,
                           )
-                        : Image.asset(AppImages.videoIllustration),
+                        : VideoMediaView(showLabel: true),
                     SafeArea(
                       child: Column(
                         children: [

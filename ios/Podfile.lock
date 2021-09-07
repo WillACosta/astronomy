@@ -1,6 +1,4 @@
 PODS:
-  - downloads_path_provider_28 (0.0.1):
-    - Flutter
   - Flutter (1.0.0)
   - flutter_local_notifications (0.0.1):
     - Flutter
@@ -28,7 +26,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - downloads_path_provider_28 (from `.symlinks/plugins/downloads_path_provider_28/ios`)
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -46,8 +43,6 @@ SPEC REPOS:
     - Toast
 
 EXTERNAL SOURCES:
-  downloads_path_provider_28:
-    :path: ".symlinks/plugins/downloads_path_provider_28/ios"
   Flutter:
     :path: Flutter
   flutter_local_notifications:
@@ -70,7 +65,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
-  downloads_path_provider_28: 7425048683ec0b86238361bd93795e91c2bc61a2
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58

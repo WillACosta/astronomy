@@ -1,11 +1,14 @@
 import 'dart:io';
 
+import 'package:astronomy/l10n/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../application/settings/settings_store.dart';
+import '../../../application/localization/localization_store.dart';
 import '../../../external/dependency_injection/locator.dart';
+import '../../../application/settings/settings_store.dart';
 import '../../../application/shared/shared_store.dart';
 import '../../routes/route_navigator.dart';
 import '../../widgets/widgets.dart';
@@ -24,6 +27,7 @@ class SettingsPage extends StatelessWidget {
 
   static final store = locator<SettingsStore>();
   static final sharedStore = locator<SharedStore>();
+  static final localizationStore = locator<LocalizationStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -39,33 +43,82 @@ class SettingsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Settings', style: AppTextStyles.head()),
+              Text(
+                AppLocalizations.of(context)!.settings,
+                style: AppTextStyles.head(),
+              ),
               SizedBox(height: getProportionateScreenHeight(60)),
               SettingsListTile(
-                label: 'About this project',
+                label: AppLocalizations.of(context)!.aboutThisProject,
                 onTap: () => showAboutDialog(context),
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
-              Observer(builder: (_) {
-                return SwitchListButton(
-                  label: 'Use HD images',
+              Observer(
+                builder: (_) => SwitchListButton(
+                  label: AppLocalizations.of(context)!.useHdImages,
                   value: store.userPreferences.useHdImages,
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: store.userPreferences.useDarkMode,
                     useHdImages: value,
+                    currentLocale: store.userPreferences.userLocale,
                   ),
-                );
-              }),
-              Observer(builder: (_) {
-                return SwitchListButton(
-                  label: 'Dark Mode',
+                ),
+              ),
+              Observer(
+                builder: (_) => SwitchListButton(
+                  label: AppLocalizations.of(context)!.darkmode,
                   value: store.userPreferences.useDarkMode,
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: value,
                     useHdImages: store.userPreferences.useHdImages,
+                    currentLocale: store.userPreferences.userLocale,
                   ),
+                ),
+              ),
+              Observer(builder: (_) {
+                Locale userLocale = Localizations.localeOf(context);
+                final currentLocale = localizationStore.locale ?? userLocale;
+
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      AppLocalizations.of(context)!.selectYourLanguage,
+                      style: AppTextStyles.body(),
+                    ),
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                        value: currentLocale,
+                        icon: Icon(Icons.arrow_drop_down),
+                        items: L10n.all.map(
+                          (locale) {
+                            final flag = L10n.getFlag(locale.languageCode);
+
+                            return DropdownMenuItem(
+                              child: Text(
+                                flag,
+                                style: TextStyle(fontSize: 32),
+                              ),
+                              value: locale,
+                              onTap: () {
+                                localizationStore.setLocale(locale);
+                                store.setPreferences(
+                                  useDarkMode:
+                                      store.userPreferences.useDarkMode,
+                                  useHdImages:
+                                      store.userPreferences.useHdImages,
+                                  currentLocale: locale,
+                                );
+                              },
+                            );
+                          },
+                        ).toList(),
+                        onChanged: (_) {},
+                      ),
+                    ),
+                  ],
                 );
-              }),
+              })
             ],
           ),
         ),
@@ -74,21 +127,20 @@ class SettingsPage extends StatelessWidget {
   }
 
   showAboutDialog(BuildContext context) {
-    String title = 'About this project';
-    String content =
-        "This project was developed with Flutter and use NASA's APOD API to display awesome pictures and videos of the universe each day.\n\nFor more information please visit the repository on GitHub.";
+    String title = AppLocalizations.of(context)!.aboutThisProject;
+    String content = AppLocalizations.of(context)!.aboutContent;
+    String closeText = AppLocalizations.of(context)!.close;
+    String repositoryUrl = 'https://github.com/WillACosta/astronomy';
 
     var cupertinoActions = [
       CupertinoDialogAction(
         isDefaultAction: true,
         child: Text('GitHub'),
-        onPressed: () => sharedStore.launchUrl(
-          'https://github.com/WillACosta/astronomy',
-        ),
+        onPressed: () => sharedStore.launchUrl(repositoryUrl),
       ),
       CupertinoDialogAction(
         isDestructiveAction: true,
-        child: Text("Close"),
+        child: Text(closeText),
         onPressed: () => closeRoute(context),
       )
     ];
@@ -96,12 +148,10 @@ class SettingsPage extends StatelessWidget {
     var materialActions = [
       MaterialButton(
         child: Text('GitHub'),
-        onPressed: () => sharedStore.launchUrl(
-          'https://github.com/WillACosta/astronomy',
-        ),
+        onPressed: () => sharedStore.launchUrl(repositoryUrl),
       ),
       MaterialButton(
-        child: Text("Close"),
+        child: Text(closeText),
         onPressed: () => closeRoute(context),
       )
     ];

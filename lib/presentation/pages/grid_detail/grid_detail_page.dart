@@ -24,7 +24,12 @@ class GridDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
-        actions: [MediaActionBar(media: media, isDetailScreen: true,)],
+        actions: [
+          MediaActionBar(
+            media: media,
+            isDetailScreen: true,
+          )
+        ],
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -39,7 +44,7 @@ class GridDetailPage extends StatelessWidget {
                         : media.url,
                     fit: BoxFit.cover,
                   )
-                : Image.asset(AppImages.videoIllustration),
+                : VideoMediaView(showLabel: true),
           ),
           GridScrollableSheet(media: media),
         ],

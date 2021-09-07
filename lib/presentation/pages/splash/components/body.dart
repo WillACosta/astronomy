@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../widgets/primary_button.dart';
 import '../../../routes/route_navigator.dart';
@@ -36,7 +37,7 @@ class Body extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  'Explore the \nuniverse',
+                  AppLocalizations.of(context)!.exploreTheUniverse,
                   style: AppTextStyles.headline(color: AppColors.secondary),
                   textAlign: TextAlign.center,
                 ),
@@ -44,7 +45,7 @@ class Body extends StatelessWidget {
                   child: Align(
                     alignment: FractionalOffset.bottomRight,
                     child: PrimaryButton(
-                      label: 'Get Started',
+                      label: AppLocalizations.of(context)!.getStarted,
                       onPressed: () => navigateTo(
                         context,
                         routeName: AppRoutes.container,

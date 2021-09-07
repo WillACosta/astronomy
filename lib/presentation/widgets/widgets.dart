@@ -2,6 +2,7 @@ export 'outlined_action_button.dart';
 export 'switch_list_button.dart';
 export 'settings_list_tile.dart';
 export 'error_state_widget.dart';
+export 'video_media_view.dart';
 export 'media_action_bar.dart';
 export 'sheet_container.dart';
 export 'primary_button.dart';
