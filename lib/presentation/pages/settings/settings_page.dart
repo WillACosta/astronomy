@@ -33,6 +33,8 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppSizeConfig().init(context);
 
+    Locale systemLocale = Localizations.localeOf(context);
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -60,7 +62,8 @@ class SettingsPage extends StatelessWidget {
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: store.userPreferences.useDarkMode,
                     useHdImages: value,
-                    currentLocale: store.userPreferences.userLocale,
+                    currentLocale:
+                        store.userPreferences.userLocale ?? systemLocale,
                   ),
                 ),
               ),
@@ -71,13 +74,13 @@ class SettingsPage extends StatelessWidget {
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: value,
                     useHdImages: store.userPreferences.useHdImages,
-                    currentLocale: store.userPreferences.userLocale,
+                    currentLocale:
+                        store.userPreferences.userLocale ?? systemLocale,
                   ),
                 ),
               ),
               Observer(builder: (_) {
-                Locale userLocale = Localizations.localeOf(context);
-                final currentLocale = localizationStore.locale ?? userLocale;
+                final currentLocale = localizationStore.locale ?? systemLocale;
 
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,7 +100,7 @@ class SettingsPage extends StatelessWidget {
                             return DropdownMenuItem(
                               child: Text(
                                 flag,
-                                style: TextStyle(fontSize: 32),
+                                style: TextStyle(fontSize: 20),
                               ),
                               value: locale,
                               onTap: () {

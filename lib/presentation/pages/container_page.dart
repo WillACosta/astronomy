@@ -22,6 +22,7 @@ class ContainerPage extends StatelessWidget {
         children: [
           HomePage(),
           GridPage(),
+          FavoritesPage(),
           SettingsPage(),
         ],
       ),
@@ -52,8 +53,9 @@ class ContainerPage extends StatelessWidget {
                         : AppColors.accent,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(20),
+                    padding: EdgeInsets.only(
+                      left: getProportionateScreenWidth(20),
+                      right: getProportionateScreenWidth(20),
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(1),
@@ -66,13 +68,28 @@ class ContainerPage extends StatelessWidget {
                           : AppColors.accent,
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      right: getProportionateScreenWidth(20),
+                    ),
+                    child: IconButton(
+                      onPressed: () => _store.toPage(2),
+                      icon: Icon(
+                        Icons.bookmark_border_outlined,
+                        size: 25,
+                      ),
+                      color: _store.currentPage == 2
+                          ? Theme.of(context).accentColor
+                          : AppColors.accent,
+                    ),
+                  ),
                   IconButton(
-                    onPressed: () => _store.toPage(2),
+                    onPressed: () => _store.toPage(3),
                     icon: Icon(
                       Icons.settings_outlined,
                       size: 25,
                     ),
-                    color: _store.currentPage == 2
+                    color: _store.currentPage == 3
                         ? Theme.of(context).accentColor
                         : AppColors.accent,
                   ),

@@ -1,8 +1,9 @@
-import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/settings_repository.dart';
-import '../../domain/entities/user_preferences.dart';
+import '../../domain/adapters/user_preferences.dart';
+import '../datasources/local_data_source.dart';
+
 
 @Injectable(as: SettingsRepository)
 class CSettingsRepository implements SettingsRepository {

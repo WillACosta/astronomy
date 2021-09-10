@@ -1,9 +1,8 @@
-import 'package:astronomy/application/localization/localization_store.dart';
-import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../application/localization/localization_store.dart';
+import '../../../../external/dependency_injection/locator.dart';
 import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
 
@@ -42,12 +41,10 @@ class _MediaTextContentState extends State<MediaTextContent> {
             style: AppTextStyles.bodySmall(color: AppColors.accent),
           ),
           SizedBox(height: getProportionateScreenHeight(10)),
-          Observer(builder: (_) {
-            return Text(
-              widget.media.title,
-              style: AppTextStyles.bodyHead(),
-            );
-          }),
+          Text(
+            widget.media.title,
+            style: AppTextStyles.bodyHead(),
+          ),
           SizedBox(height: getProportionateScreenHeight(25)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

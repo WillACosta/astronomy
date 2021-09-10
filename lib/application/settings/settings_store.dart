@@ -1,10 +1,10 @@
-import 'package:astronomy/domain/entities/user_locale.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../domain/usecases/settings/settings_usecase.dart';
-import '../../domain/entities/user_preferences.dart';
+import '../../domain/adapters/user_preferences.dart';
+import '../../domain/adapters/user_locale.dart';
 
 part 'settings_store.g.dart';
 
@@ -44,7 +44,7 @@ abstract class _SettingsStoreBase with Store {
     required bool useHdImages,
     required dynamic currentLocale,
   }) async {
-    var locale = UserLocale(
+    final userLocale = UserLocale(
       languageCode: currentLocale.languageCode,
       countryCode: currentLocale.countryCode,
       scriptCode: currentLocale.scriptCode,
@@ -53,7 +53,7 @@ abstract class _SettingsStoreBase with Store {
     final prefs = UserPreferences(
       useDarkMode: useDarkMode,
       useHdImages: useHdImages,
-      userLocale: locale,
+      userLocale: userLocale,
     );
 
     await _usecase.setUserPreferences(userPreferences: prefs);

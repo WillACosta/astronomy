@@ -1,8 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:social_share/social_share.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:intl/intl.dart';
 
+import '../../application/favorites/favorites_store.dart';
 import '../../external/dependency_injection/locator.dart';
 import '../../application/settings/settings_store.dart';
 import '../../application/shared/shared_store.dart';
@@ -23,9 +28,13 @@ class MediaActionBar extends StatelessWidget {
 
   static final _store = locator<SharedStore>();
   static final _settingsStore = locator<SettingsStore>();
+  static final _favoriteStore = locator<FavoriteStore>();
 
   @override
   Widget build(BuildContext context) {
+    DateFormat dateFormatter = DateFormat();
+    String dateKey = dateFormatter.format(media.date);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -63,10 +72,22 @@ class MediaActionBar extends StatelessWidget {
                 icon: Icon(Icons.fullscreen_outlined, size: 30),
               )
             : Row(),
+        ValueListenableBuilder(
+            valueListenable: _favoriteStore.favoritesBox.listenable(),
+            builder: (_, Box box, __) {
+              return IconButton(
+                onPressed: () => _favoriteStore.addFavorite(item: media),
+                icon: Icon(
+                  _favoriteStore.favoritesBox.containsKey(dateKey)
+                      ? Icons.bookmark
+                      : Icons.bookmark_border_outlined,
+                ),
+              );
+            }),
         IconButton(
           onPressed: () async {
             SocialShare.shareOptions(
-             AppLocalizations.of(context)!.shareMessage,
+              AppLocalizations.of(context)!.shareMessage,
             );
           },
           icon: Icon(Icons.share_outlined, size: 25),
