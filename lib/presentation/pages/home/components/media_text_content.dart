@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../application/localization/localization_store.dart';
-import '../../../../external/dependency_injection/locator.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../../../../domain/entities/media.dart';
+import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
-class MediaTextContent extends StatefulWidget {
+class MediaTextContent extends StatelessWidget {
   const MediaTextContent({
     Key? key,
     required this.dateFormat,
@@ -17,54 +18,43 @@ class MediaTextContent extends StatefulWidget {
   final Media media;
 
   @override
-  _MediaTextContentState createState() => _MediaTextContentState();
-}
-
-class _MediaTextContentState extends State<MediaTextContent> {
-  final localizationStore = locator<LocalizationStore>();
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    // localizationStore.translate(widget.media.title);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: Column(
         children: [
           Text(
-            widget.dateFormat.format(widget.media.date),
+            dateFormat.format(media.date),
             style: AppTextStyles.bodySmall(color: AppColors.accent),
           ),
           SizedBox(height: getProportionateScreenHeight(10)),
-          Text(
-            widget.media.title,
-            style: AppTextStyles.bodyHead(),
+          MediaTranslationText(
+            englishTextChild: Text(media.title, style: AppTextStyles.bodyHead()),
+            textToTranslate: media.title,
           ),
           SizedBox(height: getProportionateScreenHeight(25)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                widget.media.explanation,
-                style: AppTextStyles.body(),
+              MediaTranslationText(
+                englishTextChild: Text(
+                  media.explanation,
+                  style: AppTextStyles.body(),
+                ),
+                textToTranslate: media.explanation,
               ),
               SizedBox(height: getProportionateScreenHeight(25)),
-              widget.media.copyright != null
+              media.copyright != null
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Copyright',
+                          AppLocalizations.of(context)!.copyright,
                           style: AppTextStyles.bodyHead(),
                         ),
                         SizedBox(height: getProportionateScreenHeight(10)),
                         Text(
-                          widget.media.copyright!,
+                          media.copyright!,
                           style: AppTextStyles.body(),
                         ),
                       ],

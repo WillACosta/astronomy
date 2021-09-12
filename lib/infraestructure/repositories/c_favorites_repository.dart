@@ -12,7 +12,7 @@ class CFavoritesRepository implements FavoritesRepository {
   CFavoritesRepository(this._dataSource);
 
   @override
-  AddFavoriteType addFavorite({required Media media}) async {
-    await _dataSource.addFavorite(media: media);
+  ToggleFavoriteType toggleFavorite({required Media media}) async {
+    await _dataSource.toggleFavorite(media: media);
   }
 }

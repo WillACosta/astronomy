@@ -57,4 +57,3 @@ flutter:
   assets:
     - assets/images/
     - .env
-    - i18n/

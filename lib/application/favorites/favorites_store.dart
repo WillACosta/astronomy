@@ -26,7 +26,7 @@ abstract class _FavoriteStoreBase with Store {
     favoritesBox = await Hive.openBox<Media>('user_favorites');
   }
 
-  Future<void> addFavorite({required Media item}) async {
-    await _usecase.addFavorite(media: item);
+  Future<void> toggleFavorite({required Media item}) async {
+    await _usecase.toggleFavorite(media: item);
   }
 }

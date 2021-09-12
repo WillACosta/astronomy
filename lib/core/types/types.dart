@@ -8,5 +8,5 @@ typedef ListOfMediaType = Future<Either<Failure, List<Media>>>;
 
 typedef DownloadServiceType = Future<Either<Failure, dynamic>>;
 
-typedef AddFavoriteType = Future<void>;
+typedef ToggleFavoriteType = Future<void>;
 typedef RemoveFavoriteType = Future<void>;

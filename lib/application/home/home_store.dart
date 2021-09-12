@@ -39,7 +39,6 @@ abstract class _HomeStoreBase with Store {
       ),
       (result) {
         setState(SuccessState(result));
-        /// Traduzir a media aqui
         isMediaLoaded = true;
       },
     );

@@ -76,16 +76,16 @@ class MediaActionBar extends StatelessWidget {
             valueListenable: _favoriteStore.favoritesBox.listenable(),
             builder: (_, Box box, __) {
               return IconButton(
-                onPressed: () => _favoriteStore.addFavorite(item: media),
+                onPressed: () => _favoriteStore.toggleFavorite(item: media),
                 icon: Icon(
                   _favoriteStore.favoritesBox.containsKey(dateKey)
                       ? Icons.bookmark
-                      : Icons.bookmark_border_outlined,
+                      : Icons.bookmark_add_outlined,
                 ),
               );
             }),
         IconButton(
-          onPressed: () async {
+          onPressed: () {
             SocialShare.shareOptions(
               AppLocalizations.of(context)!.shareMessage,
             );

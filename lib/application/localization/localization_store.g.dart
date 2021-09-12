@@ -24,29 +24,6 @@ mixin _$LocalizationStore on _LocalizationStoreBase, Store {
     });
   }
 
-  final _$translationAtom = Atom(name: '_LocalizationStoreBase.translation');
-
-  @override
-  String get translation {
-    _$translationAtom.reportRead();
-    return super.translation;
-  }
-
-  @override
-  set translation(String value) {
-    _$translationAtom.reportWrite(value, super.translation, () {
-      super.translation = value;
-    });
-  }
-
-  final _$translateAsyncAction =
-      AsyncAction('_LocalizationStoreBase.translate');
-
-  @override
-  Future<void> translate(String text) {
-    return _$translateAsyncAction.run(() => super.translate(text));
-  }
-
   final _$_LocalizationStoreBaseActionController =
       ActionController(name: '_LocalizationStoreBase');
 
@@ -75,8 +52,7 @@ mixin _$LocalizationStore on _LocalizationStoreBase, Store {
   @override
   String toString() {
     return '''
-locale: ${locale},
-translation: ${translation}
+locale: ${locale}
     ''';
   }
 }

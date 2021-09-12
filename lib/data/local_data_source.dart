@@ -36,10 +36,15 @@ class CLocalDataSource implements LocalDataSource {
   }
 
   @override
-  AddFavoriteType addFavorite({required Media media}) async {
+  ToggleFavoriteType toggleFavorite({required Media media}) async {
     String dateKey = dateFormatter.format(media.date);
 
     final favoritesBox = await Hive.openBox<Media>(userFavoritesKey);
-    return favoritesBox.put(dateKey, media);
+
+    if (favoritesBox.containsKey(dateKey)) {
+      favoritesBox.delete(dateKey);
+    } else {
+      favoritesBox.put(dateKey, media);
+    }
   }
 }

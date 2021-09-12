@@ -14,5 +14,9 @@
   "refreshMessage": "tente recarregar a página.",
   "shareMessage": "Encontrei esse incrível conteúdo no aplicativo Astronomy, acho que você irá gostar também!",
   "settings": "Configurações",
-  "selectYourLanguage": "Linguagem"
+  "selectYourLanguage": "Linguagem",
+  "favorites": "Favoritos",
+  "noFavorites": "Nenhum favorito ainda...",
+  "noFavoritesContent": "salve seus itens favoritos tocando no ícone",
+  "thisIsAVideo": "Isso é um vídeo"
 }

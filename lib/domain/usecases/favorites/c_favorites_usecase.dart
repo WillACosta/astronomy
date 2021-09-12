@@ -13,8 +13,8 @@ class CFavoritesUsecase implements FavoritesUseCase {
   CFavoritesUsecase(this._repository);
 
   @override
-  AddFavoriteType addFavorite({required Media media}) async {
-    await _repository.addFavorite(media: media);
+  ToggleFavoriteType toggleFavorite({required Media media}) async {
+    await _repository.toggleFavorite(media: media);
   }
 
   @override

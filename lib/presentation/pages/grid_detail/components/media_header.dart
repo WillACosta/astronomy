@@ -1,3 +1,4 @@
+import 'package:astronomy/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -28,7 +29,13 @@ class MediaHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(media.title, style: AppTextStyles.bodyHead()),
+          MediaTranslationText(
+            englishTextChild: Text(
+              media.title,
+              style: AppTextStyles.bodyHead(),
+            ),
+            textToTranslate: media.title,
+          ),
           Text(
             dateFormat.format(media.date),
             style: AppTextStyles.bodySmallest(color: AppColors.accent),

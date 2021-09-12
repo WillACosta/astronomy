@@ -14,5 +14,9 @@
   "refreshMessage": "try refresh the page.",
   "shareMessage": "Found this awesome media on Astronomy app, i think you'll like it!",
   "settings": "Settings",
-  "selectYourLanguage": "Language"
+  "selectYourLanguage": "Language",
+  "favorites": "Favorites",
+  "noFavorites": "No favorites yet...",
+  "noFavoritesContent": "save your favorite items by touching the icon",
+  "thisIsAVideo": "This is a video"
 }

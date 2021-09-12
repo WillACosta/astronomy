@@ -1,10 +1,11 @@
 import 'dart:io';
 
-import 'package:astronomy/l10n/l10n.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:astronomy/l10n/l10n.dart';
 
 import '../../../application/localization/localization_store.dart';
 import '../../../external/dependency_injection/locator.dart';
@@ -36,6 +37,13 @@ class SettingsPage extends StatelessWidget {
     Locale systemLocale = Localizations.localeOf(context);
 
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).primaryColor,
+        title: AppBarTitle(title: AppLocalizations.of(context)!.settings),
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -45,11 +53,6 @@ class SettingsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                AppLocalizations.of(context)!.settings,
-                style: AppTextStyles.head(),
-              ),
-              SizedBox(height: getProportionateScreenHeight(60)),
               SettingsListTile(
                 label: AppLocalizations.of(context)!.aboutThisProject,
                 onTap: () => showAboutDialog(context),

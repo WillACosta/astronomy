@@ -1,5 +1,5 @@
-import 'package:astronomy/domain/services/translator_service.dart';
 import 'package:flutter/material.dart';
+
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -11,10 +11,6 @@ part 'localization_store.g.dart';
 class LocalizationStore = _LocalizationStoreBase with _$LocalizationStore;
 
 abstract class _LocalizationStoreBase with Store {
-  final TranslatorService _translatorService;
-
-  _LocalizationStoreBase(this._translatorService);
-
   @observable
   Locale? locale;
 
@@ -28,14 +24,5 @@ abstract class _LocalizationStoreBase with Store {
   @action
   void clearLocale() {
     locale = null;
-  }
-
-  @observable
-  String translation = '';
-
-  @action
-  Future<void> translate(String text) async {
-    var result = await _translatorService.translateFromTo(text: text);
-    translation = result;
   }
 }
