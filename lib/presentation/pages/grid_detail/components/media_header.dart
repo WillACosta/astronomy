@@ -1,8 +1,9 @@
-import 'package:astronomy/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-import '../../../../domain/entities/media.dart' show Media;
+import '../../../../external/dependency_injection/locator.dart';
+import '../../../../application/shared/shared_store.dart';
+import '../../../../domain/entities/media.dart';
+import '../../../widgets/widgets.dart';
 
 import '../../../utils/utils.dart'
     show
@@ -16,10 +17,10 @@ class MediaHeader extends StatelessWidget {
 
   final Media media;
 
+  static final _sharedStore = locator<SharedStore>();
+
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat('dd/MM/yyyy');
-
     return Container(
       color: Theme.of(context).primaryColor,
       padding: EdgeInsets.symmetric(
@@ -37,7 +38,7 @@ class MediaHeader extends StatelessWidget {
             textToTranslate: media.title,
           ),
           Text(
-            dateFormat.format(media.date),
+            _sharedStore.dateFormat.format(media.date),
             style: AppTextStyles.bodySmallest(color: AppColors.accent),
           ),
         ],

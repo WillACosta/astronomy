@@ -1,8 +1,10 @@
-import 'package:astronomy/presentation/pages/home/components/show_sheet_modal.dart';
-import 'package:astronomy/presentation/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../domain/entities/media.dart';
+import '../../../utils/app_colors.dart';
+import '../../../utils/utils.dart';
+
+import 'show_sheet_modal.dart';
 
 class BottomSheetButton extends StatelessWidget {
   final Media media;
@@ -15,7 +17,7 @@ class BottomSheetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: getProportionateScreenHeight(10)),
       child: GestureDetector(
         onTap: () => showSheetModal(context, media),
         child: Icon(

@@ -1,4 +1,7 @@
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,6 +20,13 @@ abstract class _SharedStoreBase with Store {
 
   @observable
   bool isDownloadingImage = false;
+
+  static final _localizationStore = locator<LocalizationStore>();
+
+  final dateFormat = DateFormat(
+    'yMd',
+    _localizationStore.locale?.languageCode == 'pt' ? 'pt_BR' : 'en_US',
+  );
 
   @action
   Future<void> downloadImage({required String url}) async {

@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../utils/utils.dart';
+import '../../utils/utils.dart';
 
-class SettingsListTile extends StatelessWidget {
-  const SettingsListTile({
+class SwitchListButton extends StatelessWidget {
+  const SwitchListButton({
     Key? key,
+    required this.value,
+    this.onChanged,
     required this.label,
-    this.onTap,
   }) : super(key: key);
 
   final String label;
-  final VoidCallback? onTap;
+  final bool value;
+  final Function(bool)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return SwitchListTile(
+      value: value,
       contentPadding: EdgeInsets.all(0),
-      tileColor: Theme.of(context).primaryColor,
-      onTap: onTap,
+      onChanged: onChanged,
       title: Text(
         label,
         style: AppTextStyles.body(),
       ),
-      dense: true,
     );
   }
 }

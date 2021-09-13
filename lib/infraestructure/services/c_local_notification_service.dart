@@ -72,7 +72,7 @@ class CLocalNotificationService implements LocalNotificationService {
 
     String errorMessage = _localizationStore.locale?.languageCode == 'pt'
         ? 'Aconteceu um erro ao baixar sua imagem.'
-        : 'there was an error while downloading your image.';
+        : 'There was an error while downloading your image.';
 
     await notificationsPlugin.show(
       0,

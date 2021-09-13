@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/utils.dart' show AppImages, AppTextStyles;
+import '../../utils/utils.dart' show AppImages, AppTextStyles;
 
 class ErrorStateWidget extends StatelessWidget {
   const ErrorStateWidget({

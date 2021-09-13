@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/domain/repositories/settings_repository.dart';
+import '../../repositories/settings_repository.dart';
 import '../../adapters/user_preferences.dart';
 
 import 'settings_usecase.dart';
@@ -17,8 +17,9 @@ class CSettingsUsecase implements SettingsUseCase {
   }
 
   @override
-  Future<void> setUserPreferences(
-      {required UserPreferences userPreferences}) async {
+  Future<void> setUserPreferences({
+    required UserPreferences userPreferences,
+  }) async {
     return await repository.setPreferences(userPreferences: userPreferences);
   }
 }

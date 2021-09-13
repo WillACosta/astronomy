@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/media.dart';
+import '../widgets/widgets.dart';
 import '../pages/pages.dart';
 import '../utils/utils.dart';
 
@@ -41,15 +42,6 @@ class RouteGenerator {
   }
 
   static Route<dynamic> _errorRoute() {
-    return MaterialPageRoute(builder: (_) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Error'),
-        ),
-        body: Center(
-          child: Text('ERROR'),
-        ),
-      );
-    });
+    return MaterialPageRoute(builder: (_) => ErrorStateWidget());
   }
 }

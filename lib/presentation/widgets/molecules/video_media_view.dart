@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../utils/utils.dart' show getProportionateScreenHeight;
+import '../../utils/utils.dart' show getProportionateScreenHeight;
 
 class VideoMediaView extends StatelessWidget {
   const VideoMediaView({Key? key, this.showLabel}) : super(key: key);

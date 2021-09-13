@@ -1,3 +1,4 @@
+import 'package:astronomy/presentation/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/widgets.dart';
@@ -9,22 +10,24 @@ class ShimmerLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 4,
-        crossAxisSpacing: 4,
+    return AppPagesPadding(
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: getProportionateScreenWidth(10),
+          crossAxisSpacing: getProportionateScreenHeight(10),
+        ),
+        itemCount: 10,
+        itemBuilder: (_, int index) {
+          return ShimmerTile.radiusSquare(
+            width: getProportionateScreenWidth(160),
+            height: getProportionateScreenHeight(160),
+            shapeBorder: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          );
+        },
       ),
-      itemCount: 10,
-      itemBuilder: (_, int index) {
-        return ShimmerTile.radiusSquare(
-          width: 200,
-          height: 200,
-          shapeBorder: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
-        );
-      },
     );
   }
 }

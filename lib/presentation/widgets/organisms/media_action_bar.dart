@@ -7,14 +7,14 @@ import 'package:social_share/social_share.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
-import '../../application/favorites/favorites_store.dart';
-import '../../external/dependency_injection/locator.dart';
-import '../../application/settings/settings_store.dart';
-import '../../application/shared/shared_store.dart';
-import '../../domain/entities/media.dart';
-import '../routes/route_navigator.dart';
-import '../utils/utils.dart';
-import 'outlined_action_button.dart';
+import '../../../application/favorites/favorites_store.dart';
+import '../../../external/dependency_injection/locator.dart';
+import '../../../application/settings/settings_store.dart';
+import '../../../application/shared/shared_store.dart';
+import '../../../domain/entities/media.dart';
+import '../../routes/route_navigator.dart';
+import '../../utils/utils.dart';
+import '../widgets.dart';
 
 class MediaActionBar extends StatelessWidget {
   const MediaActionBar({

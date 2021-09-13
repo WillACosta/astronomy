@@ -1,11 +1,13 @@
-import 'package:astronomy/domain/entities/media.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:intl/intl.dart';
+
 import 'package:mobx/mobx.dart';
 
-import '../../domain/entities/grid_page_dto.dart';
+import '../../external/dependency_injection/locator.dart';
 import '../../domain/usecases/grid/grid_usecase.dart';
+import '../../domain/entities/grid_page_dto.dart';
+import '../../domain/entities/media.dart';
+import '../shared/shared_store.dart';
 import 'grid_page_state.dart';
 
 part 'grid_page_store.g.dart';
@@ -15,7 +17,8 @@ class GridPageStore = _GridPageStoreBase with _$GridPageStore;
 
 abstract class _GridPageStoreBase with Store {
   final GridUseCase _usecase;
-  final dateFormat = DateFormat('dd/MM/yyyy');
+
+  static final _sharedStore = locator<SharedStore>();
 
   _GridPageStoreBase(this._usecase) {
     getMediaList();
@@ -41,7 +44,7 @@ abstract class _GridPageStoreBase with Store {
 
   @computed
   String get getDateRangeLabel =>
-      '${dateFormat.format(getDateRange.start)} - ${dateFormat.format(getDateRange.end)}';
+      '${_sharedStore.dateFormat.format(getDateRange.start)} - ${_sharedStore.dateFormat.format(getDateRange.end)}';
 
   @action
   void setDateRange(DateTimeRange value) => _dateTimeRange = value;

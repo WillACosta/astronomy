@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:astronomy/domain/services/permissions_service.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:injectable/injectable.dart';
@@ -8,6 +7,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:dio/dio.dart';
 
 import '../../domain/services/local_notification_service.dart';
+import '../../domain/services/permissions_service.dart';
 import '../../domain/services/download_service.dart';
 import '../../core/exception/service_failure.dart';
 import '../../core/types/types.dart';

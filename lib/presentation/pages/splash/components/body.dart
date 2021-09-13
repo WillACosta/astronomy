@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../widgets/primary_button.dart';
+import '../../../../application/localization/localization_store.dart';
+import '../../../../external/dependency_injection/locator.dart';
 import '../../../routes/route_navigator.dart';
+import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({
     Key? key,
   }) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  static final _localizationStore = locator<LocalizationStore>();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _localizationStore.locale = Localizations.localeOf(context);
+  }
 
   @override
   Widget build(BuildContext context) {

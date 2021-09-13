@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/utils.dart';
+import '../../utils/utils.dart';
 
 class OutlinedActionButton extends StatelessWidget {
   const OutlinedActionButton({

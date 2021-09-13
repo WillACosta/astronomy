@@ -17,11 +17,7 @@ import '../../widgets/widgets.dart';
 import 'components/alert_dialog_widget.dart';
 
 import '../../utils/utils.dart'
-    show
-        AppSizeConfig,
-        getProportionateScreenHeight,
-        getProportionateScreenWidth,
-        AppTextStyles;
+    show AppSizeConfig, getProportionateScreenHeight, AppTextStyles;
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -45,11 +41,7 @@ class SettingsPage extends StatelessWidget {
         title: AppBarTitle(title: AppLocalizations.of(context)!.settings),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: getProportionateScreenHeight(30),
-            horizontal: getProportionateScreenWidth(25),
-          ),
+        child: AppPagesPadding(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -103,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                             return DropdownMenuItem(
                               child: Text(
                                 flag,
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 25),
                               ),
                               value: locale,
                               onTap: () {
