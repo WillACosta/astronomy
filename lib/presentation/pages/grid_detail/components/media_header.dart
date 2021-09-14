@@ -31,6 +31,7 @@ class MediaHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MediaTranslationText(
+            isTitleShimmerTile: true,
             englishTextChild: Text(
               media.title,
               style: AppTextStyles.bodyHead(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../application/localization/localization_store.dart';
@@ -18,6 +20,20 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   static final _localizationStore = locator<LocalizationStore>();
+
+  @override
+  void initState() {
+    super.initState();
+
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+
+    Future.delayed(Duration(seconds: 3)).then((_) {
+      navigateTo(
+        context,
+        routeName: AppRoutes.container,
+      );
+    });
+  }
 
   @override
   void didChangeDependencies() {
@@ -56,23 +72,42 @@ class _BodyState extends State<Body> {
                   style: AppTextStyles.headline(color: AppColors.secondary),
                   textAlign: TextAlign.center,
                 ),
-                Expanded(
-                  child: Align(
-                    alignment: FractionalOffset.bottomRight,
-                    child: PrimaryButton(
-                      label: AppLocalizations.of(context)!.getStarted,
-                      onPressed: () => navigateTo(
-                        context,
-                        routeName: AppRoutes.container,
-                      ),
-                    ),
-                  ),
+                SizedBox(
+                  height: getProportionateScreenHeight(15),
                 ),
+                CircularProgressIndicator(
+                  strokeWidth: 1,
+                  color: Theme.of(context).accentColor,
+                ),
+                Spacer(),
+                // GetStartedButton(),
               ],
             ),
           ),
         )
       ],
+    );
+  }
+}
+
+class GetStartedButton extends StatelessWidget {
+  const GetStartedButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Align(
+        alignment: FractionalOffset.bottomRight,
+        child: PrimaryButton(
+          label: AppLocalizations.of(context)!.getStarted,
+          onPressed: () => navigateTo(
+            context,
+            routeName: AppRoutes.container,
+          ),
+        ),
+      ),
     );
   }
 }

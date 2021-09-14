@@ -8,7 +8,7 @@
   "aboutThisProject": "Sobre o projeto",
   "useHdImages": "Usar Imagems em HD",
   "darkmode": "Modo Escuro",
-  "aboutContent": "Este projeto foi desenvolvido com Flutter e utiliza a APOD API  da NASA para exibir incríveis imagens e vídeos do universo todos os dias.\n\nPara obter mais informações, visite o repositório no GitHub.",
+  "aboutContent": "Este projeto foi desenvolvido em Flutter e utiliza a API(APOD) da NASA para exibir incríveis imagens e vídeos do universo todos os dias.\n\nPara obter mais informações ou reporte de bugs, visite o repositório no GitHub.",
   "close": "Fechar",
   "errorMessage": "Oops! Alguma coisa deu errado",
   "refreshMessage": "tente recarregar a página.",

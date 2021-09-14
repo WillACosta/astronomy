@@ -38,6 +38,7 @@ class GridScrollableSheet extends StatelessWidget {
                 SheetHandle(),
                 SizedBox(height: getProportionateScreenHeight(25)),
                 MediaTranslationText(
+                  isTitleShimmerTile: false,
                   englishTextChild: Text(
                     media.explanation,
                     style: AppTextStyles.body(),
