@@ -22,52 +22,49 @@ class HomePage extends StatelessWidget {
     AppSizeConfig().init(context);
 
     return Scaffold(
-      body: RefreshIndicator(
-        onRefresh: () async {
-          await Future.delayed(const Duration(seconds: 4));
-        },
-        child: Observer(
-          builder: (_) {
-            var state = _store.state;
+      body: Observer(
+        builder: (_) {
+          var state = _store.state;
 
-            if (state is ErrorState) {
-              return const ErrorStateWidget();
-            }
+          if (state is ErrorState) {
+            return ApodRefreshIndicator(
+              onRefresh: _store.refresh,
+            );
+          }
 
-            if (state is InitialState) {}
+          if (state is InitialState) {}
 
-            if (state is LoadingState) {
-              return const ShimmerLoader();
-            }
+          if (state is LoadingState) {
+            return const ShimmerLoader();
+          }
 
-            if (state is SuccessState) {
-              return GestureDetector(
-                onVerticalDragUpdate: (dragUpdateDetails) => showSheetModal(
-                  context,
-                  state.media,
-                ),
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    state.media.mediaType == 'image'
-                        ? ApodNetworkImage(media: state.media)
-                        : const VideoMediaView(showLabel: true),
-                    SafeArea(
-                      child: Column(
-                        children: [
-                          const Spacer(),
-                          BottomSheetButton(media: state.media),
-                        ],
-                      ),
+          if (state is SuccessState) {
+            return GestureDetector(
+              onVerticalDragUpdate: (dragUpdateDetails) => showSheetModal(
+                context,
+                state.media,
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  state.media.mediaType == 'image'
+                      ? ApodNetworkImage(media: state.media)
+                      : const VideoMediaView(showLabel: true),
+                  SafeArea(
+                    child: Column(
+                      children: [
+                        const Spacer(),
+                        BottomSheetButton(media: state.media),
+                      ],
                     ),
-                  ],
-                ),
-              );
-            }
+                  ),
+                ],
+              ),
+            );
+          }
 
-            return Container();
-          },
-        ),
+          return Container();
+        },
       ),
     );
   }

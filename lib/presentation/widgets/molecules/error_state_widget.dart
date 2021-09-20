@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/utils.dart' show AppImages, AppTextStyles;
 
@@ -20,11 +21,17 @@ class ErrorStateWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: Text('Oops! Something went wrong', style: AppTextStyles.head()),
+            child: Text(
+              AppLocalizations.of(context)!.errorMessage,
+              style: AppTextStyles.head(),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15),
-            child: Text('try refresh the page.', style: AppTextStyles.body()),
+            child: Text(
+              AppLocalizations.of(context)!.refreshMessage,
+              style: AppTextStyles.body(),
+            ),
           ),
         ],
       ),

@@ -3,7 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/utils.dart' show AppTextStyles;
-import '../../widgets/widgets.dart' show ErrorStateWidget;
+import '../../widgets/widgets.dart' show ApodRefreshIndicator, ErrorStateWidget;
 
 import '../../../external/dependency_injection/locator.dart';
 import '../../../application/grid/grid_page_state.dart';
@@ -68,7 +68,9 @@ class GridPage extends StatelessWidget {
             }
 
             if (state is ErrorState) {
-              return const ErrorStateWidget();
+              return ApodRefreshIndicator(
+                onRefresh: _store.getMediaList,
+              );
             }
 
             return const ErrorStateWidget();
