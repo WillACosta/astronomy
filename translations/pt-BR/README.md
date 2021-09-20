@@ -10,13 +10,9 @@ O Astronomy é um app mobile feito em flutter para exibir incríveis imagens e v
 
 ## Design
 
-O app possui uma proposta de design limpa e minimalista. Você também pode fazer uma cópia do design para sua conta no [Figma](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
+O app possui uma proposta de design limpa e minimalista e também um guia de estilo. Você também pode fazer uma cópia do design para sua conta no [Figma](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 <img src='https://i.imgur.com/KIzTLgV.jpg' />
-
-## Style Guide
-
-O projeto possui um guia de estilo para manter a consistência de padrões estéticos na aplicação, você pode encontra-lo na guia 'pages' do arquivo do figma.
 
 ## Features
 
@@ -42,14 +38,6 @@ O projeto possui um guia de estilo para manter a consistência de padrões esté
 - Salvamento de dados locais com Hive
 - Efeito de carregamento Shimmer
 - Consumo da NASA APOD API
-
-### Pacotes utilizados
-
-- GetIt - Service Locator
-- Injectable - Dependency Injection
-- HTTP
-- Google Fonts
-- Mocktail
 
 ## Como usar
 

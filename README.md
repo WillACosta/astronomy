@@ -10,13 +10,9 @@ Astronomy is a mobile app made in Flutter to display awesome pictures and videos
 
 ## Design
 
-The app has a clean and minimalist proposal you can copy this to your [Figma account](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
+The app has a clean, minimalist proposal and a style guide. You can copy this to your [Figma account](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 <img src='https://i.imgur.com/KIzTLgV.jpg' />
-
-## Style Guide
-
-The project uses a style guide to maintain a consistency of aesthetic patterns you can find this in the pages of the Figma file.
 
 ## Features
 
@@ -30,8 +26,6 @@ The project uses a style guide to maintain a consistency of aesthetic patterns y
 
 - Save your favorites
 
-- And more...
-
 ## Technical Resources
 
 - Developed with Clean Architecture
@@ -42,14 +36,6 @@ The project uses a style guide to maintain a consistency of aesthetic patterns y
 - Local storage with Hive
 - Shimmer loading effect
 - NASA'S APOD API requests
-
-### Used packages
-
-- GetIt - Service Locator
-- Injectable - Dependency Injection
-- HTTP
-- Google Fonts
-- Mocktail
 
 ## How to use
 
