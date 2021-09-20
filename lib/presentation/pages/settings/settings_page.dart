@@ -74,49 +74,52 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Observer(builder: (_) {
-                final currentLocale = localizationStore.locale ?? systemLocale;
+              Observer(
+                builder: (_) {
+                  final currentLocale =
+                      localizationStore.locale ?? systemLocale;
 
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      AppLocalizations.of(context)!.selectYourLanguage,
-                      style: AppTextStyles.body(),
-                    ),
-                    DropdownButtonHideUnderline(
-                      child: DropdownButton(
-                        value: currentLocale,
-                        icon: const Icon(Icons.arrow_drop_down),
-                        items: L10n.all.map(
-                          (locale) {
-                            final flag = L10n.getFlag(locale.languageCode);
-
-                            return DropdownMenuItem(
-                              child: Text(
-                                flag,
-                                style: const TextStyle(fontSize: 25),
-                              ),
-                              value: locale,
-                              onTap: () {
-                                localizationStore.setLocale(locale);
-                                store.setPreferences(
-                                  useDarkMode:
-                                      store.userPreferences.useDarkMode,
-                                  useHdImages:
-                                      store.userPreferences.useHdImages,
-                                  currentLocale: locale,
-                                );
-                              },
-                            );
-                          },
-                        ).toList(),
-                        onChanged: (_) {},
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        AppLocalizations.of(context)!.selectYourLanguage,
+                        style: AppTextStyles.body(),
                       ),
-                    ),
-                  ],
-                );
-              })
+                      DropdownButtonHideUnderline(
+                        child: DropdownButton(
+                          value: currentLocale,
+                          icon: const Icon(Icons.arrow_drop_down),
+                          items: L10n.all.map(
+                            (locale) {
+                              final flag = L10n.getFlag(locale.languageCode);
+
+                              return DropdownMenuItem(
+                                child: Text(
+                                  flag,
+                                  style: const TextStyle(fontSize: 25),
+                                ),
+                                value: locale,
+                                onTap: () {
+                                  localizationStore.setLocale(locale);
+                                  store.setPreferences(
+                                    useDarkMode:
+                                        store.userPreferences.useDarkMode,
+                                    useHdImages:
+                                        store.userPreferences.useHdImages,
+                                    currentLocale: locale,
+                                  );
+                                },
+                              );
+                            },
+                          ).toList(),
+                          onChanged: (_) {},
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              )
             ],
           ),
         ),

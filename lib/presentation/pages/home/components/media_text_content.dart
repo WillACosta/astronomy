@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../domain/entities/media.dart';
-import '../../../widgets/widgets.dart';
+// import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
 class MediaTextContent extends StatelessWidget {
@@ -22,26 +22,38 @@ class MediaTextContent extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(30),
       children: [
-        Text(dateFormat.format(media.date),
-            style: AppTextStyles.bodySmall(color: AppColors.accent),
-            textAlign: TextAlign.center),
+        Text(
+          dateFormat.format(media.date),
+          style: AppTextStyles.bodySmall(color: AppColors.accent),
+          textAlign: TextAlign.center,
+        ),
         SizedBox(height: getProportionateScreenHeight(10)),
-        MediaTranslationText(
-          isTitleShimmerTile: true,
-          englishTextChild: Text(media.title, style: AppTextStyles.bodyHead()),
-          textToTranslate: media.title,
+        // MediaTranslationText(
+        //   isTitleShimmerTile: true,
+        //   englishTextChild: Text(media.title, style: AppTextStyles.bodyHead()),
+        //   textToTranslate: media.title,
+        // ),
+        Text(
+          media.title,
+          style: AppTextStyles.bodyHead(),
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: getProportionateScreenHeight(25)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MediaTranslationText(
-              isTitleShimmerTile: false,
-              englishTextChild: Text(
-                media.explanation,
-                style: AppTextStyles.body(),
-              ),
-              textToTranslate: media.explanation,
+            // MediaTranslationText(
+            //   isTitleShimmerTile: false,
+            //   englishTextChild: Text(
+            //     media.explanation,
+            //     style: AppTextStyles.body(),
+            //   ),
+            //   textToTranslate: media.explanation,
+            // ),
+            Text(
+              media.explanation,
+              style: AppTextStyles.body(),
+              textAlign: TextAlign.justify,
             ),
             SizedBox(height: getProportionateScreenHeight(25)),
             media.copyright != null

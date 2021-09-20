@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../external/dependency_injection/locator.dart';
 import '../../../../application/shared/shared_store.dart';
 import '../../../../domain/entities/media.dart';
-import '../../../widgets/widgets.dart';
+// import '../../../widgets/widgets.dart';
 
 import '../../../utils/utils.dart'
     show
@@ -30,13 +30,17 @@ class MediaHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MediaTranslationText(
-            isTitleShimmerTile: true,
-            englishTextChild: Text(
-              media.title,
-              style: AppTextStyles.bodyHead(),
-            ),
-            textToTranslate: media.title,
+          // MediaTranslationText(
+          //   isTitleShimmerTile: true,
+          //   englishTextChild: Text(
+          //     media.title,
+          //     style: AppTextStyles.bodyHead(),
+          //   ),
+          //   textToTranslate: media.title,
+          // ),
+          Text(
+            media.title,
+            style: AppTextStyles.bodyHead(),
           ),
           Text(
             _sharedStore.dateFormat.format(media.date),

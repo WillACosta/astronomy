@@ -56,8 +56,6 @@ class _TranslatorFutureBuilderState extends State<TranslatorFutureBuilder> {
         }
 
         if (snapshot.hasError) {
-          // Error
-
           return Container(child: widget.englishTextChild);
         }
 

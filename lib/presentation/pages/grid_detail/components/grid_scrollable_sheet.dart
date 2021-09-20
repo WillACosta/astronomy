@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../domain/entities/media.dart';
-
-import '../../../widgets/widgets.dart'
-    show MediaTranslationText, SheetContainer, SheetHandle;
+import '../../../widgets/widgets.dart';
 
 import '../../../utils/utils.dart'
     show
@@ -37,13 +35,18 @@ class GridScrollableSheet extends StatelessWidget {
               children: [
                 const SheetHandle(),
                 SizedBox(height: getProportionateScreenHeight(25)),
-                MediaTranslationText(
-                  isTitleShimmerTile: false,
-                  englishTextChild: Text(
-                    media.explanation,
-                    style: AppTextStyles.body(),
-                  ),
-                  textToTranslate: media.explanation,
+                // MediaTranslationText(
+                //   isTitleShimmerTile: false,
+                //   englishTextChild: Text(
+                //     media.explanation,
+                //     style: AppTextStyles.body(),
+                //   ),
+                //   textToTranslate: media.explanation,
+                // ),
+                Text(
+                  media.explanation,
+                  style: AppTextStyles.body(),
+                  textAlign: TextAlign.justify,
                 ),
                 SizedBox(height: getProportionateScreenHeight(25)),
                 media.copyright != null
