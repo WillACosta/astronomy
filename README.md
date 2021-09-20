@@ -1,5 +1,9 @@
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
+<center>
+  <img src="https://imgur.com/kVVqH9i.png" width="150" height="150" style="border-radius: 50px" />
+</center>
+
 ## Astronomy Project
 
 The project was developed with Flutter and use NASA's APOD API to display awesome pictures and videos of the universe each day.
@@ -14,7 +18,7 @@ The app has a clean and minimalist proposal you can copy this to your Figma acco
 
 ## Style Guide
 
-The project uses a style guide to maintain a consistency of aesthetic patterns you can find this in the pages of the Figma file.
+The project uses a style guide to maintain a consistency of aesthetic patterns you can find this in the pages of the [Figma file](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 ## Features
 
@@ -25,6 +29,8 @@ The project uses a style guide to maintain a consistency of aesthetic patterns y
 - Share and download any image in HD
 
 - Dark mode
+
+- Save your favorites
 
 - And more...
 
@@ -62,7 +68,7 @@ $ flutter pub get
 ## Rename the '.env-example' file to '.env' in the root directory with
 $ mv .env-example .env
 
-## Open the file and add your API KEY
+## Open the file and add your API KEY (Get on https://api.nasa.gov/)
 
 ## Run the app
 $ flutter run
