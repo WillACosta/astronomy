@@ -22,5 +22,5 @@ void main() async {
   await Hive.initFlutter(dir.path);
 
   initConfigurations();
-  runApp(App());
+  runApp(const App());
 }

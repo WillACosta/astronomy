@@ -13,6 +13,8 @@ import 'routes/route_generator.dart';
 import 'utils/app_routes.dart';
 
 class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   static final settingsStore = locator<SettingsStore>();
   static final localizationStore = locator<LocalizationStore>();
 
@@ -30,7 +32,7 @@ class App extends StatelessWidget {
               : ThemeMode.light,
           initialRoute: AppRoutes.initial,
           onGenerateRoute: RouteGenerator.generateRoute,
-          localizationsDelegates: [
+          localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,

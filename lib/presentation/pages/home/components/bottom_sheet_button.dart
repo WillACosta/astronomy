@@ -20,7 +20,7 @@ class BottomSheetButton extends StatelessWidget {
       padding: EdgeInsets.only(bottom: getProportionateScreenHeight(10)),
       child: GestureDetector(
         onTap: () => showSheetModal(context, media),
-        child: Icon(
+        child: const Icon(
           Icons.expand_less_outlined,
           color: AppColors.secondary,
           size: 30,

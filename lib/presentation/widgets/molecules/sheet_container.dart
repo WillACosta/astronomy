@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SheetContainer extends StatelessWidget {
-  const SheetContainer({ Key? key, required this.child }) : super(key: key);
+  const SheetContainer({Key? key, required this.child}) : super(key: key);
   final Widget child;
 
   @override
@@ -9,7 +9,7 @@ class SheetContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
         ),

@@ -32,7 +32,7 @@ class FavoritesPage extends StatelessWidget {
           builder: (_, Box box, child) {
             var mediaList = List<Media>.from(box.values);
             return mediaList.isEmpty
-                ? FavoritesEmptyState()
+                ? const FavoritesEmptyState()
                 : GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -51,7 +51,7 @@ class FavoritesPage extends StatelessWidget {
                               onPressed: () => _store.toggleFavorite(
                                 item: mediaList[index],
                               ),
-                              icon: Icon(Icons.bookmark),
+                              icon: const Icon(Icons.bookmark),
                             ),
                           ),
                         ],

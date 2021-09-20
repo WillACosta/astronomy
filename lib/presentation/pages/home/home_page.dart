@@ -13,6 +13,8 @@ import 'components/show_sheet_modal.dart';
 import 'components/bottom_sheet_button.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   static final _store = locator<HomeStore>();
 
   @override
@@ -22,20 +24,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: RefreshIndicator(
         onRefresh: () async {
-          await Future.delayed(Duration(seconds: 4));
+          await Future.delayed(const Duration(seconds: 4));
         },
         child: Observer(
           builder: (_) {
             var state = _store.state;
 
             if (state is ErrorState) {
-              return ErrorStateWidget();
+              return const ErrorStateWidget();
             }
 
             if (state is InitialState) {}
 
             if (state is LoadingState) {
-              return ShimmerLoader();
+              return const ShimmerLoader();
             }
 
             if (state is SuccessState) {
@@ -49,11 +51,11 @@ class HomePage extends StatelessWidget {
                   children: [
                     state.media.mediaType == 'image'
                         ? ApodNetworkImage(media: state.media)
-                        : VideoMediaView(showLabel: true),
+                        : const VideoMediaView(showLabel: true),
                     SafeArea(
                       child: Column(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           BottomSheetButton(media: state.media),
                         ],
                       ),

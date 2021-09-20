@@ -18,7 +18,7 @@ class SwitchListButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SwitchListTile(
       value: value,
-      contentPadding: EdgeInsets.all(0),
+      contentPadding: const EdgeInsets.all(0),
       onChanged: onChanged,
       title: Text(
         label,

@@ -20,17 +20,17 @@ class ContainerPage extends StatelessWidget {
         controller: _store.pageController,
         onPageChanged: _store.setCurrentPage,
         children: [
-          HomePage(),
+          const HomePage(),
           GridPage(),
-          FavoritesPage(),
-          SettingsPage(),
+          const FavoritesPage(),
+          const SettingsPage(),
         ],
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(getProportionateScreenHeight(15)),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
           ),
@@ -44,7 +44,7 @@ class ContainerPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => _store.toPage(0),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.home_outlined,
                       size: 25,
                     ),
@@ -59,7 +59,7 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(1),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.grid_view_outlined,
                         size: 25,
                       ),
@@ -74,7 +74,7 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(2),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.bookmark_border_outlined,
                         size: 25,
                       ),
@@ -85,7 +85,7 @@ class ContainerPage extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(3),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.settings_outlined,
                       size: 25,
                     ),

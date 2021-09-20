@@ -10,7 +10,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppSizeConfig().init(context);
 
-    return Scaffold(
+    return const Scaffold(
       body: Body(),
     );
   }

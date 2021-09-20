@@ -35,7 +35,7 @@ class GridScrollableSheet extends StatelessWidget {
             child: ListView(
               controller: sController,
               children: [
-                SheetHandle(),
+                const SheetHandle(),
                 SizedBox(height: getProportionateScreenHeight(25)),
                 MediaTranslationText(
                   isTitleShimmerTile: false,

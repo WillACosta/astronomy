@@ -17,7 +17,7 @@ abstract class _HomeStoreBase with Store {
   }
 
   @observable
-  HomeState state = InitialState();
+  HomeState state = const InitialState();
 
   @observable
   bool isMediaLoaded = false;
@@ -29,7 +29,7 @@ abstract class _HomeStoreBase with Store {
   getMedia() async {
     if (isMediaLoaded) return;
 
-    setState(LoadingState());
+    setState(const LoadingState());
 
     final result = await _usecase.getMediaOfTheDay();
 

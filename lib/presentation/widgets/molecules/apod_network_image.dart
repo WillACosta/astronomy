@@ -10,7 +10,7 @@ class ApodNetworkImage extends StatelessWidget {
   const ApodNetworkImage({
     Key? key,
     required this.media,
-  });
+  }) : super(key: key);
 
   final Media media;
   static final _settingsStore = locator<SettingsStore>();

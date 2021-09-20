@@ -31,14 +31,13 @@ class _TranslatorFutureBuilderState extends State<TranslatorFutureBuilder> {
   }
 
   _fetchData() async {
-    return this._asyncMemoizer.runOnce(() async {
+    return _asyncMemoizer.runOnce(() async {
       return await widget.futureFunction;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return FutureBuilder(
       future: _fetchData(),
       builder: (_, snapshot) {
@@ -70,7 +69,7 @@ class _TranslatorFutureBuilderState extends State<TranslatorFutureBuilder> {
                   borderRadius: BorderRadius.circular(2),
                 ),
               )
-            : TextShimmerLoader();
+            : const TextShimmerLoader();
       },
     );
   }

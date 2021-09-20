@@ -12,12 +12,12 @@ class RouteGenerator {
     switch (settings.name) {
       case AppRoutes.initial:
         return MaterialPageRoute(
-          builder: (_) => SplashPage(),
+          builder: (_) => const SplashPage(),
         );
 
       case AppRoutes.container:
         return MaterialPageRoute(
-          builder: (_) => ContainerPage(),
+          builder: (_) => const ContainerPage(),
         );
 
       case AppRoutes.gridDetail:
@@ -42,6 +42,6 @@ class RouteGenerator {
   }
 
   static Route<dynamic> _errorRoute() {
-    return MaterialPageRoute(builder: (_) => ErrorStateWidget());
+    return MaterialPageRoute(builder: (_) => const ErrorStateWidget());
   }
 }

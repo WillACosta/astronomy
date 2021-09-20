@@ -13,7 +13,7 @@ class VideoMediaView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Spacer(),
+        const Spacer(),
         Container(
           width: 55,
           height: 55,
@@ -32,8 +32,8 @@ class VideoMediaView extends StatelessWidget {
         SizedBox(height: getProportionateScreenHeight(10)),
         showLabel == true
             ? Text(AppLocalizations.of(context)!.thisIsAVideo)
-            : SizedBox(),
-        Spacer(),
+            : const SizedBox(),
+        const Spacer(),
       ],
     );
   }

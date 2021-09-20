@@ -29,14 +29,14 @@ abstract class _GridPageStoreBase with Store {
   }
 
   @observable
-  GridPageState state = InitialState();
+  GridPageState state = const InitialState();
 
   @observable
   List<Media> mediaList = [];
 
   @observable
   DateTimeRange _dateTimeRange = DateTimeRange(
-    start: DateTime.now().subtract(Duration(days: 7)),
+    start: DateTime.now().subtract(const Duration(days: 7)),
     end: DateTime.now(),
   );
 
@@ -54,7 +54,7 @@ abstract class _GridPageStoreBase with Store {
 
   @action
   getMediaList() async {
-    setState(LoadingState());
+    setState(const LoadingState());
 
     final result = await _usecase.getMediaList(
       GridPageDto(dateTimeRange: _dateTimeRange),

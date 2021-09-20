@@ -7,7 +7,7 @@ import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
 class GridPageBody extends StatelessWidget {
-  GridPageBody({Key? key, required this.list}) : super(key: key);
+  const GridPageBody({Key? key, required this.list}) : super(key: key);
   final List<Media> list;
 
   static final _sharedStore = locator<SharedStore>();

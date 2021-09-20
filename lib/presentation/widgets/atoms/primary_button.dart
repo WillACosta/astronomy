@@ -25,8 +25,8 @@ class PrimaryButton extends StatelessWidget {
             style: AppTextStyles.head(),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Icon(Icons.arrow_forward),
+            padding: EdgeInsets.only(left: getProportionateScreenWidth(10)),
+            child: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

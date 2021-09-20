@@ -68,6 +68,6 @@ class CDownloadService implements DownloadService {
 
   String _concatSavePath(Directory dir) {
     DateTime date = DateTime.now();
-    return "${dir.path}/apod-images/astronomy-image-${date.toString()}.jpg";
+    return '${dir.path}/apod-images/astronomy-image-${date.toString()}.jpg';
   }
 }

@@ -34,7 +34,7 @@ class GridItemInkWell extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                     child: ApodNetworkImage(media: media),
                   )
-                : VideoMediaView(),
+                : const VideoMediaView(),
             ...children,
           ],
         ),

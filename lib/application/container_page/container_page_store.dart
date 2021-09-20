@@ -23,7 +23,7 @@ abstract class _ContainerPageStoreBase with Store {
   void toPage(int pageIndex) {
     pageController.animateToPage(
       pageIndex,
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       curve: Curves.ease,
     );
   }

@@ -41,7 +41,7 @@ class MediaActionBar extends StatelessWidget {
         media.mediaType == 'video'
             ? IconButton(
                 onPressed: () => _store.launchUrl(media.url),
-                icon: Icon(Icons.link_outlined),
+                icon: const Icon(Icons.link_outlined),
               )
             : Observer(
                 builder: (_) {
@@ -54,7 +54,9 @@ class MediaActionBar extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(AppLocalizations.of(context)!.download),
-                        _store.isDownloadingImage ? LoadingIndicator() : Row(),
+                        _store.isDownloadingImage
+                            ? const LoadingIndicator()
+                            : Row(),
                       ],
                     ),
                   );
@@ -69,7 +71,7 @@ class MediaActionBar extends StatelessWidget {
                     args: media,
                   );
                 },
-                icon: Icon(Icons.fullscreen_outlined, size: 30),
+                icon: const Icon(Icons.fullscreen_outlined, size: 30),
               )
             : Row(),
         ValueListenableBuilder(
@@ -90,7 +92,7 @@ class MediaActionBar extends StatelessWidget {
               AppLocalizations.of(context)!.shareMessage,
             );
           },
-          icon: Icon(Icons.share_outlined, size: 25),
+          icon: const Icon(Icons.share_outlined, size: 25),
         ),
       ],
     );

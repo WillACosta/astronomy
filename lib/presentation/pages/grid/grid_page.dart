@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter/material.dart';
 
 import '../../utils/utils.dart' show AppTextStyles;
 import '../../widgets/widgets.dart' show ErrorStateWidget;
 
-import '../../../application/grid/grid_page_state.dart';
 import '../../../external/dependency_injection/locator.dart';
+import '../../../application/grid/grid_page_state.dart';
 import '../../../application/grid/grid_page_store.dart';
 
 import 'components/grid_page_body.dart';
@@ -49,7 +49,7 @@ class GridPage extends StatelessWidget {
 
               _store.setDateRange(dateRangeUser);
             },
-            icon: Icon(Icons.calendar_today),
+            icon: const Icon(Icons.calendar_today),
           ),
         ],
       ),
@@ -60,7 +60,7 @@ class GridPage extends StatelessWidget {
             var state = _store.state;
 
             if (state is LoadingState) {
-              return ShimmerLoader();
+              return const ShimmerLoader();
             }
 
             if (state is SuccessState) {
@@ -68,10 +68,10 @@ class GridPage extends StatelessWidget {
             }
 
             if (state is ErrorState) {
-              return ErrorStateWidget();
+              return const ErrorStateWidget();
             }
 
-            return ErrorStateWidget();
+            return const ErrorStateWidget();
           },
         ),
       ),

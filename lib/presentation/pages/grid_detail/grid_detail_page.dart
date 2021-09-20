@@ -34,7 +34,7 @@ class GridDetailPage extends StatelessWidget {
             padding: EdgeInsets.only(top: getProportionateScreenHeight(80)),
             child: media.mediaType == 'image'
                 ? ApodNetworkImage(media: media)
-                : VideoMediaView(showLabel: true),
+                : const VideoMediaView(showLabel: true),
           ),
           GridScrollableSheet(media: media),
         ],

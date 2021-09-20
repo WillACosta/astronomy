@@ -13,7 +13,7 @@ class FavoritesEmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Spacer(),
+        const Spacer(),
         Text(
           AppLocalizations.of(context)!.noFavorites,
           style: AppTextStyles.body(color: AppColors.accent),
@@ -29,13 +29,13 @@ class FavoritesEmptyState extends StatelessWidget {
                 style: AppTextStyles.bodySmall(color: AppColors.accent),
               ),
             ),
-            Icon(
+            const Icon(
               Icons.bookmark_add_outlined,
               color: AppColors.accent,
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }

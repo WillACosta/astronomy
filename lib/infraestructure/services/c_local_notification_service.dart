@@ -21,10 +21,10 @@ class CLocalNotificationService implements LocalNotificationService {
   _initialize() {
     notificationsPlugin = FlutterLocalNotificationsPlugin();
 
-    final android = AndroidInitializationSettings('@mipmap/ic_launcher');
-    final iOS = IOSInitializationSettings();
+    const android = AndroidInitializationSettings('@mipmap/ic_launcher');
+    const iOS = IOSInitializationSettings();
 
-    final initSettings = InitializationSettings(android: android, iOS: iOS);
+    const initSettings = InitializationSettings(android: android, iOS: iOS);
 
     notificationsPlugin.initialize(
       initSettings,
@@ -33,7 +33,7 @@ class CLocalNotificationService implements LocalNotificationService {
   }
 
   Future<void> _onSelectNotification(String? json) async {
-    var notificationObject;
+    dynamic notificationObject;
 
     if (json != null) notificationObject = jsonDecode(json);
 
@@ -46,7 +46,7 @@ class CLocalNotificationService implements LocalNotificationService {
   Future<void> showNotification({
     required Map<String, dynamic> downloadStatus,
   }) async {
-    final android = AndroidNotificationDetails(
+    const android = AndroidNotificationDetails(
       'channel id',
       'channel name',
       'channel description',
@@ -54,8 +54,8 @@ class CLocalNotificationService implements LocalNotificationService {
       importance: Importance.max,
     );
 
-    final iOS = IOSNotificationDetails();
-    final platform = NotificationDetails(android: android, iOS: iOS);
+    const iOS = IOSNotificationDetails();
+    const platform = NotificationDetails(android: android, iOS: iOS);
     final json = jsonEncode(downloadStatus);
     final isSuccess = downloadStatus['isSuccess'];
 

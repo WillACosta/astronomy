@@ -27,7 +27,7 @@ class _BodyState extends State<Body> {
 
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 
-    Future.delayed(Duration(seconds: 3)).then((_) {
+    Future.delayed(const Duration(seconds: 3)).then((_) {
       navigateTo(
         context,
         routeName: AppRoutes.container,
@@ -66,7 +66,7 @@ class _BodyState extends State<Body> {
                   'Astronomy',
                   style: AppTextStyles.logo,
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   AppLocalizations.of(context)!.exploreTheUniverse,
                   style: AppTextStyles.headline(color: AppColors.secondary),
@@ -79,7 +79,7 @@ class _BodyState extends State<Body> {
                   strokeWidth: 1,
                   color: Theme.of(context).accentColor,
                 ),
-                Spacer(),
+                const Spacer(),
                 // GetStartedButton(),
               ],
             ),

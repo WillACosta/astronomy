@@ -87,7 +87,7 @@ class SettingsPage extends StatelessWidget {
                     DropdownButtonHideUnderline(
                       child: DropdownButton(
                         value: currentLocale,
-                        icon: Icon(Icons.arrow_drop_down),
+                        icon: const Icon(Icons.arrow_drop_down),
                         items: L10n.all.map(
                           (locale) {
                             final flag = L10n.getFlag(locale.languageCode);
@@ -95,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                             return DropdownMenuItem(
                               child: Text(
                                 flag,
-                                style: TextStyle(fontSize: 25),
+                                style: const TextStyle(fontSize: 25),
                               ),
                               value: locale,
                               onTap: () {
@@ -133,7 +133,7 @@ class SettingsPage extends StatelessWidget {
     var cupertinoActions = [
       CupertinoDialogAction(
         isDefaultAction: true,
-        child: Text('GitHub'),
+        child: const Text('GitHub'),
         onPressed: () => sharedStore.launchUrl(repositoryUrl),
       ),
       CupertinoDialogAction(
@@ -145,7 +145,7 @@ class SettingsPage extends StatelessWidget {
 
     var materialActions = [
       MaterialButton(
-        child: Text('GitHub'),
+        child: const Text('GitHub'),
         onPressed: () => sharedStore.launchUrl(repositoryUrl),
       ),
       MaterialButton(

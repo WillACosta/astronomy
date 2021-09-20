@@ -18,7 +18,7 @@ final darkTheme = ThemeData(
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       primary: AppColors.secondary,
-      side: BorderSide(
+      side: const BorderSide(
         color: AppColors.secondary,
         width: 1,
       ),
@@ -31,10 +31,10 @@ final darkTheme = ThemeData(
     displayColor: AppColors.secondary,
     bodyColor: AppColors.secondary,
   ),
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.primary,
   ),
-  switchTheme: SwitchThemeData(),
+  switchTheme: const SwitchThemeData(),
 );
 
 final lightTheme = ThemeData(
@@ -57,13 +57,13 @@ final lightTheme = ThemeData(
     displayColor: AppColors.primary,
     bodyColor: AppColors.primary,
   ),
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.primary,
   ),
   scaffoldBackgroundColor: AppColors.secondary,
-  switchTheme: SwitchThemeData(),
+  switchTheme: const SwitchThemeData(),
   backgroundColor: AppColors.secondary,
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),
 );

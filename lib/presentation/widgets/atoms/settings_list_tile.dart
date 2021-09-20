@@ -15,7 +15,7 @@ class SettingsListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.all(0),
+      contentPadding: const EdgeInsets.all(0),
       tileColor: Theme.of(context).primaryColor,
       onTap: onTap,
       title: Text(
