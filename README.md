@@ -6,8 +6,7 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 ## Astronomy
 
-The project was developed with Flutter and use NASA's APOD API to display awesome pictures and videos of the universe each day.
-Astronomy is a mobile app made in flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites and much more.
+Astronomy is a mobile app made in Flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites and much more.
 
 ## Design
 
