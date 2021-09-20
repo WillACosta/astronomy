@@ -4,9 +4,9 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
   <img src="https://imgur.com/U1p21DT.png" width="100" height="100" />
 </center>
 
-## Astronomy Project
+## Projeto Astronomy
 
-O projeto foi criado com Flutter e utiliza a API pública da NASA APOD (Astronomy Picture of the Day) para exibir todos os dias images ou vídeos do nosso incrível Universo.
+Projeto desenvolvido em Dart/Flutter, utilizando a API pública da NASA APOD (Astronomy Picture of the Day) para exibir todos os dias images e vídeos do nosso incrível Universo.
 
 ## Design
 
@@ -39,11 +39,11 @@ O projeto possui um guia de estilo para manter a consistência de padrões esté
 - Desenvolvido utilizando Arquitetura Limpa
 - Gerenciamento de estados com MobX
 - Testes de unidade
-- Intercionalização com o pacote Intl
+- Intercionalização
 - Animações e Widgets customizados
-- Salvamento de preferências locais com Hive
+- Salvamento de dados locais com Hive
 - Efeito de carregamento Shimmer
-- Consumo da NASA's APOD API
+- Consumo da NASA APOD API
 
 ### Pacotes utilizados
 
