@@ -1,7 +1,7 @@
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
 <center>
-  <img src="https://imgur.com/CXR4dWP.png" width="100" height="100"/>
+  <img src="https://imgur.com/U1p21DT.png" width="100" height="100"/>
 </center>
 
 ## Astronomy Project
