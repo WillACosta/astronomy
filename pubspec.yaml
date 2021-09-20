@@ -39,6 +39,24 @@ dependencies:
   social_share: ^2.1.1
   url_launcher: ^6.0.10
   translator: ^0.1.7
+  async: ^2.6.1
+  flutter_hooks: ^0.18.0
+  flutter_native_splash: ^1.2.3
+  flutter_launcher_icons: ^0.9.2
+
+flutter_native_splash:
+  color: "#0d0d0d"
+  image: "assets/app/splash.png"
+  android: true
+  ios: true
+
+flutter_icons:
+  image_path: "assets/app/icon.png"
+  ios: true
+  remove_alpha_ios: true
+  android: "launcher_icon"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/app/icon-android.png"
 
 dev_dependencies:
   build_runner: ^2.1.0

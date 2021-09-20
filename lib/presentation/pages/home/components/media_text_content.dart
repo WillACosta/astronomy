@@ -22,11 +22,9 @@ class MediaTextContent extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(30),
       children: [
-        Text(
-          dateFormat.format(media.date),
-          style: AppTextStyles.bodySmall(color: AppColors.accent),
-          textAlign: TextAlign.center
-        ),
+        Text(dateFormat.format(media.date),
+            style: AppTextStyles.bodySmall(color: AppColors.accent),
+            textAlign: TextAlign.center),
         SizedBox(height: getProportionateScreenHeight(10)),
         MediaTranslationText(
           isTitleShimmerTile: true,

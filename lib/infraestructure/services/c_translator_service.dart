@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 import 'package:translator/translator.dart';
 
 import '../../domain/services/translator_service.dart';
@@ -6,6 +7,7 @@ import '../../domain/services/translator_service.dart';
 @Injectable(as: TranslatorService)
 class CTranslatorService implements TranslatorService {
   static final translator = GoogleTranslator();
+  DateFormat dateFormatter = DateFormat();
 
   @override
   Future<String> translateFromTo({

@@ -13,7 +13,7 @@ import 'routes/route_generator.dart';
 import 'utils/app_routes.dart';
 
 class App extends StatelessWidget {
-  static final store = locator<SettingsStore>();
+  static final settingsStore = locator<SettingsStore>();
   static final localizationStore = locator<LocalizationStore>();
 
   @override
@@ -25,7 +25,7 @@ class App extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: lightTheme,
           darkTheme: darkTheme,
-          themeMode: store.userPreferences.useDarkMode
+          themeMode: settingsStore.userPreferences.useDarkMode
               ? ThemeMode.dark
               : ThemeMode.light,
           initialRoute: AppRoutes.initial,
@@ -37,7 +37,7 @@ class App extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
-          locale: store.userPreferences.userLocale,
+          locale: settingsStore.userPreferences.userLocale,
         );
       },
     );

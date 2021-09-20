@@ -1,3 +1,4 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -10,6 +11,7 @@ class TranslatorStore = _TranslatorStoreBase with _$TranslatorStore;
 
 abstract class _TranslatorStoreBase with Store {
   final TranslatorService _translatorService;
+  late Box translationBox;
 
   _TranslatorStoreBase(this._translatorService);
 

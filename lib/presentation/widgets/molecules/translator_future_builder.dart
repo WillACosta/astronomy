@@ -1,8 +1,10 @@
-import 'package:astronomy/presentation/utils/utils.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
-class TranslatorFutureBuilder extends StatelessWidget {
+import '../../utils/utils.dart';
+import '../widgets.dart';
+
+class TranslatorFutureBuilder extends StatefulWidget {
   const TranslatorFutureBuilder({
     Key? key,
     required this.futureFunction,
@@ -15,13 +17,33 @@ class TranslatorFutureBuilder extends StatelessWidget {
   final bool isTitleShimmerTile;
 
   @override
+  _TranslatorFutureBuilderState createState() =>
+      _TranslatorFutureBuilderState();
+}
+
+class _TranslatorFutureBuilderState extends State<TranslatorFutureBuilder> {
+  late AsyncMemoizer _asyncMemoizer;
+
+  @override
+  void initState() {
+    super.initState();
+    _asyncMemoizer = AsyncMemoizer();
+  }
+
+  _fetchData() async {
+    return this._asyncMemoizer.runOnce(() async {
+      return await widget.futureFunction;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+
     return FutureBuilder(
-      future: futureFunction,
-      // future: Future.delayed(Duration(minutes: 5)),
+      future: _fetchData(),
       builder: (_, snapshot) {
         if (snapshot.hasData) {
-          return isTitleShimmerTile
+          return widget.isTitleShimmerTile
               ? Text(
                   snapshot.data as String,
                   style: AppTextStyles.bodyHead(),
@@ -35,19 +57,12 @@ class TranslatorFutureBuilder extends StatelessWidget {
         }
 
         if (snapshot.hasError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: const Text('Ops! Ocorreu um erro na tradução do texto!'),
-              action: SnackBarAction(
-                label: 'Ok',
-                onPressed: () {},
-              ),
-            ),
-          );
-          return Container(child: englishTextChild);
+          // Error
+
+          return Container(child: widget.englishTextChild);
         }
 
-        return isTitleShimmerTile
+        return widget.isTitleShimmerTile
             ? ShimmerTile.radiusSquare(
                 width: 100,
                 height: 10,
