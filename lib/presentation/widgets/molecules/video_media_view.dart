@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../utils/utils.dart' show getProportionateScreenHeight;
+import '../../utils/utils.dart';
 
 class VideoMediaView extends StatelessWidget {
   const VideoMediaView({Key? key, this.showLabel}) : super(key: key);
@@ -31,7 +30,18 @@ class VideoMediaView extends StatelessWidget {
         ),
         SizedBox(height: getProportionateScreenHeight(10)),
         showLabel == true
-            ? Text(AppLocalizations.of(context)!.thisIsAVideo)
+            ? Column(
+                children: [
+                  Text(
+                    AppLocalizations.of(context)!.thisIsAVideo,
+                    style: AppTextStyles.body(color: AppColors.accent),
+                  ),
+                  Text(
+                    AppLocalizations.of(context)!.toSeeVideo,
+                    style: AppTextStyles.bodySmall(color: AppColors.accent),
+                  ),
+                ],
+              )
             : const SizedBox(),
         const Spacer(),
       ],

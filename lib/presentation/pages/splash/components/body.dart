@@ -27,7 +27,7 @@ class _BodyState extends State<Body> {
 
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 
-    Future.delayed(const Duration(seconds: 3)).then((_) {
+    Future.delayed(const Duration(seconds: 4)).then((_) {
       navigateTo(
         context,
         routeName: AppRoutes.container,

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:astronomy/l10n/l10n.dart';
+// import 'package:astronomy/l10n/l10n.dart';
 
 import '../../../application/localization/localization_store.dart';
 import '../../../external/dependency_injection/locator.dart';
@@ -13,11 +13,9 @@ import '../../../application/settings/settings_store.dart';
 import '../../../application/shared/shared_store.dart';
 import '../../routes/route_navigator.dart';
 import '../../widgets/widgets.dart';
+import '../../utils/utils.dart';
 
 import 'components/alert_dialog_widget.dart';
-
-import '../../utils/utils.dart'
-    show AppSizeConfig, getProportionateScreenHeight, AppTextStyles;
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -74,52 +72,52 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Observer(
-                builder: (_) {
-                  final currentLocale =
-                      localizationStore.locale ?? systemLocale;
+              // Observer(
+              //   builder: (_) {
+              //     final currentLocale =
+              //         localizationStore.locale ?? systemLocale;
 
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        AppLocalizations.of(context)!.selectYourLanguage,
-                        style: AppTextStyles.body(),
-                      ),
-                      DropdownButtonHideUnderline(
-                        child: DropdownButton(
-                          value: currentLocale,
-                          icon: const Icon(Icons.arrow_drop_down),
-                          items: L10n.all.map(
-                            (locale) {
-                              final flag = L10n.getFlag(locale.languageCode);
+              //     return Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: [
+              //         Text(
+              //           AppLocalizations.of(context)!.selectYourLanguage,
+              //           style: AppTextStyles.body(),
+              //         ),
+              //         DropdownButtonHideUnderline(
+              //           child: DropdownButton(
+              //             value: currentLocale,
+              //             icon: const Icon(Icons.arrow_drop_down),
+              //             items: L10n.all.map(
+              //               (locale) {
+              //                 final flag = L10n.getFlag(locale.languageCode);
 
-                              return DropdownMenuItem(
-                                child: Text(
-                                  flag,
-                                  style: const TextStyle(fontSize: 25),
-                                ),
-                                value: locale,
-                                onTap: () {
-                                  localizationStore.setLocale(locale);
-                                  store.setPreferences(
-                                    useDarkMode:
-                                        store.userPreferences.useDarkMode,
-                                    useHdImages:
-                                        store.userPreferences.useHdImages,
-                                    currentLocale: locale,
-                                  );
-                                },
-                              );
-                            },
-                          ).toList(),
-                          onChanged: (_) {},
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              )
+              //                 return DropdownMenuItem(
+              //                   child: Text(
+              //                     flag,
+              //                     style: const TextStyle(fontSize: 25),
+              //                   ),
+              //                   value: locale,
+              //                   onTap: () {
+              //                     localizationStore.setLocale(locale);
+              //                     store.setPreferences(
+              //                       useDarkMode:
+              //                           store.userPreferences.useDarkMode,
+              //                       useHdImages:
+              //                           store.userPreferences.useHdImages,
+              //                       currentLocale: locale,
+              //                     );
+              //                   },
+              //                 );
+              //               },
+              //             ).toList(),
+              //             onChanged: (_) {},
+              //           ),
+              //         ),
+              //       ],
+              //     );
+              //   },
+              // )
             ],
           ),
         ),
