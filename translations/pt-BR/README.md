@@ -1,24 +1,22 @@
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
-<center>
+<div align="center">
   <img src="https://imgur.com/U1p21DT.png" width="100" height="100" />
-</center>
+</div>
 
-## Projeto Astronomy
+## Astronomy
 
-Projeto desenvolvido em Dart/Flutter, utilizando a API pública da NASA APOD (Astronomy Picture of the Day) para exibir todos os dias images e vídeos do nosso incrível Universo.
+O Astronomy é um app mobile feito em flutter para exibir imagens e vídeos incríveis do nosso universo todos os dias utilizando a APOD API pública da nasa, contendo recursos como download, uso de galeria, gerenciamento de estado, salvamento de favoritos e muito mais.
 
 ## Design
 
-O aplicativo possui uma proposta de design limpa e minimalista. Você também pode fazer uma cópia do design para sua conta no [Figma](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
-
----
+O app possui uma proposta de design limpa e minimalista. Você também pode fazer uma cópia do design para sua conta no [Figma](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 <img src='https://i.imgur.com/KIzTLgV.jpg' />
 
 ## Style Guide
 
-O projeto possui um guia de estilo para manter a consistência de padrões estéticos na aplicação, você pode encontra-lo nas 'pages' do arquivo do figma.
+O projeto possui um guia de estilo para manter a consistência de padrões estéticos na aplicação, você pode encontra-lo na guia 'pages' do arquivo do figma.
 
 ## Features
 
