@@ -1,12 +1,11 @@
-import 'package:astronomy/application/container_page/container_page_store.dart';
-import 'package:astronomy/presentation/routes/route_navigator.dart';
 import 'package:flutter/material.dart';
-
-import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:showcaseview/showcaseview.dart';
 
+import '../../../application/container_page/container_page_store.dart';
+import '../../../external/dependency_injection/locator.dart';
 import '../../../application/showcase/showcase_store.dart';
 import '../../../domain/entities/media.dart';
+import '../../routes/route_navigator.dart';
 import '../../widgets/widgets.dart';
 import '../../utils/utils.dart';
 
@@ -52,7 +51,11 @@ class _GridDetailPageState extends State<GridDetailPage> {
     AppSizeConfig().init(context);
 
     return ShowCaseWidget(
-        onFinish: () => {closeRoute(context), _containerStore.toPage(0)},
+        onFinish: () => {
+              closeRoute(context),
+              _containerStore.toPage(0),
+              _showcaseStore.setDisplayShowcase(display: false),
+            },
         builder: Builder(
           builder: (context) {
             showCaseContext = context;

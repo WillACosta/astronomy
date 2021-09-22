@@ -8,6 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'domain/adapters/user_preferences.dart';
 import 'external/init_configurations.dart';
 import 'domain/adapters/user_locale.dart';
+import 'domain/adapters/showcase.dart';
 import 'domain/entities/media.dart';
 import 'presentation/app.dart';
 
@@ -18,6 +19,7 @@ void main() async {
   Hive.registerAdapter(UserPreferencesAdapter());
   Hive.registerAdapter(UserLocaleAdapter());
   Hive.registerAdapter(MediaAdapter());
+  Hive.registerAdapter(ShowcaseAdapter());
 
   await Hive.initFlutter(dir.path);
 

@@ -4,11 +4,13 @@ import 'package:intl/intl.dart';
 
 import '../infraestructure/datasources/local_data_source.dart';
 import '../domain/adapters/user_preferences.dart';
+import '../domain/adapters/showcase.dart';
 import '../domain/entities/media.dart';
 import '../core/types/types.dart';
 
 const preferencesKey = 'user_preferences';
 const userFavoritesKey = 'user_favorites';
+const displayShowcaseKey = 'display_showcase';
 
 @Injectable(as: LocalDataSource)
 class CLocalDataSource implements LocalDataSource {
@@ -46,5 +48,17 @@ class CLocalDataSource implements LocalDataSource {
     } else {
       favoritesBox.put(dateKey, media);
     }
+  }
+
+  @override
+  Future<Showcase> readShowcase() async {
+    final box = await Hive.openBox<Showcase>(displayShowcaseKey);
+    return box.get(displayShowcaseKey) ?? Showcase(displayShowCase: true);
+  }
+
+  @override
+  Future<void> setShowcase({required Showcase showcase}) async {
+    final box = await Hive.openBox<Showcase>(displayShowcaseKey);
+    await box.put(displayShowcaseKey, showcase);
   }
 }

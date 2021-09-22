@@ -25,6 +25,23 @@ mixin _$ShowCaseStore on _ShowCaseStoreBase, Store {
     });
   }
 
+  final _$_readPreferencesAsyncAction =
+      AsyncAction('_ShowCaseStoreBase._readPreferences');
+
+  @override
+  Future _readPreferences() {
+    return _$_readPreferencesAsyncAction.run(() => super._readPreferences());
+  }
+
+  final _$setDisplayShowcaseAsyncAction =
+      AsyncAction('_ShowCaseStoreBase.setDisplayShowcase');
+
+  @override
+  Future setDisplayShowcase({required bool display}) {
+    return _$setDisplayShowcaseAsyncAction
+        .run(() => super.setDisplayShowcase(display: display));
+  }
+
   @override
   String toString() {
     return '''
