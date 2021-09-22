@@ -8,12 +8,13 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../../application/container_page/container_page_store.dart' as _i32;
-import '../../application/favorites/favorites_store.dart' as _i36;
+import '../../application/favorites/favorites_store.dart' as _i37;
 import '../../application/grid/grid_page_store.dart' as _i29;
 import '../../application/home/home_store.dart' as _i30;
 import '../../application/localization/localization_store.dart' as _i34;
-import '../../application/settings/settings_store.dart' as _i35;
+import '../../application/settings/settings_store.dart' as _i36;
 import '../../application/shared/shared_store.dart' as _i31;
+import '../../application/showcase/showcase_store.dart' as _i35;
 import '../../application/translator/translator_store.dart' as _i21;
 import '../../data/apod_data_source.dart' as _i4;
 import '../../data/local_data_source.dart' as _i12;
@@ -79,9 +80,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.singleton<_i32.ContainerPageStore>(_i32.ContainerPageStore());
   gh.singleton<_i24.LocalNotificationService>(_i33.CLocalNotificationService());
   gh.singleton<_i34.LocalizationStore>(_i34.LocalizationStore());
-  gh.singleton<_i35.SettingsStore>(
-      _i35.SettingsStore(get<_i17.SettingsUseCase>()));
-  gh.singleton<_i36.FavoriteStore>(
-      _i36.FavoriteStore(get<_i27.FavoritesUseCase>()));
+  gh.singleton<_i35.ShowCaseStore>(_i35.ShowCaseStore());
+  gh.singleton<_i36.SettingsStore>(
+      _i36.SettingsStore(get<_i17.SettingsUseCase>()));
+  gh.singleton<_i37.FavoriteStore>(
+      _i37.FavoriteStore(get<_i27.FavoritesUseCase>()));
   return get;
 }

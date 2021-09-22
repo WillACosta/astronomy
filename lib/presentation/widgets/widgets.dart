@@ -16,6 +16,7 @@ export './molecules/error_state_widget.dart';
 export './molecules/video_media_view.dart';
 export './molecules/sheet_container.dart';
 export './molecules/shimmer_tile.dart';
+export './molecules/apod_showcase.dart';
 
 /// Organisms
 export './organisms/media_translation_text.dart';

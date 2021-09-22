@@ -26,6 +26,8 @@ The app has a clean, minimalist proposal and a style guide. You can copy this to
 
 - Save your favorites
 
+- Showcase features on first launch
+
 ## Technical Resources
 
 - Developed with Clean Architecture

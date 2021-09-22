@@ -1,21 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:showcaseview/showcaseview.dart';
 
+import '../../../application/container_page/container_page_store.dart';
 import '../../../external/dependency_injection/locator.dart';
+import '../../../application/showcase/showcase_store.dart';
 import '../../../application/home/home_state.dart';
 import '../../../application/home/home_store.dart';
 import '../../widgets/widgets.dart';
 
-import '../../utils/utils.dart' show AppSizeConfig;
+import '../../utils/utils.dart';
 
 import 'components/shimmer_loader.dart';
 import 'components/show_sheet_modal.dart';
 import 'components/bottom_sheet_button.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static final _store = locator<HomeStore>();
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _key1 = GlobalKey();
+
+  final _store = locator<HomeStore>();
+  final _containerStore = locator<ContainerPageStore>();
+  final _showcaseStore = locator<ShowCaseStore>();
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      if (_showcaseStore.displayShowCase) {
+        ShowCaseWidget.of(context)!.startShowCase([_key1]);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +46,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       body: Observer(
-        builder: (_) {
+        builder: (context) {
           var state = _store.state;
 
           if (state is ErrorState) {
@@ -54,7 +77,13 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         const Spacer(),
-                        BottomSheetButton(media: state.media),
+                        ApodShowcase(
+                          showcaseKey: _key1,
+                          description:
+                              'Swipe up on the screen or touch here to view details of media',
+                          child: BottomSheetButton(media: state.media),
+                          onToolTipClick: () => _containerStore.toPage(1),
+                        ),
                       ],
                     ),
                   ),
@@ -63,7 +92,7 @@ class HomePage extends StatelessWidget {
             );
           }
 
-          return Container();
+          return Row();
         },
       ),
     );

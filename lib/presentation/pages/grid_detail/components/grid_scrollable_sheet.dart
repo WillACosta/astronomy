@@ -13,9 +13,11 @@ class GridScrollableSheet extends StatelessWidget {
   const GridScrollableSheet({
     Key? key,
     required this.media,
+    required this.showcaseKey,
   }) : super(key: key);
 
   final Media media;
+  final GlobalKey showcaseKey;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class GridScrollableSheet extends StatelessWidget {
       initialChildSize: 0.1,
       minChildSize: 0.1,
       maxChildSize: 0.6,
-      builder: (_, ScrollController sController) {
+      builder: (context, ScrollController sController) {
         return SheetContainer(
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -33,7 +35,11 @@ class GridScrollableSheet extends StatelessWidget {
             child: ListView(
               controller: sController,
               children: [
-                const SheetHandle(),
+                ApodShowcase(
+                  description: 'Swipe up to view an explanation of this media',
+                  showcaseKey: showcaseKey,
+                  child: const SheetHandle(),
+                ),
                 SizedBox(height: getProportionateScreenHeight(25)),
                 // MediaTranslationText(
                 //   isTitleShimmerTile: false,

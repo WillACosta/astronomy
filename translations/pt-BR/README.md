@@ -28,6 +28,8 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 
 - Salvar os favoritos
 
+- Apresentação das funcionalidades na primeira execução
+
 ## Recursos Técnicos
 
 - Desenvolvido utilizando Arquitetura Limpa

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:showcaseview/showcaseview.dart';
 
 import '../../application/container_page/container_page_store.dart';
 import '../../external/dependency_injection/locator.dart';
@@ -20,8 +21,10 @@ class ContainerPage extends StatelessWidget {
         controller: _store.pageController,
         onPageChanged: _store.setCurrentPage,
         children: [
-          const HomePage(),
-          GridPage(),
+          ShowCaseWidget(
+            builder: Builder(builder: (_) => const HomePage()),
+          ),
+          const GridPage(),
           const FavoritesPage(),
           const SettingsPage(),
         ],
