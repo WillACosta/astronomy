@@ -10,7 +10,7 @@ Astronomy is a mobile app made in Flutter to display awesome pictures and videos
 
 ## Design
 
-The app has a clean, minimalist proposal and a style guide. You can copy this to your [Figma account](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
+The app has a clean and minimalist proposal and also a style guide. You can copy this to your [Figma account](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 <img src='https://i.imgur.com/KIzTLgV.jpg' />
 
