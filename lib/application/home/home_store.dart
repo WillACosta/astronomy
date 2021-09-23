@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -6,7 +8,7 @@ import 'home_state.dart';
 
 part 'home_store.g.dart';
 
-@Injectable()
+@LazySingleton()
 class HomeStore = _HomeStoreBase with _$HomeStore;
 
 abstract class _HomeStoreBase with Store {

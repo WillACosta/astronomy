@@ -80,9 +80,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i30.CFavoritesRepository(get<_i11.LocalDataSource>()));
   gh.factory<_i31.FavoritesUseCase>(
       () => _i32.CFavoritesUsecase(get<_i29.FavoritesRepository>()));
-  gh.factory<_i33.GridPageStore>(
+  gh.lazySingleton<_i33.GridPageStore>(
       () => _i33.GridPageStore(get<_i7.GridUseCase>()));
-  gh.factory<_i34.HomeStore>(() => _i34.HomeStore(get<_i9.HomeUseCase>()));
+  gh.lazySingleton<_i34.HomeStore>(
+      () => _i34.HomeStore(get<_i9.HomeUseCase>()));
   gh.factory<_i35.SharedStore>(
       () => _i35.SharedStore(get<_i26.DownloadService>()));
   gh.singleton<_i36.ContainerPageStore>(_i36.ContainerPageStore());

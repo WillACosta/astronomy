@@ -35,6 +35,9 @@ final darkTheme = ThemeData(
     backgroundColor: AppColors.primary,
   ),
   switchTheme: const SwitchThemeData(),
+  iconTheme: const IconThemeData(
+    color: AppColors.secondary,
+  ),
 );
 
 final lightTheme = ThemeData(

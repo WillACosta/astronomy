@@ -12,20 +12,23 @@ import 'grid_page_state.dart';
 
 part 'grid_page_store.g.dart';
 
-@Injectable()
+@LazySingleton()
 class GridPageStore = _GridPageStoreBase with _$GridPageStore;
 
 abstract class _GridPageStoreBase with Store {
   final GridUseCase _usecase;
+  List<ReactionDisposer>? _disposers;
 
   static final _sharedStore = locator<SharedStore>();
 
   _GridPageStoreBase(this._usecase) {
     getMediaList();
 
-    reaction((_) => _dateTimeRange, (value) {
-      getMediaList();
-    });
+    _disposers ??= [
+      reaction((_) => _dateTimeRange, (value) {
+        getMediaList();
+      })
+    ];
   }
 
   @observable
@@ -64,5 +67,13 @@ abstract class _GridPageStoreBase with Store {
       (error) => setState(ErrorState(error)),
       (result) => setState(SuccessState(result)),
     );
+  }
+
+  dispose() {
+    if (_disposers != null) {
+      for (var dispose in _disposers!) {
+        dispose();
+      }
+    }
   }
 }
