@@ -40,6 +40,7 @@ dependencies:
   translator: ^0.1.7
   async: ^2.6.1
   showcaseview: ^1.1.1
+  animations: ^2.0.1
 
 flutter_native_splash:
   color: "#0d0d0d"

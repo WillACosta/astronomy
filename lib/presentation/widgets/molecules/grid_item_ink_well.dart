@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:animations/animations.dart';
+
+import '../../pages/grid_detail/grid_detail_page.dart';
 import '../../../domain/entities/media.dart';
-import '../../routes/route_navigator.dart';
-import '../../utils/utils.dart';
 
 import '../widgets.dart' show ApodNetworkImage, VideoMediaView;
 
@@ -18,14 +19,16 @@ class GridItemInkWell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(30),
-      onTap: () => navigateTo(
-        context,
-        routeName: AppRoutes.gridDetail,
-        args: media,
+    return OpenContainer(
+      transitionDuration: const Duration(seconds: 1),
+      closedShape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
       ),
-      child: GridTile(
+      closedColor: Theme.of(context).primaryColor,
+      openColor: Theme.of(context).primaryColor,
+      middleColor: Theme.of(context).primaryColor,
+      openBuilder: (context, _) => GridDetailPage(media: media),
+      closedBuilder: (context, VoidCallback openContainer) => GridTile(
         child: Stack(
           fit: StackFit.expand,
           children: [

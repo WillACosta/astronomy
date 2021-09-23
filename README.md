@@ -17,15 +17,10 @@ The app has a clean and minimalist proposal and also a style guide. You can copy
 ## Features
 
 - View the image of the day with an explanation written by a professional astronomer
-
 - View a gallery of previous APOD images and jump quickly to any date
-
 - Share and download any image in HD
-
 - Dark mode
-
 - Save your favorites
-
 - Showcase features on first launch
 
 ## Technical Resources

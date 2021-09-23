@@ -17,17 +17,11 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 ## Features
 
 - Visualização da imagem do dia, com uma descrição escrita por um astronônomo profissional
-
 - Galeria para visualização das imagens anteriores, contando com mais de 7000 imagens desde 1995.
-
 - Download e compartilhamento das imagens
-
 - Darkmode
-
 - Visualização e Download das imagens em HD
-
 - Salvar os favoritos
-
 - Apresentação das funcionalidades na primeira execução
 
 ## Recursos Técnicos
@@ -39,7 +33,7 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 - Animações e Widgets customizados
 - Salvamento de dados locais com Hive
 - Efeito de carregamento Shimmer
-- Consumo da NASA APOD API
+- Consumo de APIs
 
 ## Como usar
 
