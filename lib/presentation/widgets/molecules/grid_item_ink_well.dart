@@ -20,7 +20,7 @@ class GridItemInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OpenContainer(
-      transitionDuration: const Duration(seconds: 1),
+      transitionDuration: const Duration(milliseconds: 500),
       closedShape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),

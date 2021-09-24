@@ -53,8 +53,8 @@ class _GridDetailPageState extends State<GridDetailPage> {
     return ShowCaseWidget(
         onFinish: () => {
               closeRoute(context),
-              _containerStore.toPage(0),
               _showcaseStore.setDisplayShowcase(display: false),
+              _containerStore.toPage(0),
             },
         builder: Builder(
           builder: (context) {

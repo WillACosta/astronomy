@@ -2,7 +2,7 @@ name: astronomy
 description: A project that uses NASA's API to show awesome pictures of the universe each day.
 
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: ">=2.13.0 <3.0.0"

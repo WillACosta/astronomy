@@ -8,7 +8,7 @@
   "aboutThisProject": "About This Project",
   "useHdImages": "Use Hd Images",
   "darkmode": "Dark Mode",
-  "aboutContent": "This project was developed with Flutter and use NASA's APOD API to display awesome pictures and videos of the universe each day.\n\nFor more information please visit the repository on GitHub.",
+  "aboutContent": "This project was developed with Flutter and use NASA's APOD API to display awesome pictures and videos of the universe every day.\n\nFor more information or bug report please visit the repository on GitHub.",
   "close": "Close",
   "errorMessage": "Oops! Something went wrong",
   "refreshMessage": "try refresh the page.",
