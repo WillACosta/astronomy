@@ -38,6 +38,12 @@ final darkTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),
+  dialogTheme: DialogTheme(
+      backgroundColor: AppColors.primary,
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      )),
 );
 
 final lightTheme = ThemeData(
@@ -69,4 +75,10 @@ final lightTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),
+  dialogTheme: DialogTheme(
+      backgroundColor: AppColors.secondary,
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      )),
 );

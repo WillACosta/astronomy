@@ -159,10 +159,12 @@ class SettingsPage extends StatelessWidget {
       showCupertinoDialog(
         context: context,
         builder: (_) {
-          return AlertDialogWidget(
-            title: title,
-            content: content,
-            actions: cupertinoActions,
+          return AnimatedBounce(
+            child: AlertDialogWidget(
+              title: title,
+              content: content,
+              actions: cupertinoActions,
+            ),
           );
         },
       );
@@ -172,10 +174,12 @@ class SettingsPage extends StatelessWidget {
       showDialog(
         context: context,
         builder: (_) {
-          return AlertDialogWidget(
-            title: title,
-            content: content,
-            actions: materialActions,
+          return AnimatedBounce(
+            child: AlertDialogWidget(
+              title: title,
+              content: content,
+              actions: materialActions,
+            ),
           );
         },
       );
