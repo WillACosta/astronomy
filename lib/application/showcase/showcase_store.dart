@@ -6,6 +6,8 @@ import '../../domain/adapters/showcase.dart';
 
 part 'showcase_store.g.dart';
 
+enum ShowcasePage { home, grid, gridDetail }
+
 @singleton
 class ShowCaseStore = _ShowCaseStoreBase with _$ShowCaseStore;
 
@@ -13,16 +15,16 @@ abstract class _ShowCaseStoreBase with Store {
   final ShowcaseUseCase _usecase;
 
   @observable
-  bool displayShowCase = false;
+  bool displayHomeShowcase = false;
+
+  @observable
+  bool displayGridShowcase = false;
+
+  @observable
+  bool displayGridDetailShowcase = false;
 
   _ShowCaseStoreBase(this._usecase) {
     _init();
-  }
-
-  @action
-  _readPreferences() async {
-    var isShowCase = await _usecase.readShowcase();
-    displayShowCase = isShowCase.displayShowCase;
   }
 
   void _init() async {
@@ -30,10 +32,42 @@ abstract class _ShowCaseStoreBase with Store {
   }
 
   @action
-  setDisplayShowcase({required bool display}) async {
-    displayShowCase = display;
+  _readPreferences() async {
+    var isShowCase = await _usecase.readShowcase();
 
-    var showcaseValue = Showcase(displayShowCase: display);
+    displayHomeShowcase = isShowCase.displayHomeShowcase;
+    displayGridShowcase = isShowCase.displayGridShowcase;
+    displayGridDetailShowcase = isShowCase.displayGridDetailShowcase;
+  }
+
+  @action
+  _setDisplayShowcase() async {
+    var showcaseValue = Showcase(
+      displayHomeShowcase: displayHomeShowcase,
+      displayGridShowcase: displayGridShowcase,
+      displayGridDetailShowcase: displayGridDetailShowcase,
+    );
+
     await _usecase.setShowcase(showcase: showcaseValue);
+  }
+
+  @action
+  _setShowcaseValue({required ShowcasePage showcasePage, bool value = false}) {
+    if (showcasePage == ShowcasePage.home) {
+      displayHomeShowcase = value;
+    }
+
+    if (showcasePage == ShowcasePage.grid) {
+      displayGridShowcase = value;
+    }
+
+    if (showcasePage == ShowcasePage.gridDetail) {
+      displayGridDetailShowcase = value;
+    }
+  }
+
+  void closeShowCase({required ShowcasePage showcasePage}) {
+    _setShowcaseValue(showcasePage: showcasePage);
+    _setDisplayShowcase();
   }
 }

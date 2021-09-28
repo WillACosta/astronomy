@@ -17,16 +17,22 @@ class ShowcaseAdapter extends TypeAdapter<Showcase> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Showcase(
-      displayShowCase: fields[0] as bool,
+      displayHomeShowcase: fields[0] as bool,
+      displayGridShowcase: fields[1] as bool,
+      displayGridDetailShowcase: fields[2] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, Showcase obj) {
     writer
-      ..writeByte(1)
+      ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.displayShowCase);
+      ..write(obj.displayHomeShowcase)
+      ..writeByte(1)
+      ..write(obj.displayGridShowcase)
+      ..writeByte(2)
+      ..write(obj.displayGridDetailShowcase);
   }
 
   @override

@@ -34,9 +34,14 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (_showcaseStore.displayShowCase) {
-        ShowCaseWidget.of(context)!.startShowCase([_key1]);
-      }
+      Future.delayed(
+        const Duration(milliseconds: 500),
+        () {
+          if (_showcaseStore.displayHomeShowcase) {
+            ShowCaseWidget.of(context)!.startShowCase([_key1]);
+          }
+        },
+      );
     });
   }
 

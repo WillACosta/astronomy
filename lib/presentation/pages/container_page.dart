@@ -4,12 +4,15 @@ import 'package:showcaseview/showcaseview.dart';
 
 import '../../application/container_page/container_page_store.dart';
 import '../../external/dependency_injection/locator.dart';
+import '../../application/showcase/showcase_store.dart';
 import '../utils/utils.dart';
 
 import 'pages.dart';
 
 class ContainerPage extends StatelessWidget {
   const ContainerPage({Key? key}) : super(key: key);
+
+  static final _showcaseStore = locator<ShowCaseStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,9 @@ class ContainerPage extends StatelessWidget {
         onPageChanged: _store.setCurrentPage,
         children: [
           ShowCaseWidget(
+            onFinish: () => _showcaseStore.closeShowCase(
+              showcasePage: ShowcasePage.home,
+            ),
             builder: Builder(builder: (_) => const HomePage()),
           ),
           const GridPage(),

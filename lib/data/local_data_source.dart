@@ -53,7 +53,12 @@ class CLocalDataSource implements LocalDataSource {
   @override
   Future<Showcase> readShowcase() async {
     final box = await Hive.openBox<Showcase>(displayShowcaseKey);
-    return box.get(displayShowcaseKey) ?? Showcase(displayShowCase: true);
+    return box.get(displayShowcaseKey) ??
+        Showcase(
+          displayHomeShowcase: true,
+          displayGridShowcase: true,
+          displayGridDetailShowcase: true,
+        );
   }
 
   @override

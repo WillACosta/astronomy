@@ -9,19 +9,52 @@ part of 'showcase_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$ShowCaseStore on _ShowCaseStoreBase, Store {
-  final _$displayShowCaseAtom =
-      Atom(name: '_ShowCaseStoreBase.displayShowCase');
+  final _$displayHomeShowcaseAtom =
+      Atom(name: '_ShowCaseStoreBase.displayHomeShowcase');
 
   @override
-  bool get displayShowCase {
-    _$displayShowCaseAtom.reportRead();
-    return super.displayShowCase;
+  bool get displayHomeShowcase {
+    _$displayHomeShowcaseAtom.reportRead();
+    return super.displayHomeShowcase;
   }
 
   @override
-  set displayShowCase(bool value) {
-    _$displayShowCaseAtom.reportWrite(value, super.displayShowCase, () {
-      super.displayShowCase = value;
+  set displayHomeShowcase(bool value) {
+    _$displayHomeShowcaseAtom.reportWrite(value, super.displayHomeShowcase, () {
+      super.displayHomeShowcase = value;
+    });
+  }
+
+  final _$displayGridShowcaseAtom =
+      Atom(name: '_ShowCaseStoreBase.displayGridShowcase');
+
+  @override
+  bool get displayGridShowcase {
+    _$displayGridShowcaseAtom.reportRead();
+    return super.displayGridShowcase;
+  }
+
+  @override
+  set displayGridShowcase(bool value) {
+    _$displayGridShowcaseAtom.reportWrite(value, super.displayGridShowcase, () {
+      super.displayGridShowcase = value;
+    });
+  }
+
+  final _$displayGridDetailShowcaseAtom =
+      Atom(name: '_ShowCaseStoreBase.displayGridDetailShowcase');
+
+  @override
+  bool get displayGridDetailShowcase {
+    _$displayGridDetailShowcaseAtom.reportRead();
+    return super.displayGridDetailShowcase;
+  }
+
+  @override
+  set displayGridDetailShowcase(bool value) {
+    _$displayGridDetailShowcaseAtom
+        .reportWrite(value, super.displayGridDetailShowcase, () {
+      super.displayGridDetailShowcase = value;
     });
   }
 
@@ -33,19 +66,36 @@ mixin _$ShowCaseStore on _ShowCaseStoreBase, Store {
     return _$_readPreferencesAsyncAction.run(() => super._readPreferences());
   }
 
-  final _$setDisplayShowcaseAsyncAction =
-      AsyncAction('_ShowCaseStoreBase.setDisplayShowcase');
+  final _$_setDisplayShowcaseAsyncAction =
+      AsyncAction('_ShowCaseStoreBase._setDisplayShowcase');
 
   @override
-  Future setDisplayShowcase({required bool display}) {
-    return _$setDisplayShowcaseAsyncAction
-        .run(() => super.setDisplayShowcase(display: display));
+  Future _setDisplayShowcase() {
+    return _$_setDisplayShowcaseAsyncAction
+        .run(() => super._setDisplayShowcase());
+  }
+
+  final _$_ShowCaseStoreBaseActionController =
+      ActionController(name: '_ShowCaseStoreBase');
+
+  @override
+  dynamic _setShowcaseValue(
+      {required ShowcasePage showcasePage, bool value = false}) {
+    final _$actionInfo = _$_ShowCaseStoreBaseActionController.startAction(
+        name: '_ShowCaseStoreBase._setShowcaseValue');
+    try {
+      return super._setShowcaseValue(showcasePage: showcasePage, value: value);
+    } finally {
+      _$_ShowCaseStoreBaseActionController.endAction(_$actionInfo);
+    }
   }
 
   @override
   String toString() {
     return '''
-displayShowCase: ${displayShowCase}
+displayHomeShowcase: ${displayHomeShowcase},
+displayGridShowcase: ${displayGridShowcase},
+displayGridDetailShowcase: ${displayGridDetailShowcase}
     ''';
   }
 }

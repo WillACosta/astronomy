@@ -36,7 +36,7 @@ class _GridDetailPageState extends State<GridDetailPage> {
         Future.delayed(
           const Duration(milliseconds: 400),
           () {
-            if (_showcaseStore.displayShowCase) {
+            if (_showcaseStore.displayGridDetailShowcase) {
               ShowCaseWidget.of(showCaseContext!)!
                   .startShowCase([_bottomSheetKey]);
             }
@@ -51,45 +51,50 @@ class _GridDetailPageState extends State<GridDetailPage> {
     AppSizeConfig().init(context);
 
     return ShowCaseWidget(
-        onFinish: () => {
-              closeRoute(context),
-              _showcaseStore.setDisplayShowcase(display: false),
-              _containerStore.toPage(0),
-            },
-        builder: Builder(
-          builder: (context) {
-            showCaseContext = context;
+      onFinish: () {
+        closeRoute(context);
 
-            return Scaffold(
-              appBar: AppBar(
-                backgroundColor: Theme.of(context).primaryColor,
-                elevation: 0,
-                actions: [
-                  MediaActionBar(
-                    media: widget.media,
-                    isDetailScreen: true,
-                  )
-                ],
-              ),
-              body: Stack(
-                fit: StackFit.expand,
-                children: [
-                  MediaHeader(media: widget.media),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(top: getProportionateScreenHeight(80)),
-                    child: widget.media.mediaType == 'image'
-                        ? ApodNetworkImage(media: widget.media)
-                        : const VideoMediaView(showLabel: true),
-                  ),
-                  GridScrollableSheet(
-                    media: widget.media,
-                    showcaseKey: _bottomSheetKey,
-                  ),
-                ],
-              ),
-            );
-          },
-        ));
+        _showcaseStore.closeShowCase(
+          showcasePage: ShowcasePage.gridDetail,
+        );
+
+        _containerStore.toPage(0);
+      },
+      builder: Builder(
+        builder: (context) {
+          showCaseContext = context;
+
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Theme.of(context).primaryColor,
+              elevation: 0,
+              actions: [
+                MediaActionBar(
+                  media: widget.media,
+                  isDetailScreen: true,
+                )
+              ],
+            ),
+            body: Stack(
+              fit: StackFit.expand,
+              children: [
+                MediaHeader(media: widget.media),
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: getProportionateScreenHeight(80)),
+                  child: widget.media.mediaType == 'image'
+                      ? ApodNetworkImage(media: widget.media)
+                      : const VideoMediaView(showLabel: true),
+                ),
+                GridScrollableSheet(
+                  media: widget.media,
+                  showcaseKey: _bottomSheetKey,
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }

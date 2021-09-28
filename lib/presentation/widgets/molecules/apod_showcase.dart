@@ -31,7 +31,7 @@ class ApodShowcase extends StatelessWidget {
       overlayColor: AppColors.primary,
       descTextStyle: AppTextStyles.body(color: AppColors.primary),
       showcaseBackgroundColor: AppColors.secondary,
-      overlayPadding: const EdgeInsets.all(8),
+      overlayPadding: const EdgeInsets.all(7.5),
       contentPadding: const EdgeInsets.all(10),
       disposeOnTap: disposeOnTap,
       showArrow: showArrow,

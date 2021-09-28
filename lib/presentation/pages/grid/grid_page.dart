@@ -6,7 +6,6 @@ import 'package:showcaseview/showcaseview.dart';
 
 import '../../utils/utils.dart' show AppTextStyles;
 
-import '../../../application/container_page/container_page_store.dart';
 import '../../../external/dependency_injection/locator.dart';
 import '../../../application/showcase/showcase_store.dart';
 import '../../../application/grid/grid_page_state.dart';
@@ -26,7 +25,6 @@ class GridPage extends StatefulWidget {
 class _GridPageState extends State<GridPage> {
   final _store = locator<GridPageStore>();
   final _showcaseStore = locator<ShowCaseStore>();
-  final _containerStore = locator<ContainerPageStore>();
 
   final _calendarStepKey = GlobalKey();
   final _gridItemStepKey = GlobalKey();
@@ -41,7 +39,7 @@ class _GridPageState extends State<GridPage> {
         Future.delayed(
           const Duration(milliseconds: 400),
           () {
-            if (_showcaseStore.displayShowCase) {
+            if (_showcaseStore.displayGridShowcase) {
               ShowCaseWidget.of(showCaseContext!)!.startShowCase([
                 _calendarStepKey,
                 _gridItemStepKey,
@@ -56,7 +54,9 @@ class _GridPageState extends State<GridPage> {
   @override
   Widget build(BuildContext context) {
     return ShowCaseWidget(
-      onFinish: () => _containerStore.toPage(0),
+      onFinish: () => _showcaseStore.closeShowCase(
+        showcasePage: ShowcasePage.grid,
+      ),
       builder: Builder(
         builder: (context) {
           showCaseContext = context;
@@ -92,7 +92,7 @@ class _GridPageState extends State<GridPage> {
                     _store.setDateRange(dateRangeUser);
                   },
                   icon: ApodShowcase(
-                    description: 'Select an interval to show in grid view',
+                    description: 'Select a range to view on the grid',
                     showcaseKey: _calendarStepKey,
                     disposeOnTap: false,
                     child: const Icon(Icons.calendar_today),

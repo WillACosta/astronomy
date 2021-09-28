@@ -11,8 +11,8 @@ class AppPagesPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: getProportionateScreenHeight(30),
-        horizontal: getProportionateScreenWidth(20),
+        vertical: getProportionateScreenHeight(25),
+        horizontal: getProportionateScreenWidth(15),
       ),
       child: child,
     );

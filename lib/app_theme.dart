@@ -39,11 +39,12 @@ final darkTheme = ThemeData(
     color: AppColors.secondary,
   ),
   dialogTheme: DialogTheme(
-      backgroundColor: AppColors.primary,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      )),
+    backgroundColor: AppColors.primary,
+    elevation: 1,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+    ),
+  ),
 );
 
 final lightTheme = ThemeData(
