@@ -51,7 +51,7 @@ class _GridDetailPageState extends State<GridDetailPage> {
     AppSizeConfig().init(context);
 
     return ShowCaseWidget(
-      onFinish: () {
+      onComplete: (__, _) {
         closeRoute(context);
 
         _showcaseStore.closeShowCase(

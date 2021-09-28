@@ -25,7 +25,7 @@ class ContainerPage extends StatelessWidget {
         onPageChanged: _store.setCurrentPage,
         children: [
           ShowCaseWidget(
-            onFinish: () => _showcaseStore.closeShowCase(
+            onComplete: (__, _) => _showcaseStore.closeShowCase(
               showcasePage: ShowcasePage.home,
             ),
             builder: Builder(builder: (_) => const HomePage()),

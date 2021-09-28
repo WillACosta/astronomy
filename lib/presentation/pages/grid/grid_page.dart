@@ -54,7 +54,7 @@ class _GridPageState extends State<GridPage> {
   @override
   Widget build(BuildContext context) {
     return ShowCaseWidget(
-      onFinish: () => _showcaseStore.closeShowCase(
+      onComplete: (__, _) => _showcaseStore.closeShowCase(
         showcasePage: ShowcasePage.grid,
       ),
       builder: Builder(
