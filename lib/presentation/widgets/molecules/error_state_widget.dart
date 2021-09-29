@@ -17,20 +17,20 @@ class ErrorStateWidget extends StatelessWidget {
         children: [
           Image.asset(
             AppImages.errorIllustration,
-            width: 250,
+            width: 230,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Text(
               AppLocalizations.of(context)!.errorMessage,
-              style: AppTextStyles.head(),
+              style: AppTextStyles.body(),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Text(
               AppLocalizations.of(context)!.refreshMessage,
-              style: AppTextStyles.body(),
+              style: AppTextStyles.bodySmall(),
             ),
           ),
         ],
