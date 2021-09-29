@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/utils.dart' show animationDuration;
+
 class AnimatedBounce extends StatefulWidget {
   const AnimatedBounce({
     Key? key,
@@ -23,9 +25,7 @@ class AnimatedBounceState extends State<AnimatedBounce>
 
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(
-        milliseconds: 450,
-      ),
+      duration: animationDuration,
     );
 
     scaleAnimation = CurvedAnimation(

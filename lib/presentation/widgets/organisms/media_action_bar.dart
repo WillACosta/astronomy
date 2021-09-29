@@ -1,10 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:social_share/social_share.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
 import '../../../application/favorites/favorites_store.dart';
@@ -15,6 +15,8 @@ import '../../../domain/entities/media.dart';
 import '../../routes/route_navigator.dart';
 import '../../utils/utils.dart';
 import '../widgets.dart';
+
+import 'bookmark_button.dart';
 
 class MediaActionBar extends StatelessWidget {
   const MediaActionBar({
@@ -77,13 +79,11 @@ class MediaActionBar extends StatelessWidget {
         ValueListenableBuilder(
             valueListenable: _favoriteStore.favoritesBox.listenable(),
             builder: (_, Box box, __) {
-              return IconButton(
+              return AnimatedBookmarkButton(
                 onPressed: () => _favoriteStore.toggleFavorite(item: media),
-                icon: Icon(
-                  _favoriteStore.favoritesBox.containsKey(dateKey)
-                      ? Icons.bookmark
-                      : Icons.bookmark_add_outlined,
-                ),
+                isLiked: _favoriteStore.favoritesBox.containsKey(dateKey)
+                    ? true
+                    : false,
               );
             }),
         IconButton(
