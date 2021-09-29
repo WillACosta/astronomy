@@ -6,7 +6,7 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 ##
 
-O Astronomy é um app mobile feito em flutter para exibir incríveis imagens e vídeos do nosso universo todos os dias utilizando a API pública da nasa, contendo recursos como download, uso de galeria, gerenciamento de estado, salvamento de favoritos e muito mais.
+O Astronomy é um app mobile feito em flutter para exibir incríveis imagens e vídeos do nosso universo todos os dias utilizando a API pública da nasa, contendo recursos como download, uso de galeria, gerenciamento de estado, salvamento de favoritos, animações e muito mais.
 
 ## Design
 
