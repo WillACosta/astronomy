@@ -51,7 +51,11 @@ class MediaActionBar extends StatelessWidget {
                     isDark: !_settingsStore.userPreferences.useDarkMode &&
                         isDetailScreen,
                     onPressed: () async => !_store.isDownloadingImage
-                        ? await _store.downloadImage(url: media.url)
+                        ? await _store.downloadImage(
+                            url: _settingsStore.userPreferences.useHdImages
+                                ? media.hdurl!
+                                : media.url,
+                          )
                         : () => null,
                     child: Row(
                       children: [
