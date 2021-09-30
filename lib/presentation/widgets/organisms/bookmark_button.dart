@@ -51,8 +51,8 @@ class _AnimatedBookmarkButtonState extends State<AnimatedBookmarkButton>
 
   @override
   void dispose() {
-    super.dispose();
     controller.dispose();
+    super.dispose();
   }
 
   void onTap() {
@@ -86,20 +86,14 @@ class _AnimatedBookmarkButtonState extends State<AnimatedBookmarkButton>
             clipBehavior: Clip.none,
             children: [
               Container(
-                width: 30,
-                height: 30,
                 alignment: Alignment.center,
                 child: Transform.scale(
                   scale: ((_isLiked) && controller.isAnimating)
                       ? scaleAnimation.value
                       : 1.0,
-                  child: SizedBox(
-                    child: Icon(
-                      _isLiked ? Icons.bookmark : Icons.bookmark_add_outlined,
-                      size: 30,
-                    ),
-                    height: 30,
-                    width: 30,
+                  child: Icon(
+                    _isLiked ? Icons.bookmark : Icons.bookmark_add_outlined,
+                    size: 25,
                   ),
                 ),
               ),

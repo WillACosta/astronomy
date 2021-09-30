@@ -21,8 +21,8 @@ class BottomSheetButton extends StatelessWidget {
         onTap: () => showModalBottomSheet(
           context: context,
           backgroundColor: Colors.transparent,
-          builder: (_) => BottomSheetModal(media: media),
           isDismissible: true,
+          builder: (_) => BottomSheetModal(media: media),
         ),
         child: const Icon(
           Icons.expand_less_outlined,

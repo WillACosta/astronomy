@@ -80,8 +80,9 @@ class _GridDetailPageState extends State<GridDetailPage> {
               children: [
                 MediaHeader(media: widget.media),
                 Padding(
-                  padding:
-                      EdgeInsets.only(top: getProportionateScreenHeight(80)),
+                  padding: EdgeInsets.only(
+                    top: getProportionateScreenHeight(80),
+                  ),
                   child: widget.media.mediaType == 'image'
                       ? ApodNetworkImage(media: widget.media)
                       : const VideoMediaView(showLabel: true),
