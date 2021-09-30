@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
 
-import 'show_sheet_modal.dart';
+import 'bottom_sheet_modal.dart';
 
 class BottomSheetButton extends StatelessWidget {
   final Media media;
@@ -18,7 +18,12 @@ class BottomSheetButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: getProportionateScreenHeight(10)),
       child: GestureDetector(
-        onTap: () => showSheetModal(context, media),
+        onTap: () => showModalBottomSheet(
+          context: context,
+          backgroundColor: Colors.transparent,
+          builder: (_) => BottomSheetModal(media: media),
+          isDismissible: true,
+        ),
         child: const Icon(
           Icons.expand_less_outlined,
           color: AppColors.secondary,

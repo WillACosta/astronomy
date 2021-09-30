@@ -16,6 +16,7 @@ import '../../routes/route_navigator.dart';
 import '../../utils/utils.dart';
 import '../widgets.dart';
 
+import 'animated_check_icon.dart';
 import 'bookmark_button.dart';
 
 class MediaActionBar extends StatelessWidget {
@@ -36,6 +37,7 @@ class MediaActionBar extends StatelessWidget {
   Widget build(BuildContext context) {
     DateFormat dateFormatter = DateFormat();
     String dateKey = dateFormatter.format(media.date);
+    var isDownloadButtonDirty = false;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -50,19 +52,28 @@ class MediaActionBar extends StatelessWidget {
                   return OutlinedActionButton(
                     isDark: !_settingsStore.userPreferences.useDarkMode &&
                         isDetailScreen,
-                    onPressed: () async => !_store.isDownloadingImage
-                        ? await _store.downloadImage(
-                            url: _settingsStore.userPreferences.useHdImages
-                                ? media.hdurl!
-                                : media.url,
-                          )
-                        : () => null,
+                    onPressed: !_store.isDownloadingImage
+                        ? () async {
+                            await _store.downloadImage(
+                              url: _settingsStore.userPreferences.useHdImages
+                                  ? media.hdurl!
+                                  : media.url,
+                            );
+
+                            isDownloadButtonDirty = true;
+                          }
+                        : null,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(AppLocalizations.of(context)!.download),
-                        _store.isDownloadingImage
-                            ? const LoadingIndicator()
-                            : Row(),
+                        if (_store.isDownloadingImage)
+                          const LoadingIndicator()
+                        else if (isDownloadButtonDirty)
+                          const AnimatedCheckIcon()
+                        else
+                          Row()
                       ],
                     ),
                   );

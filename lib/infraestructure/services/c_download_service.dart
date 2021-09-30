@@ -44,14 +44,15 @@ class CDownloadService implements DownloadService {
         );
 
         var result = await ImageGallerySaver.saveFile(savePath);
-        return Right(result);
-      } catch (e) {
-        return Left(ServiceFailure(message: 'Sorry! Something went wrong.'));
-      } finally {
+
         _localNotificationService.showNotification(downloadStatus: {
           'isSuccess': true,
           'filePath': savePath,
         });
+
+        return Right(result);
+      } catch (e) {
+        return Left(ServiceFailure(message: 'Sorry! Something went wrong.'));
       }
     } else {
       return Left(

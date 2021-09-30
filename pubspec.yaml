@@ -41,6 +41,7 @@ dependencies:
   async: ^2.6.1
   showcaseview: ^1.1.1
   animations: ^2.0.1
+  animated_check: ^1.0.4
 
 flutter_native_splash:
   color: "#0d0d0d"

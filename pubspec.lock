@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.1"
+  animated_check:
+    dependency: "direct main"
+    description:
+      name: animated_check
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4"
   animations:
     dependency: "direct main"
     description:

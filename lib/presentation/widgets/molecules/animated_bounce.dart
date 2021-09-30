@@ -43,7 +43,6 @@ class AnimatedBounceState extends State<AnimatedBounce>
   @override
   void dispose() {
     super.dispose();
-
     controller.dispose();
   }
 
