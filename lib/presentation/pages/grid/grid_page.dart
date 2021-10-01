@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -13,6 +14,7 @@ import '../../../application/grid/grid_page_store.dart';
 import '../../widgets/widgets.dart';
 
 import 'components/grid_page_body.dart';
+import 'components/platform_date_picker_button.dart';
 import 'components/shimmer_loader.dart';
 
 class GridPage extends StatefulWidget {
@@ -61,44 +63,33 @@ class _GridPageState extends State<GridPage> {
         builder: (context) {
           showCaseContext = context;
 
-          return Scaffold(
-            extendBody: true,
-            appBar: AppBar(
-              centerTitle: false,
-              backgroundColor: Theme.of(context).primaryColor,
-              automaticallyImplyLeading: false,
-              elevation: 0,
-              title: Observer(
-                builder: (context) {
-                  return Text(
-                    '${AppLocalizations.of(context)!.viewing} ${_store.getDateRangeLabel}',
-                    style: AppTextStyles.body(),
-                    textAlign: TextAlign.start,
-                  );
-                },
-              ),
-              actions: [
-                IconButton(
-                  onPressed: () async {
-                    final dateRangeUser = await showDateRangePicker(
-                      context: context,
-                      firstDate: DateTime(1995, 6, 16),
-                      lastDate: DateTime.now(),
-                      initialDateRange: _store.getDateRange,
-                    );
-
-                    if (dateRangeUser == null) return;
-
-                    _store.setDateRange(dateRangeUser);
-                  },
-                  icon: ApodShowcase(
-                    description: 'Select a range to view on the grid',
-                    showcaseKey: _calendarStepKey,
-                    disposeOnTap: false,
-                    child: const Icon(Icons.calendar_today),
+          return PlatformScaffold(
+            isCupertinoMiddleTitle: true,
+            title: Observer(
+              builder: (_) {
+                return Text(
+                  '${AppLocalizations.of(context)!.viewing} ${_store.getDateRangeLabel}',
+                  style: AppTextStyles.body(
+                    color: Theme.of(context).accentColor,
                   ),
-                ),
-              ],
+                  textAlign: TextAlign.start,
+                );
+              },
+            ),
+            actionWidget: PlatformDatePickerButton(
+              stepKey: _calendarStepKey,
+              onPressed: () async {
+                final dateRangeUser = await showDateRangePicker(
+                  context: context,
+                  firstDate: DateTime(1995, 6, 16),
+                  lastDate: DateTime.now(),
+                  initialDateRange: _store.getDateRange,
+                );
+
+                if (dateRangeUser == null) return;
+
+                _store.setDateRange(dateRangeUser);
+              },
             ),
             body: RefreshIndicator(
               onRefresh: () => _store.getMediaList(),

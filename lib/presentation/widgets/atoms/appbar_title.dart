@@ -13,7 +13,9 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.head(),
+      style: AppTextStyles.head(
+        color: Theme.of(context).accentColor,
+      ),
     );
   }
 }

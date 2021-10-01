@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../domain/entities/media.dart';
@@ -24,10 +27,12 @@ class BottomSheetButton extends StatelessWidget {
           isDismissible: true,
           builder: (_) => BottomSheetModal(media: media),
         ),
-        child: const Icon(
-          Icons.expand_less_outlined,
+        child: Icon(
+          Platform.isAndroid
+              ? Icons.expand_less_outlined
+              : CupertinoIcons.chevron_up,
           color: AppColors.secondary,
-          size: 30,
+          size: 25,
         ),
       ),
     );

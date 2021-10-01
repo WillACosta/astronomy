@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -53,8 +56,10 @@ class ContainerPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => _store.toPage(0),
-                    icon: const Icon(
-                      Icons.home_outlined,
+                    icon: Icon(
+                      Platform.isAndroid
+                          ? Icons.home_outlined
+                          : CupertinoIcons.home,
                       size: 25,
                     ),
                     color: _store.currentPage == 0
@@ -68,8 +73,10 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(1),
-                      icon: const Icon(
-                        Icons.grid_view_outlined,
+                      icon: Icon(
+                        Platform.isAndroid
+                            ? Icons.grid_view_outlined
+                            : CupertinoIcons.rectangle_grid_2x2,
                         size: 25,
                       ),
                       color: _store.currentPage == 1
@@ -83,8 +90,10 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(2),
-                      icon: const Icon(
-                        Icons.bookmark_border_outlined,
+                      icon: Icon(
+                        Platform.isAndroid
+                            ? Icons.bookmark_border_outlined
+                            : CupertinoIcons.bookmark,
                         size: 25,
                       ),
                       color: _store.currentPage == 2
@@ -94,8 +103,10 @@ class ContainerPage extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(3),
-                    icon: const Icon(
-                      Icons.settings_outlined,
+                    icon: Icon(
+                      Platform.isAndroid
+                          ? Icons.settings_outlined
+                          : CupertinoIcons.settings,
                       size: 25,
                     ),
                     color: _store.currentPage == 3

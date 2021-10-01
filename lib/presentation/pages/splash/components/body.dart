@@ -75,10 +75,7 @@ class _BodyState extends State<Body> {
                 SizedBox(
                   height: getProportionateScreenHeight(15),
                 ),
-                CircularProgressIndicator(
-                  strokeWidth: 1,
-                  color: Theme.of(context).accentColor,
-                ),
+                const NativeProgressIndicator(cupertinoRadius: 15),
                 const Spacer(),
                 // GetStartedButton(),
               ],

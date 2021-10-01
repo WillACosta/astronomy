@@ -30,14 +30,8 @@ class SettingsPage extends StatelessWidget {
 
     Locale systemLocale = Localizations.localeOf(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: false,
-        automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).primaryColor,
-        title: AppBarTitle(title: AppLocalizations.of(context)!.settings),
-      ),
+    return PlatformScaffold(
+      title: AppBarTitle(title: AppLocalizations.of(context)!.settings),
       body: SafeArea(
         child: AppPagesPadding(
           child: Column(
@@ -49,7 +43,7 @@ class SettingsPage extends StatelessWidget {
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
               Observer(
-                builder: (_) => SwitchListButton(
+                builder: (_) => PlatformSwitchListButton(
                   label: AppLocalizations.of(context)!.useHdImages,
                   value: store.userPreferences.useHdImages,
                   onChanged: (value) => store.setPreferences(
@@ -61,7 +55,7 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               Observer(
-                builder: (_) => SwitchListButton(
+                builder: (_) => PlatformSwitchListButton(
                   label: AppLocalizations.of(context)!.darkmode,
                   value: store.userPreferences.useDarkMode,
                   onChanged: (value) => store.setPreferences(
@@ -72,52 +66,6 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Observer(
-              //   builder: (_) {
-              //     final currentLocale =
-              //         localizationStore.locale ?? systemLocale;
-
-              //     return Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-              //         Text(
-              //           AppLocalizations.of(context)!.selectYourLanguage,
-              //           style: AppTextStyles.body(),
-              //         ),
-              //         DropdownButtonHideUnderline(
-              //           child: DropdownButton(
-              //             value: currentLocale,
-              //             icon: const Icon(Icons.arrow_drop_down),
-              //             items: L10n.all.map(
-              //               (locale) {
-              //                 final flag = L10n.getFlag(locale.languageCode);
-
-              //                 return DropdownMenuItem(
-              //                   child: Text(
-              //                     flag,
-              //                     style: const TextStyle(fontSize: 25),
-              //                   ),
-              //                   value: locale,
-              //                   onTap: () {
-              //                     localizationStore.setLocale(locale);
-              //                     store.setPreferences(
-              //                       useDarkMode:
-              //                           store.userPreferences.useDarkMode,
-              //                       useHdImages:
-              //                           store.userPreferences.useHdImages,
-              //                       currentLocale: locale,
-              //                     );
-              //                   },
-              //                 );
-              //               },
-              //             ).toList(),
-              //             onChanged: (_) {},
-              //           ),
-              //         ),
-              //       ],
-              //     );
-              //   },
-              // )
             ],
           ),
         ),

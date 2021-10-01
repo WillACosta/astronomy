@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -43,10 +44,7 @@ class MediaActionBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         media.mediaType == 'video'
-            ? IconButton(
-                onPressed: () => _store.launchUrl(media.url),
-                icon: const Icon(Icons.link_outlined),
-              )
+            ? MediaVideoLinkButton(store: _store, media: media)
             : Observer(
                 builder: (_) {
                   return OutlinedActionButton(
@@ -79,18 +77,7 @@ class MediaActionBar extends StatelessWidget {
                   );
                 },
               ),
-        media.mediaType == 'image'
-            ? IconButton(
-                onPressed: () {
-                  navigateTo(
-                    context,
-                    routeName: AppRoutes.imageView,
-                    args: media,
-                  );
-                },
-                icon: const Icon(Icons.fullscreen_outlined, size: 30),
-              )
-            : Row(),
+        media.mediaType == 'image' ? FullScreenButton(media: media) : Row(),
         ValueListenableBuilder(
             valueListenable: _favoriteStore.favoritesBox.listenable(),
             builder: (_, Box box, __) {
@@ -101,15 +88,116 @@ class MediaActionBar extends StatelessWidget {
                     : false,
               );
             }),
-        IconButton(
-          onPressed: () {
-            SocialShare.shareOptions(
-              AppLocalizations.of(context)!.shareMessage,
-            );
-          },
-          icon: const Icon(Icons.share_outlined, size: 25),
-        ),
+        const ShareButton(),
       ],
+    );
+  }
+}
+
+class MediaVideoLinkButton extends PlatformWidget<CupertinoButton, IconButton> {
+  const MediaVideoLinkButton({
+    Key? key,
+    required this.media,
+    required SharedStore store,
+  })  : _store = store,
+        super(key: key);
+
+  final Media media;
+  final SharedStore _store;
+
+  @override
+  IconButton createAndroidWidget(BuildContext context) {
+    return IconButton(
+      onPressed: () => _store.launchUrl(media.url),
+      icon: const Icon(
+        Icons.link_outlined,
+        size: 30,
+      ),
+    );
+  }
+
+  @override
+  CupertinoButton createIosWidget(BuildContext context) {
+    return CupertinoButton(
+      onPressed: () => _store.launchUrl(media.url),
+      child: const Icon(
+        CupertinoIcons.link,
+        size: 25,
+      ),
+    );
+  }
+}
+
+class FullScreenButton extends PlatformWidget<CupertinoButton, IconButton> {
+  const FullScreenButton({
+    Key? key,
+    required this.media,
+  }) : super(key: key);
+
+  final Media media;
+
+  @override
+  IconButton createAndroidWidget(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        navigateTo(
+          context,
+          routeName: AppRoutes.imageView,
+          args: media,
+        );
+      },
+      icon: const Icon(
+        Icons.fullscreen_outlined,
+        size: 30,
+      ),
+    );
+  }
+
+  @override
+  CupertinoButton createIosWidget(BuildContext context) {
+    return CupertinoButton(
+      child: const Icon(
+        CupertinoIcons.fullscreen,
+        size: 25,
+      ),
+      onPressed: () {
+        navigateTo(
+          context,
+          routeName: AppRoutes.imageView,
+          args: media,
+        );
+      },
+    );
+  }
+}
+
+class ShareButton extends PlatformWidget<CupertinoButton, IconButton> {
+  const ShareButton({Key? key}) : super(key: key);
+
+  @override
+  IconButton createAndroidWidget(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        SocialShare.shareOptions(
+          AppLocalizations.of(context)!.shareMessage,
+        );
+      },
+      icon: const Icon(
+        Icons.share_outlined,
+        size: 25,
+      ),
+    );
+  }
+
+  @override
+  CupertinoButton createIosWidget(BuildContext context) {
+    return CupertinoButton(
+      child: const Icon(CupertinoIcons.share),
+      onPressed: () {
+        SocialShare.shareOptions(
+          AppLocalizations.of(context)!.shareMessage,
+        );
+      },
     );
   }
 }
@@ -121,16 +209,12 @@ class LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8),
+    return const Padding(
+      padding: EdgeInsets.only(left: 8),
       child: SizedBox(
         width: 15,
         height: 15,
-        child: CircularProgressIndicator(
-          color: Theme.of(context).accentColor,
-          strokeWidth: 1,
-          semanticsLabel: 'Loading indicator',
-        ),
+        child: NativeProgressIndicator(),
       ),
     );
   }

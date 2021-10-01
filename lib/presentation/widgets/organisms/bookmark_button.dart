@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/utils.dart';
@@ -82,22 +85,20 @@ class _AnimatedBookmarkButtonState extends State<AnimatedBookmarkButton>
       child: AnimatedBuilder(
         animation: controller,
         builder: (context, child) {
-          return Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                alignment: Alignment.center,
-                child: Transform.scale(
-                  scale: ((_isLiked) && controller.isAnimating)
-                      ? scaleAnimation.value
-                      : 1.0,
-                  child: Icon(
-                    _isLiked ? Icons.bookmark : Icons.bookmark_add_outlined,
-                    size: 25,
-                  ),
-                ),
-              ),
-            ],
+          return Transform.scale(
+            scale: ((_isLiked) && controller.isAnimating)
+                ? scaleAnimation.value
+                : 1.0,
+            child: Icon(
+              _isLiked
+                  ? (Platform.isAndroid
+                      ? Icons.bookmark
+                      : CupertinoIcons.bookmark_fill)
+                  : (Platform.isAndroid
+                      ? Icons.bookmark_add_outlined
+                      : CupertinoIcons.bookmark),
+              size: 25,
+            ),
           );
         },
       ),

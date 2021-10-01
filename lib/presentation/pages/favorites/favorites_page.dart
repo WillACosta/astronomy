@@ -18,14 +18,8 @@ class FavoritesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: false,
-        automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).primaryColor,
-        title: AppBarTitle(title: AppLocalizations.of(context)!.favorites),
-      ),
+    return PlatformScaffold(
+      title: AppBarTitle(title: AppLocalizations.of(context)!.favorites),
       body: AppPagesPadding(
         child: ValueListenableBuilder(
           valueListenable: _store.favoritesBox.listenable(),
