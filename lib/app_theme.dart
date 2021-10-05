@@ -45,6 +45,7 @@ final darkTheme = ThemeData(
       borderRadius: BorderRadius.circular(20),
     ),
   ),
+  primarySwatch: Colors.grey,
 );
 
 final lightTheme = ThemeData(

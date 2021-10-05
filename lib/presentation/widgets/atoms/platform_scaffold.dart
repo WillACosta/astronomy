@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../widgets.dart';
 
-class PlatformScaffold extends PlatformWidget<CupertinoPageScaffold, Scaffold> {
+class PlatformScaffold extends PlatformWidget<Widget, Widget> {
   final Widget body;
   final Widget? title;
   final Widget? actionWidget;
   final bool isCupertinoMiddleTitle;
+  final bool automaticallyImplyLeading;
 
   const PlatformScaffold({
     Key? key,
@@ -15,15 +16,16 @@ class PlatformScaffold extends PlatformWidget<CupertinoPageScaffold, Scaffold> {
     this.actionWidget,
     this.title,
     this.isCupertinoMiddleTitle = false,
+    this.automaticallyImplyLeading = false,
   }) : super(key: key);
 
   @override
-  Scaffold createAndroidWidget(BuildContext context) {
+  Widget createAndroidWidget(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: automaticallyImplyLeading,
         backgroundColor: Theme.of(context).primaryColor,
         title: title,
         actions: actionWidget != null ? [actionWidget!] : null,
@@ -33,26 +35,38 @@ class PlatformScaffold extends PlatformWidget<CupertinoPageScaffold, Scaffold> {
   }
 
   @override
-  CupertinoPageScaffold createIosWidget(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: isCupertinoMiddleTitle
-          ? CupertinoNavigationBar(
-              automaticallyImplyMiddle: false,
-              automaticallyImplyLeading: false,
-              border: null,
-              backgroundColor: Theme.of(context).primaryColor,
-              middle: title,
-              trailing: actionWidget,
-            )
-          : CupertinoNavigationBar(
-              automaticallyImplyMiddle: false,
-              automaticallyImplyLeading: false,
-              border: null,
-              backgroundColor: Theme.of(context).primaryColor,
-              leading: title,
-              trailing: actionWidget,
-            ),
-      child: body,
+  Widget createIosWidget(BuildContext context) {
+    // return CupertinoPageScaffold(
+    //   navigationBar: isCupertinoMiddleTitle
+    //       ? CupertinoNavigationBar(
+    //           automaticallyImplyMiddle: false,
+    //           automaticallyImplyLeading: false,
+    //           border: null,
+    //           backgroundColor: Theme.of(context).primaryColor,
+    //           middle: title,
+    //           trailing: actionWidget,
+    //         )
+    //       : CupertinoNavigationBar(
+    //         padding: EdgeInsetsDirectional.zero,
+    //         automaticallyImplyMiddle: true,
+    //           automaticallyImplyLeading: automaticallyImplyLeading,
+    //           border: null,
+    //           backgroundColor: Theme.of(context).primaryColor,
+    //           leading: title,
+    //           trailing: actionWidget,
+    //         ),
+    //   child: body,
+    // );
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: false,
+        automaticallyImplyLeading: automaticallyImplyLeading,
+        backgroundColor: Theme.of(context).primaryColor,
+        title: title,
+        actions: actionWidget != null ? [actionWidget!] : null,
+      ),
+      body: body,
     );
   }
 }

@@ -64,16 +64,11 @@ class _GridDetailPageState extends State<GridDetailPage> {
         builder: (context) {
           showCaseContext = context;
 
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Theme.of(context).primaryColor,
-              elevation: 0,
-              actions: [
-                MediaActionBar(
-                  media: widget.media,
-                  isDetailScreen: true,
-                )
-              ],
+          return PlatformScaffold(
+            automaticallyImplyLeading: true,
+            actionWidget: MediaActionBar(
+              media: widget.media,
+              isDetailScreen: true,
             ),
             body: Stack(
               fit: StackFit.expand,

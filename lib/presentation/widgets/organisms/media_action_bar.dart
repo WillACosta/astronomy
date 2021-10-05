@@ -42,6 +42,7 @@ class MediaActionBar extends StatelessWidget {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         media.mediaType == 'video'
             ? MediaVideoLinkButton(store: _store, media: media)
@@ -62,10 +63,13 @@ class MediaActionBar extends StatelessWidget {
                           }
                         : null,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(AppLocalizations.of(context)!.download),
+                        Text(
+                          AppLocalizations.of(context)!.download,
+                          style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                          ),
+                        ),
                         if (_store.isDownloadingImage)
                           const LoadingIndicator()
                         else if (isDownloadButtonDirty)
@@ -94,7 +98,8 @@ class MediaActionBar extends StatelessWidget {
   }
 }
 
-class MediaVideoLinkButton extends PlatformWidget<CupertinoButton, IconButton> {
+class MediaVideoLinkButton
+    extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
   const MediaVideoLinkButton({
     Key? key,
     required this.media,
@@ -117,18 +122,16 @@ class MediaVideoLinkButton extends PlatformWidget<CupertinoButton, IconButton> {
   }
 
   @override
-  CupertinoButton createIosWidget(BuildContext context) {
-    return CupertinoButton(
+  ApodCupertinoIconButton createIosWidget(BuildContext context) {
+    return ApodCupertinoIconButton(
       onPressed: () => _store.launchUrl(media.url),
-      child: const Icon(
-        CupertinoIcons.link,
-        size: 25,
-      ),
+      icon: CupertinoIcons.link,
     );
   }
 }
 
-class FullScreenButton extends PlatformWidget<CupertinoButton, IconButton> {
+class FullScreenButton
+    extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
   const FullScreenButton({
     Key? key,
     required this.media,
@@ -154,12 +157,9 @@ class FullScreenButton extends PlatformWidget<CupertinoButton, IconButton> {
   }
 
   @override
-  CupertinoButton createIosWidget(BuildContext context) {
-    return CupertinoButton(
-      child: const Icon(
-        CupertinoIcons.fullscreen,
-        size: 25,
-      ),
+  ApodCupertinoIconButton createIosWidget(BuildContext context) {
+    return ApodCupertinoIconButton(
+      icon: CupertinoIcons.fullscreen,
       onPressed: () {
         navigateTo(
           context,
@@ -171,7 +171,7 @@ class FullScreenButton extends PlatformWidget<CupertinoButton, IconButton> {
   }
 }
 
-class ShareButton extends PlatformWidget<CupertinoButton, IconButton> {
+class ShareButton extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
   const ShareButton({Key? key}) : super(key: key);
 
   @override
@@ -190,9 +190,9 @@ class ShareButton extends PlatformWidget<CupertinoButton, IconButton> {
   }
 
   @override
-  CupertinoButton createIosWidget(BuildContext context) {
-    return CupertinoButton(
-      child: const Icon(CupertinoIcons.share),
+  ApodCupertinoIconButton createIosWidget(BuildContext context) {
+    return ApodCupertinoIconButton(
+      icon: CupertinoIcons.share,
       onPressed: () {
         SocialShare.shareOptions(
           AppLocalizations.of(context)!.shareMessage,
