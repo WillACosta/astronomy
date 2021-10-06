@@ -34,7 +34,6 @@ final darkTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.primary,
   ),
-  switchTheme: const SwitchThemeData(),
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),
@@ -48,9 +47,12 @@ final darkTheme = ThemeData(
 );
 
 final lightTheme = ThemeData(
+  visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColor: AppColors.secondary,
   accentColor: AppColors.primary,
   brightness: Brightness.light,
+  scaffoldBackgroundColor: AppColors.secondary,
+  backgroundColor: AppColors.secondary,
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       primary: AppColors.secondary,
@@ -58,6 +60,11 @@ final lightTheme = ThemeData(
   ),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
+      primary: AppColors.secondary,
+      side: const BorderSide(
+        color: AppColors.primary,
+        width: 1,
+      ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),
       ),
@@ -69,17 +76,19 @@ final lightTheme = ThemeData(
   ),
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.primary,
+    elevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.secondary,
+    ),
   ),
-  scaffoldBackgroundColor: AppColors.secondary,
-  switchTheme: const SwitchThemeData(),
-  backgroundColor: AppColors.secondary,
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),
   dialogTheme: DialogTheme(
-      backgroundColor: AppColors.secondary,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      )),
+    backgroundColor: AppColors.secondary,
+    elevation: 1,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+    ),
+  ),
 );
