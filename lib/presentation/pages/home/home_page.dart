@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       Future.delayed(
-        const Duration(milliseconds: 500),
+        const Duration(milliseconds: 800),
         () {
           if (_showcaseStore.displayHomeShowcase) {
             ShowCaseWidget.of(context)!.startShowCase([_key1]);

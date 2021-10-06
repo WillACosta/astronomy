@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../../../application/container_page/container_page_store.dart';
 import '../../../external/dependency_injection/locator.dart';
 import '../../../application/showcase/showcase_store.dart';
 import '../../../domain/entities/media.dart';
@@ -22,7 +21,6 @@ class GridDetailPage extends StatefulWidget {
 
 class _GridDetailPageState extends State<GridDetailPage> {
   final _showcaseStore = locator<ShowCaseStore>();
-  final _containerStore = locator<ContainerPageStore>();
 
   final _bottomSheetKey = GlobalKey();
 
@@ -57,8 +55,6 @@ class _GridDetailPageState extends State<GridDetailPage> {
         _showcaseStore.closeShowCase(
           showcasePage: ShowcasePage.gridDetail,
         );
-
-        _containerStore.toPage(0);
       },
       builder: Builder(
         builder: (context) {
