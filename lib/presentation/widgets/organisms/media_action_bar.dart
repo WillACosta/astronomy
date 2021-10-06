@@ -45,7 +45,11 @@ class MediaActionBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         media.mediaType == 'video'
-            ? MediaVideoLinkButton(store: _store, media: media)
+            ? MediaVideoLinkButton(
+                store: _store,
+                media: media,
+                isDarkIcons: isDetailScreen,
+              )
             : Observer(
                 builder: (_) {
                   return OutlinedActionButton(
@@ -64,12 +68,7 @@ class MediaActionBar extends StatelessWidget {
                         : null,
                     child: Row(
                       children: [
-                        Text(
-                          AppLocalizations.of(context)!.download,
-                          style: TextStyle(
-                            color: Theme.of(context).accentColor,
-                          ),
-                        ),
+                        Text(AppLocalizations.of(context)!.download),
                         if (_store.isDownloadingImage)
                           const LoadingIndicator()
                         else if (isDownloadButtonDirty)
@@ -81,7 +80,12 @@ class MediaActionBar extends StatelessWidget {
                   );
                 },
               ),
-        media.mediaType == 'image' ? FullScreenButton(media: media) : Row(),
+        media.mediaType == 'image'
+            ? FullScreenButton(
+                media: media,
+                isDarkIcons: isDetailScreen,
+              )
+            : Row(),
         ValueListenableBuilder(
             valueListenable: _favoriteStore.favoritesBox.listenable(),
             builder: (_, Box box, __) {
@@ -92,7 +96,7 @@ class MediaActionBar extends StatelessWidget {
                     : false,
               );
             }),
-        const ShareButton(),
+        ShareButton(isDarkIcons: isDetailScreen),
       ],
     );
   }
@@ -104,11 +108,13 @@ class MediaVideoLinkButton
     Key? key,
     required this.media,
     required SharedStore store,
+    required this.isDarkIcons,
   })  : _store = store,
         super(key: key);
 
   final Media media;
   final SharedStore _store;
+  final bool isDarkIcons;
 
   @override
   IconButton createAndroidWidget(BuildContext context) {
@@ -124,6 +130,7 @@ class MediaVideoLinkButton
   @override
   ApodCupertinoIconButton createIosWidget(BuildContext context) {
     return ApodCupertinoIconButton(
+      isDarkIcons: isDarkIcons,
       onPressed: () => _store.launchUrl(media.url),
       icon: CupertinoIcons.link,
     );
@@ -135,8 +142,10 @@ class FullScreenButton
   const FullScreenButton({
     Key? key,
     required this.media,
+    required this.isDarkIcons,
   }) : super(key: key);
 
+  final bool isDarkIcons;
   final Media media;
 
   @override
@@ -159,6 +168,7 @@ class FullScreenButton
   @override
   ApodCupertinoIconButton createIosWidget(BuildContext context) {
     return ApodCupertinoIconButton(
+      isDarkIcons: isDarkIcons,
       icon: CupertinoIcons.fullscreen,
       onPressed: () {
         navigateTo(
@@ -172,7 +182,12 @@ class FullScreenButton
 }
 
 class ShareButton extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
-  const ShareButton({Key? key}) : super(key: key);
+  const ShareButton({
+    Key? key,
+    required this.isDarkIcons,
+  }) : super(key: key);
+
+  final bool isDarkIcons;
 
   @override
   IconButton createAndroidWidget(BuildContext context) {
@@ -192,6 +207,7 @@ class ShareButton extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
   @override
   ApodCupertinoIconButton createIosWidget(BuildContext context) {
     return ApodCupertinoIconButton(
+      isDarkIcons: isDarkIcons,
       icon: CupertinoIcons.share,
       onPressed: () {
         SocialShare.shareOptions(

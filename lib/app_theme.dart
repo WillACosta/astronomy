@@ -44,7 +44,6 @@ final darkTheme = ThemeData(
       borderRadius: BorderRadius.circular(20),
     ),
   ),
-  primarySwatch: Colors.grey,
 );
 
 final lightTheme = ThemeData(
@@ -74,13 +73,6 @@ final lightTheme = ThemeData(
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     displayColor: AppColors.primary,
     bodyColor: AppColors.primary,
-  ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.primary,
-    elevation: 0,
-    iconTheme: IconThemeData(
-      color: AppColors.secondary,
-    ),
   ),
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
