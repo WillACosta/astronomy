@@ -42,6 +42,10 @@ class PlatformSwitchListButton extends PlatformWidget<Widget, Widget> {
       value: value,
       contentPadding: const EdgeInsets.all(0),
       onChanged: onChanged,
+      activeTrackColor: AppColors.success,
+      activeColor: AppColors.secondary,
+      inactiveTrackColor: AppColors.neutral,
+      inactiveThumbColor: AppColors.secondary,
       title: Text(
         label,
         style: AppTextStyles.body(),

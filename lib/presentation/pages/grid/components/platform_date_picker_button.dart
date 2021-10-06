@@ -18,6 +18,7 @@ class PlatformDatePickerButton
   IconButton createAndroidWidget(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
+      color: Theme.of(context).accentColor,
       icon: ApodShowcase(
         description: 'Select a range to view on the grid',
         showcaseKey: stepKey,
