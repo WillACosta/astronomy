@@ -23,6 +23,17 @@ The app has a clean and minimalist proposal and also a style guide. You can copy
 - Save your favorites
 - Showcase features on first launch
 
+## Roadmap
+
+- [ ] System Theme Mode
+- [ ] Hide the `bottomBar` to get an immersive vision of APOD
+- [ ] Hide the `appBar` abd `bottomBar` in Grid View Screen
+- [ ] Aditional Glassmorphism Theme
+- [ ] Accessibility options
+- [ ] Push notifications about the image of the day
+- [ ] Set image as Wallpaper
+- [ ] Responsive Design
+
 ## Technical Resources
 
 - Developed with Clean Architecture
@@ -61,4 +72,4 @@ If you've read this far, how about helping out and contributing to the project? 
 
 ---
 
-Made with ❤️ by Will
+Made with 🖤 by Will

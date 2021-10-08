@@ -24,6 +24,17 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 - Salvar os favoritos
 - Apresentação das funcionalidades na primeira execução
 
+## Roadmap
+
+- [ ] Tema pré-definido de acordo com o sistema
+- [ ] Esconder `bottomBar` para obter uma maior imersão da imagem do dia
+- [ ] Esconder `appBar` e `bottomBar` na tela de grid
+- [ ] Tema adicional baseado em Glassmorphism
+- [ ] Opções de acessibilidade
+- [ ] Notificações diárias sobre a imagem do dia
+- [ ] Definir imagem como Wallpaper
+- [ ] Design responsivo para outros dispositivos
+
 ## Recursos Técnicos
 
 - Desenvolvido utilizando Arquitetura Limpa
@@ -62,4 +73,4 @@ Se você leu até aqui, que tal dar aquela força e contribuir com o projeto? Va
 
 ---
 
-Feito com ❤️ por Will
+Feito com 🖤 por Will
