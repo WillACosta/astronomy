@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/WillACosta/astronomy.svg?branch=main)](https://app.travis-ci.com/WillACosta/astronomy)
+
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
 <div align="center">
