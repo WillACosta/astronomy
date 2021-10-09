@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:fpdart/fpdart.dart';
 
 import 'package:astronomy/domain/usecases/grid/c_grid_usecase.dart';
 import 'package:astronomy/core/exception/apod_server_failure.dart';
@@ -12,16 +12,24 @@ import '../../../mocks/data.dart';
 import '../../../mocks/mocktail_class.dart';
 
 void main() {
-  final apodRepository = FakeApodRepository();
-  final usecase = CGridUseCase(apodRepository);
+  late FakeApodRepository apodRepository;
+  late CGridUseCase usecase;
+
+  setUp(() {
+    apodRepository = FakeApodRepository();
+    usecase = CGridUseCase(apodRepository);
+  });
 
   test(
-    'Should request a list of media to APOD Repository and return Right',
+    'should request a list of media to APOD Repository and return Right',
     () async {
       final List<Media> fakeList = [];
 
       when(
-        () => apodRepository.getMediaList(startDate: '', endDate: ''),
+        () => apodRepository.getMediaList(
+          startDate: any(named: 'startDate'),
+          endDate: any(named: 'endDate'),
+        ),
       ).thenAnswer(
         (_) async => Right(fakeList),
       );
@@ -36,10 +44,13 @@ void main() {
   );
 
   test(
-    'Should request a list of media to APOD Repository and return Left',
+    'should request a list of media to APOD Repository and return Left',
     () async {
       when(
-        () => apodRepository.getMediaList(startDate: '', endDate: ''),
+        () => apodRepository.getMediaList(
+          startDate: any(named: 'startDate'),
+          endDate: any(named: 'endDate'),
+        ),
       ).thenAnswer(
         (_) async => Left(
           ServerFailure(
