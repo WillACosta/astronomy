@@ -10,6 +10,16 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 Astronomy is a mobile app made in Flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites, animations and much more.
 
+## Content
+
+- **[Design](#design)**
+- **[Features](#features)**
+- **[Technical Resources](#technical-resources)**
+- **[Roadmap](#roadmap)**
+- **[How to Use](#how-to-use)**
+- **[Contributing](#contributing)**
+- **[App Flow Sample](#app-flow-sample)**
+
 ## Design
 
 The app has a clean and minimalist proposal and also a style guide. You can copy this to your [Figma account](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
@@ -47,7 +57,7 @@ The app has a clean and minimalist proposal and also a style guide. You can copy
 - [ ] Set image as Wallpaper
 - [ ] Responsive Design
 
-## How to use
+## How to Use
 
 ```bash
 ## Clone this repo
@@ -68,9 +78,13 @@ $ mv .env-example .env
 $ flutter run
 ```
 
-## Contribution
+## Contributing
 
 If you've read this far, how about helping out and contributing to the project? Let's study together and make Flutter even better known! :)
+
+## App Flow Sample
+
+<img src="github/sample.gif" />
 
 ---
 

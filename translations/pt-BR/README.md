@@ -10,13 +10,23 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 O Astronomy é um app mobile feito em flutter para exibir incríveis imagens e vídeos do nosso universo todos os dias utilizando a API pública da nasa, contendo recursos como download, uso de galeria, gerenciamento de estado, salvamento de favoritos, animações e muito mais.
 
+## Conteúdo
+
+- **[Design](#design)**
+- **[Funcionalidades](#funcionalidades)**
+- **[Recursos Técnicos](#recursos-técnicos)**
+- **[Planejamento Técnico](#planejamento-técnico)**
+- **[Como Usar](#como-usar)**
+- **[Contribuição](#contribuição)**
+- **[Demonstração do App](#demonstração-do-app)**
+
 ## Design
 
 O app possui uma proposta de design limpa e minimalista e também um guia de estilo. Você também pode fazer uma cópia do design para sua conta no [Figma](https://www.figma.com/file/3vfTFRteEH1hAvT6D5igl0/Astronomy-App-Concept?node-id=157%3A14).
 
 <img src='https://i.imgur.com/KIzTLgV.jpg' />
 
-## Features
+## Funcionalidades
 
 - Visualização da imagem do dia, com uma descrição escrita por um astronônomo profissional
 - Galeria para visualização das imagens anteriores, contando com mais de 7000 imagens desde 1995.
@@ -37,7 +47,7 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 - Efeito de carregamento Shimmer
 - Consumo de APIs
 
-## Roadmap
+## Planejamento Técnico
 
 - [ ] Tema pré-definido de acordo com o sistema
 - [ ] Esconder `bottomBar` para obter uma maior imersão da imagem do dia
@@ -48,7 +58,7 @@ O app possui uma proposta de design limpa e minimalista e também um guia de est
 - [ ] Definir imagem como Wallpaper
 - [ ] Design responsivo para outros dispositivos
 
-## Como usar
+## Como Usar
 
 ```bash
 ## Clone este repositório
@@ -72,6 +82,10 @@ $ flutter run
 ## Contribuição
 
 Se você leu até aqui, que tal dar aquela força e contribuir com o projeto? Vamos estudar juntos e tornar o Flutter ainda mais conhecido! :)
+
+## Demonstração do App
+
+<img src="github/sample.gif" />
 
 ---
 
