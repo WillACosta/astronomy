@@ -85,7 +85,7 @@ Se você leu até aqui, que tal dar aquela força e contribuir com o projeto? Va
 
 ## Demonstração do App
 
-<img src="github/sample.gif" />
+<img src="../../github/sample.gif" />
 
 ---
 
