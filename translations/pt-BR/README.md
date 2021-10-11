@@ -10,6 +10,10 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 O Astronomy é um app mobile feito em flutter para exibir incríveis imagens e vídeos do nosso universo todos os dias utilizando a API pública da nasa, contendo recursos como download, uso de galeria, gerenciamento de estado, salvamento de favoritos, animações e muito mais.
 
+<a href='https://play.google.com/store/apps/details?id=com.application.astronomy&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+  <img alt='Disponível no Google Play' src='https://play.google.com/intl/pt-BR/badges/static/images/badges/pt-br_badge_web_generic.png' height='80' />
+</a>
+
 ## Conteúdo
 
 - **[Design](#design)**
