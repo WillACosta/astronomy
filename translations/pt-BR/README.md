@@ -1,6 +1,6 @@
 [![Build Status](https://app.travis-ci.com/WillACosta/astronomy.svg?branch=main)](https://app.travis-ci.com/WillACosta/astronomy)
 
-Línguagem: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
+Linguagem: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
 <div align="center">
   <img src="https://imgur.com/U1p21DT.png" width="100" height="100" />
