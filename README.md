@@ -3,12 +3,16 @@
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
 <div align="center" border-radius="100px">
-  <img src="https://imgur.com/U1p21DT.png" width="100" height="100"/>
+  <img src="https://imgur.com/U1p21DT.png" width="100" height="100" />
 </div>
 
 ##
 
 Astronomy is a mobile app made in Flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites, animations and much more.
+
+<a href='https://play.google.com/store/apps/details?id=com.application.astronomy&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+  <img alt='Get it on Google Play' src='https://play.google.com/intl/pt-BR/badges/static/images/badges/en_badge_web_generic.png' height="80" />
+</a>
 
 ## Content
 
