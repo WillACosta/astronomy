@@ -25,6 +25,8 @@ class VideoMediaView extends StatelessWidget {
               Icons.play_arrow,
               color: Theme.of(context).primaryColor,
               size: 35,
+              semanticLabel:
+                  'This is a video icon, to open touch on the link in the top right of the screen',
             ),
           ),
         ),

@@ -40,12 +40,14 @@ class SettingsPage extends StatelessWidget {
               SettingsListTile(
                 label: AppLocalizations.of(context)!.aboutThisProject,
                 onTap: () => showAboutDialog(context),
+                semanticsLabel: 'About this project button',
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
               Observer(
                 builder: (_) => PlatformSwitchListButton(
                   label: AppLocalizations.of(context)!.useHdImages,
                   value: store.userPreferences.useHdImages,
+                  semanticsLabel: 'Use hd images switch button',
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: store.userPreferences.useDarkMode,
                     useHdImages: value,
@@ -58,6 +60,7 @@ class SettingsPage extends StatelessWidget {
                 builder: (_) => PlatformSwitchListButton(
                   label: AppLocalizations.of(context)!.darkmode,
                   value: store.userPreferences.useDarkMode,
+                  semanticsLabel: 'Dark mode switch button',
                   onChanged: (value) => store.setPreferences(
                     useDarkMode: value,
                     useHdImages: store.userPreferences.useHdImages,

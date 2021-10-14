@@ -15,6 +15,7 @@ class NativeProgressIndicator extends PlatformWidget<CupertinoActivityIndicator,
     return CircularProgressIndicator(
       strokeWidth: 1,
       color: Theme.of(context).accentColor,
+      semanticsLabel: 'Circular progress indicator',
     );
   }
 

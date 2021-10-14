@@ -23,7 +23,10 @@ class PlatformDatePickerButton
         description: 'Select a range to view on the grid',
         showcaseKey: stepKey,
         disposeOnTap: false,
-        child: const Icon(Icons.calendar_today),
+        child: const Icon(
+          Icons.calendar_today,
+          semanticLabel: 'Calendar button',
+        ),
       ),
     );
   }
@@ -40,6 +43,7 @@ class PlatformDatePickerButton
         child: Icon(
           CupertinoIcons.calendar,
           color: Theme.of(context).accentColor,
+          semanticLabel: 'Calendar button',
         ),
       ),
     );

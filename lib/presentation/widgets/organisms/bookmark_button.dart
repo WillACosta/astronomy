@@ -97,6 +97,7 @@ class _AnimatedBookmarkButtonState extends State<AnimatedBookmarkButton>
                   : (Platform.isAndroid
                       ? Icons.bookmark_add_outlined
                       : CupertinoIcons.bookmark),
+              semanticLabel: 'Favorite button',
               size: 25,
             ),
           );

@@ -7,10 +7,12 @@ class SettingsListTile extends StatelessWidget {
     Key? key,
     required this.label,
     this.onTap,
+    this.semanticsLabel,
   }) : super(key: key);
 
   final String label;
   final VoidCallback? onTap;
+  final String? semanticsLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class SettingsListTile extends StatelessWidget {
       title: Text(
         label,
         style: AppTextStyles.body(),
+        semanticsLabel: semanticsLabel,
       ),
       dense: true,
     );

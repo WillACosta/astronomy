@@ -53,6 +53,7 @@ class GridScrollableSheet extends StatelessWidget {
                   media.explanation,
                   style: AppTextStyles.body(),
                   textAlign: TextAlign.justify,
+                  semanticsLabel: 'Media explanation',
                 ),
                 SizedBox(height: getProportionateScreenHeight(25)),
                 media.copyright != null
@@ -62,6 +63,7 @@ class GridScrollableSheet extends StatelessWidget {
                           Text(
                             'Copyright',
                             style: AppTextStyles.bodyHead(),
+                            semanticsLabel: 'Copyright owner',
                           ),
                           SizedBox(height: getProportionateScreenHeight(10)),
                           Text(

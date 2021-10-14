@@ -17,10 +17,14 @@ class ApodNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl:
-          _settingsStore.userPreferences.useHdImages ? media.hdurl! : media.url,
-      fit: BoxFit.cover,
+    return Semantics(
+      label: 'This is an image: ${media.title}',
+      child: CachedNetworkImage(
+        imageUrl: _settingsStore.userPreferences.useHdImages
+            ? media.hdurl!
+            : media.url,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

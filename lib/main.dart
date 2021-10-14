@@ -34,7 +34,7 @@ class AppHttpOverrides extends HttpOverrides {
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
       ..badCertificateCallback = (X509Certificate cert, String host, int port) {
-        final isValidHost = host == 'api.nasa.gov';
+        final isValidHost = host == 'api.nasa.gov' || host == 'apod.nasa.gov';
         return isValidHost;
       };
   }

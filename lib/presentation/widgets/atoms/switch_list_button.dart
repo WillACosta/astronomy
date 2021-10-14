@@ -10,11 +10,13 @@ class PlatformSwitchListButton extends PlatformWidget<Widget, Widget> {
     required this.label,
     required this.value,
     this.onChanged,
+    this.semanticsLabel,
   }) : super(key: key);
 
   final String label;
   final bool value;
   final Function(bool)? onChanged;
+  final String? semanticsLabel;
 
   @override
   Widget createIosWidget(BuildContext context) {
@@ -26,6 +28,7 @@ class PlatformSwitchListButton extends PlatformWidget<Widget, Widget> {
           Text(
             label,
             style: AppTextStyles.body(),
+            semanticsLabel: semanticsLabel,
           ),
           CupertinoSwitch(
             value: value,

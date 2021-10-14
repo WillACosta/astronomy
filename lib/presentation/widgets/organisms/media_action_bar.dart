@@ -53,6 +53,7 @@ class MediaActionBar extends StatelessWidget {
             : Observer(
                 builder: (_) {
                   return OutlinedActionButton(
+                    semanticLabel: 'Download image button',
                     isDark: !_settingsStore.userPreferences.useDarkMode &&
                         isDetailScreen,
                     onPressed: !_store.isDownloadingImage
@@ -123,6 +124,7 @@ class MediaVideoLinkButton
       icon: const Icon(
         Icons.link_outlined,
         size: 30,
+        semanticLabel: 'Video link button',
       ),
     );
   }
@@ -161,6 +163,7 @@ class FullScreenButton
       icon: const Icon(
         Icons.fullscreen_outlined,
         size: 30,
+        semanticLabel: 'Fullscreen button to view media',
       ),
     );
   }
@@ -200,6 +203,7 @@ class ShareButton extends PlatformWidget<ApodCupertinoIconButton, IconButton> {
       icon: const Icon(
         Icons.share_outlined,
         size: 25,
+        semanticLabel: 'Social share button',
       ),
     );
   }

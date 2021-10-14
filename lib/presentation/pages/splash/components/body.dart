@@ -49,6 +49,8 @@ class _BodyState extends State<Body> {
         Image.asset(
           AppImages.nasaSplashImage,
           fit: BoxFit.cover,
+          semanticLabel:
+              'An astronaut floating through space and earth view in the background',
         ),
         DecoratedBox(
           decoration: BoxDecoration(
@@ -65,6 +67,7 @@ class _BodyState extends State<Body> {
                 Text(
                   'Astronomy',
                   style: AppTextStyles.logo,
+                  semanticsLabel: 'Astronomy logo',
                 ),
                 const Spacer(),
                 Text(

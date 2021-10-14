@@ -33,6 +33,7 @@ class BottomSheetButton extends StatelessWidget {
               : CupertinoIcons.chevron_up,
           color: AppColors.secondary,
           size: 25,
+          semanticLabel: 'Arrow up media details button',
         ),
       ),
     );

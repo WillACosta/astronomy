@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../domain/entities/media.dart';
-// import '../../../widgets/widgets.dart';
 import '../../../utils/utils.dart';
 
 class MediaTextContent extends StatelessWidget {
@@ -26,6 +25,7 @@ class MediaTextContent extends StatelessWidget {
           dateFormat.format(media.date),
           style: AppTextStyles.bodySmall(color: AppColors.accent),
           textAlign: TextAlign.center,
+          semanticsLabel: 'Today date',
         ),
         SizedBox(height: getProportionateScreenHeight(10)),
         // MediaTranslationText(
@@ -37,6 +37,7 @@ class MediaTextContent extends StatelessWidget {
           media.title,
           style: AppTextStyles.bodyHead(),
           textAlign: TextAlign.center,
+          semanticsLabel: 'Media title',
         ),
         SizedBox(height: getProportionateScreenHeight(25)),
         Column(
@@ -54,6 +55,7 @@ class MediaTextContent extends StatelessWidget {
               media.explanation,
               style: AppTextStyles.body(),
               textAlign: TextAlign.justify,
+              semanticsLabel: 'Media explanation',
             ),
             SizedBox(height: getProportionateScreenHeight(25)),
             media.copyright != null
@@ -63,6 +65,7 @@ class MediaTextContent extends StatelessWidget {
                       Text(
                         AppLocalizations.of(context)!.copyright,
                         style: AppTextStyles.bodyHead(),
+                        semanticsLabel: 'Copyright owner',
                       ),
                       SizedBox(height: getProportionateScreenHeight(10)),
                       Text(

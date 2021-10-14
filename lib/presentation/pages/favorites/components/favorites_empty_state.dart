@@ -17,6 +17,7 @@ class FavoritesEmptyState extends StatelessWidget {
         Text(
           AppLocalizations.of(context)!.noFavorites,
           style: AppTextStyles.body(color: AppColors.accent),
+          semanticsLabel: 'No favorites text',
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -32,6 +33,7 @@ class FavoritesEmptyState extends StatelessWidget {
             const Icon(
               Icons.bookmark_add_outlined,
               color: AppColors.accent,
+              semanticLabel: 'Bookmark favorite icon',
             ),
           ],
         ),

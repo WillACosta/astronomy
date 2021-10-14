@@ -73,6 +73,7 @@ class _GridPageState extends State<GridPage> {
                     color: Theme.of(context).accentColor,
                   ),
                   textAlign: TextAlign.start,
+                  semanticsLabel: 'Date range view',
                 );
               },
             ),

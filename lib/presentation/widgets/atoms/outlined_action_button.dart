@@ -9,28 +9,33 @@ class OutlinedActionButton extends StatelessWidget {
     required this.onPressed,
     required this.child,
     this.isDark,
+    this.semanticLabel,
   }) : super(key: key);
 
   final void Function()? onPressed;
   final Widget child;
   final bool? isDark;
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        primary: isDark != null && isDark == true
-            ? AppColors.primary
-            : AppColors.secondary,
-        side: BorderSide(
-          color: isDark != null && isDark == true
+    return Semantics(
+      label: semanticLabel,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          primary: isDark != null && isDark == true
               ? AppColors.primary
               : AppColors.secondary,
-          width: 1,
+          side: BorderSide(
+            color: isDark != null && isDark == true
+                ? AppColors.primary
+                : AppColors.secondary,
+            width: 1,
+          ),
         ),
+        onPressed: onPressed,
+        child: child,
       ),
-      onPressed: onPressed,
-      child: child,
     );
   }
 }

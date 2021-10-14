@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../external/dependency_injection/locator.dart';
 import '../../../../application/shared/shared_store.dart';
 import '../../../../domain/entities/media.dart';
-// import '../../../widgets/widgets.dart';
 
 import '../../../utils/utils.dart'
     show
@@ -41,11 +40,11 @@ class MediaHeader extends StatelessWidget {
           Text(
             media.title,
             style: AppTextStyles.bodyHead(),
+            semanticsLabel: 'Media title',
           ),
-          Text(
-            _sharedStore.dateFormat.format(media.date),
-            style: AppTextStyles.bodySmallest(color: AppColors.accent),
-          ),
+          Text(_sharedStore.dateFormat.format(media.date),
+              style: AppTextStyles.bodySmallest(color: AppColors.accent),
+              semanticsLabel: 'Media date'),
         ],
       ),
     );
