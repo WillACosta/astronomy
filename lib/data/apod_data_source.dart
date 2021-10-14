@@ -12,12 +12,16 @@ class CApodDataSource implements ApodDataSource {
 
   @override
   Future<MediaModel> getMediaOfTheDay() async {
-    final response = await http.get(Uri.parse('$baseUrl?api_key=$apiKey'));
+    try {
+      final response = await http.get(Uri.parse('$baseUrl?api_key=$apiKey'));
 
-    if (response.statusCode == 200) {
-      return MediaModel.fromJson(response.body);
-    } else {
-      throw Exception();
+      if (response.statusCode == 200) {
+        return MediaModel.fromJson(response.body);
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      throw Exception(e);
     }
   }
 
@@ -26,16 +30,20 @@ class CApodDataSource implements ApodDataSource {
     required String startDate,
     required String endDate,
   }) async {
-    final response = await http.get(
-      Uri.parse(
-        '$baseUrl?api_key=$apiKey&start_date=$startDate&end_date=$endDate',
-      ),
-    );
+    try {
+      final response = await http.get(
+        Uri.parse(
+          '$baseUrl?api_key=$apiKey&start_date=$startDate&end_date=$endDate',
+        ),
+      );
 
-    if (response.statusCode == 200) {
-      return MediaModel.fromJsonList(response.body);
-    } else {
-      throw Exception();
+      if (response.statusCode == 200) {
+        return MediaModel.fromJsonList(response.body);
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      throw Exception(e);
     }
   }
 }

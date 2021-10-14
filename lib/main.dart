@@ -24,5 +24,18 @@ void main() async {
   await Hive.initFlutter(dir.path);
 
   initConfigurations();
+  HttpOverrides.global = AppHttpOverrides();
+
   runApp(const App());
+}
+
+class AppHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port) {
+        final isValidHost = host == 'api.nasa.gov';
+        return isValidHost;
+      };
+  }
 }
