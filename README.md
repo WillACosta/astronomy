@@ -1,4 +1,5 @@
 [![Build Status](https://app.travis-ci.com/WillACosta/astronomy.svg?branch=main)](https://app.travis-ci.com/WillACosta/astronomy)
+[![Codemagic build status](https://api.codemagic.io/apps/616815ff2286885f07ff24ef/616815ff2286885f07ff24ee/status_badge.svg)](https://codemagic.io/apps/616815ff2286885f07ff24ef/616815ff2286885f07ff24ee/latest_build)
 
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/translations/pt-BR)
 
