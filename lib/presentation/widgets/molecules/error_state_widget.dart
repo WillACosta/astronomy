@@ -23,14 +23,18 @@ class ErrorStateWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             child: Text(
               AppLocalizations.of(context)!.errorMessage,
-              style: AppTextStyles.body(),
+              style: AppTextStyles.body(
+                color: Theme.of(context).accentColor,
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Text(
               AppLocalizations.of(context)!.refreshMessage,
-              style: AppTextStyles.bodySmall(),
+              style: AppTextStyles.bodySmall(
+                color: Theme.of(context).accentColor,
+              ),
             ),
           ),
         ],
