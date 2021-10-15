@@ -97,11 +97,14 @@ class SettingsPage extends StatelessWidget {
 
     var materialActions = [
       MaterialButton(
-        child: const Text('GitHub'),
+        child: const Text(
+          'GitHub',
+          semanticsLabel: 'Open GitHub page button',
+        ),
         onPressed: () => sharedStore.launchUrl(repositoryUrl),
       ),
       MaterialButton(
-        child: Text(closeText),
+        child: Text(closeText, semanticsLabel: 'Close modal button'),
         onPressed: () => closeRoute(context),
       )
     ];

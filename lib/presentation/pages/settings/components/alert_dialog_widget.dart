@@ -24,18 +24,32 @@ class AlertDialogWidget extends StatelessWidget {
       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
       child: Platform.isIOS
           ? CupertinoAlertDialog(
-              title: Text(title),
+              title: Text(
+                title,
+                semanticsLabel: 'About project title',
+              ),
               content: Padding(
                 padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
-                child: Text(content, textAlign: TextAlign.left),
+                child: Text(
+                  content,
+                  textAlign: TextAlign.left,
+                  semanticsLabel: 'About project content text',
+                ),
               ),
               actions: actions,
             )
           : AlertDialog(
-              title: Text(title),
+              title: Text(
+                title,
+                semanticsLabel: 'About project title',
+              ),
               content: Padding(
                 padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
-                child: Text(content, textAlign: TextAlign.left),
+                child: Text(
+                  content,
+                  textAlign: TextAlign.left,
+                  semanticsLabel: 'About project content text',
+                ),
               ),
               actions: actions,
             ),
