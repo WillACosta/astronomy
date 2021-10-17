@@ -18,10 +18,12 @@ class CApodRepository implements ApodRepository {
       final response = await _dataSource.getMediaOfTheDay();
       return Right(response);
     } catch (e) {
-      return Left(ServerFailure(
-        message: 'An error as occurred!',
-        error: e,
-      ));
+      return Left(
+        ServerFailure(
+          message: 'An error as occurred!',
+          error: e,
+        ),
+      );
     }
   }
 
@@ -38,7 +40,12 @@ class CApodRepository implements ApodRepository {
 
       return Right(response);
     } catch (e) {
-      return Left(ServerFailure(message: 'An error as occurred!'));
+      return Left(
+        ServerFailure(
+          message: 'An error as occurred!',
+          error: e,
+        ),
+      );
     }
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -57,10 +55,7 @@ class _HomePageState extends State<HomePage> {
           var state = _store.state;
 
           if (state is ErrorState) {
-            return ApodErrorRefreshIndicator(
-              onRefresh: _store.refresh,
-              error: json.encode(state.error.error.toString()),
-            );
+            return ApodErrorRefreshIndicator(onRefresh: _store.refresh);
           }
 
           if (state is InitialState) {}
