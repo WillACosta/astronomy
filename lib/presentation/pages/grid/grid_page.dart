@@ -109,7 +109,9 @@ class _GridPageState extends State<GridPage> {
                     );
                   }
 
-                  return ApodRefreshIndicator(onRefresh: _store.getMediaList);
+                  return ApodErrorRefreshIndicator(
+                    onRefresh: _store.getMediaList,
+                  );
                 },
               ),
             ),

@@ -36,9 +36,7 @@ abstract class _HomeStoreBase with Store {
     final result = await _usecase.getMediaOfTheDay();
 
     result.fold(
-      (error) => setState(
-        ErrorState(error),
-      ),
+      (error) => setState(ErrorState(error)),
       (result) {
         setState(SuccessState(result));
         isMediaLoaded = true;
