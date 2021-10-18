@@ -55,9 +55,7 @@ class _HomePageState extends State<HomePage> {
           var state = _store.state;
 
           if (state is ErrorState) {
-            return ApodRefreshIndicator(
-              onRefresh: _store.refresh,
-            );
+            return ApodErrorRefreshIndicator(onRefresh: _store.refresh);
           }
 
           if (state is InitialState) {}

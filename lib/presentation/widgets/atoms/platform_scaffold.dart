@@ -26,9 +26,12 @@ class PlatformScaffold extends PlatformWidget<Widget, Widget> {
         elevation: 0,
         centerTitle: false,
         automaticallyImplyLeading: automaticallyImplyLeading,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.transparent,
         title: title,
         actions: actionWidget != null ? [actionWidget!] : null,
+        iconTheme: IconThemeData(
+          color: Theme.of(context).accentColor,
+        ),
       ),
       body: body,
     );

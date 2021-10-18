@@ -12,12 +12,12 @@
   "close": "Close",
   "errorMessage": "Oops! Something went wrong",
   "refreshMessage": "try refresh the page.",
-  "shareMessage": "I found this awesome media on Astronomy app, i think you'll like it!",
+  "shareMessage": "I found this awesome media on Astronomy app, i think you'll like it! https://play.google.com/store/apps/details?id=com.application.astronomy",
   "settings": "Settings",
   "selectYourLanguage": "Language",
   "favorites": "Favorites",
   "noFavorites": "No favorites yet",
-  "noFavoritesContent": "save your favorite items by touching the icon",
+  "noFavoritesContent": "save an item to your favorites and it will appear here.",
   "thisIsAVideo": "This is a video",
   "toSeeVideo": "to see, go to the link"
 }

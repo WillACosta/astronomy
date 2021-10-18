@@ -74,6 +74,14 @@ final lightTheme = ThemeData(
     displayColor: AppColors.primary,
     bodyColor: AppColors.primary,
   ),
+  appBarTheme: const AppBarTheme(
+    elevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.secondary,
+    ),
+    brightness: Brightness.dark,
+    color: AppColors.primary,
+  ),
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
   ),

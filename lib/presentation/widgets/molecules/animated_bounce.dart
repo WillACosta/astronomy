@@ -16,45 +16,43 @@ class AnimatedBounce extends StatefulWidget {
 
 class AnimatedBounceState extends State<AnimatedBounce>
     with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> scaleAnimation;
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
 
-    controller = AnimationController(
+    _controller = AnimationController(
       vsync: this,
       duration: animationDuration,
     );
 
-    scaleAnimation = CurvedAnimation(
-      parent: controller,
+    _scaleAnimation = CurvedAnimation(
+      parent: _controller,
       curve: Curves.elasticInOut,
     );
 
-    controller.addListener(() {
+    _controller.addListener(() {
       setState(() {});
     });
 
-    controller.forward();
+    _controller.forward();
   }
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
-    controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Material(
-        color: Colors.transparent,
-        child: ScaleTransition(
-          scale: scaleAnimation,
-          child: widget.child,
-        ),
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) => ScaleTransition(
+        scale: _scaleAnimation,
+        child: widget.child,
       ),
     );
   }

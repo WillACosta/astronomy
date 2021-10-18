@@ -88,15 +88,16 @@ class MediaActionBar extends StatelessWidget {
               )
             : Row(),
         ValueListenableBuilder(
-            valueListenable: _favoriteStore.favoritesBox.listenable(),
-            builder: (_, Box box, __) {
-              return AnimatedBookmarkButton(
-                onPressed: () => _favoriteStore.toggleFavorite(item: media),
-                isLiked: _favoriteStore.favoritesBox.containsKey(dateKey)
-                    ? true
-                    : false,
-              );
-            }),
+          valueListenable: _favoriteStore.favoritesBox.listenable(),
+          builder: (_, Box box, __) {
+            return AnimatedBookmarkButton(
+              onPressed: () => _favoriteStore.toggleFavorite(item: media),
+              isLiked: _favoriteStore.favoritesBox.containsKey(dateKey)
+                  ? true
+                  : false,
+            );
+          },
+        ),
         ShareButton(isDarkIcons: isDetailScreen),
       ],
     );
