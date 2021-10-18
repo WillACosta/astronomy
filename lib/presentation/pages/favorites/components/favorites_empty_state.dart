@@ -11,34 +11,35 @@ class FavoritesEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Spacer(),
-        Text(
-          AppLocalizations.of(context)!.noFavorites,
-          style: AppTextStyles.body(color: AppColors.accent),
-          semanticsLabel: 'No favorites text',
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              flex: 2,
-              child: Text(
-                AppLocalizations.of(context)!.noFavoritesContent,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.bodySmall(color: AppColors.accent),
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20),
+      ),
+      child: Column(
+        children: [
+          const Spacer(),
+          Text(
+            AppLocalizations.of(context)!.noFavorites,
+            style: AppTextStyles.bodyHead(color: Theme.of(context).accentColor),
+            semanticsLabel: 'No favorites text',
+          ),
+          SizedBox(height: getProportionateScreenHeight(5)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: 2,
+                child: Text(
+                  AppLocalizations.of(context)!.noFavoritesContent,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.bodySmall(color: AppColors.accent),
+                ),
               ),
-            ),
-            const Icon(
-              Icons.bookmark_add_outlined,
-              color: AppColors.accent,
-              semanticLabel: 'Bookmark favorite icon',
-            ),
-          ],
-        ),
-        const Spacer(),
-      ],
+            ],
+          ),
+          const Spacer(),
+        ],
+      ),
     );
   }
 }

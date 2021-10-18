@@ -21,7 +21,7 @@ class AlertDialogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+      filter: blurFilter,
       child: Platform.isIOS
           ? CupertinoAlertDialog(
               title: Text(

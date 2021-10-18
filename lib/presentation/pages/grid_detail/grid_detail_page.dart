@@ -52,9 +52,7 @@ class _GridDetailPageState extends State<GridDetailPage> {
       onComplete: (__, _) {
         closeRoute(context);
 
-        _showcaseStore.closeShowCase(
-          showcasePage: ShowcasePage.gridDetail,
-        );
+        _showcaseStore.closeShowCase(showcasePage: ShowcasePage.gridDetail);
       },
       builder: Builder(
         builder: (context) {
@@ -72,7 +70,7 @@ class _GridDetailPageState extends State<GridDetailPage> {
                 MediaHeader(media: widget.media),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: getProportionateScreenHeight(80),
+                    top: getProportionateScreenHeight(70),
                   ),
                   child: widget.media.mediaType == 'image'
                       ? ApodNetworkImage(media: widget.media)

@@ -12,12 +12,12 @@
   "close": "Fechar",
   "errorMessage": "Oops! Alguma coisa deu errado",
   "refreshMessage": "tente recarregar a página.",
-  "shareMessage": "Encontrei esse incrível conteúdo no aplicativo Astronomy, acho que você irá gostar também!",
+  "shareMessage": "Encontrei esse incrível conteúdo no aplicativo Astronomy, acho que você irá gostar também! https://play.google.com/store/apps/details?id=com.application.astronomy",
   "settings": "Configurações",
   "selectYourLanguage": "Linguagem",
   "favorites": "Favoritos",
-  "noFavorites": "Nenhum favorito ainda...",
-  "noFavoritesContent": "salve seus itens favoritos tocando no ícone",
+  "noFavorites": "Nenhum favorito ainda",
+  "noFavoritesContent": "salve um item ao seus favoritos e ele aparecerá aqui.",
   "thisIsAVideo": "Isso é um vídeo",
   "toSeeVideo": "para visualizar, acesse o link"
 }

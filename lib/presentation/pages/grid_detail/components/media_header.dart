@@ -8,6 +8,7 @@ import '../../../utils/utils.dart'
     show
         AppColors,
         AppTextStyles,
+        blurFilter,
         getProportionateScreenHeight,
         getProportionateScreenWidth;
 
@@ -20,32 +21,28 @@ class MediaHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      padding: EdgeInsets.symmetric(
-        vertical: getProportionateScreenHeight(10),
-        horizontal: getProportionateScreenWidth(20),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // MediaTranslationText(
-          //   isTitleShimmerTile: true,
-          //   englishTextChild: Text(
-          //     media.title,
-          //     style: AppTextStyles.bodyHead(),
-          //   ),
-          //   textToTranslate: media.title,
-          // ),
-          Text(
-            media.title,
-            style: AppTextStyles.bodyHead(),
-            semanticsLabel: 'Media title',
-          ),
-          Text(_sharedStore.dateFormat.format(media.date),
+    return BackdropFilter(
+      filter: blurFilter,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(20),
+          vertical: getProportionateScreenHeight(20),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              media.title,
+              style: AppTextStyles.bodyHead(),
+              semanticsLabel: 'Media title',
+            ),
+            Text(
+              _sharedStore.dateFormat.format(media.date),
               style: AppTextStyles.bodySmallest(color: AppColors.accent),
-              semanticsLabel: 'Media date'),
-        ],
+              semanticsLabel: 'Media date',
+            ),
+          ],
+        ),
       ),
     );
   }
