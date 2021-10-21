@@ -14,7 +14,7 @@ import '../../../application/settings/settings_store.dart';
 import '../../../application/shared/shared_store.dart';
 import '../../../domain/entities/media.dart';
 import '../../routes/route_navigator.dart';
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 import '../widgets.dart';
 
 import 'animated_check_icon.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 
 class VideoMediaView extends StatelessWidget {
   const VideoMediaView({Key? key, this.showLabel}) : super(key: key);

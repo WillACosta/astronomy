@@ -8,7 +8,7 @@ import 'package:showcaseview/showcaseview.dart';
 import '../../application/container_page/container_page_store.dart';
 import '../../external/dependency_injection/locator.dart';
 import '../../application/showcase/showcase_store.dart';
-import '../utils/utils.dart';
+import '../utils/exports.dart';
 
 import 'pages.dart';
 

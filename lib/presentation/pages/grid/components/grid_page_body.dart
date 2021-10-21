@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:astronomy/presentation/routes/route_navigator.dart';
 
-import '../../../../external/dependency_injection/locator.dart';
-import '../../../../application/shared/shared_store.dart';
 import '../../../../domain/entities/media.dart';
 import '../../../widgets/widgets.dart';
-import '../../../utils/utils.dart';
+import '../../../utils/exports.dart';
 
 class GridPageBody extends StatelessWidget {
   const GridPageBody({
@@ -17,8 +15,6 @@ class GridPageBody extends StatelessWidget {
 
   final List<Media> list;
   final GlobalKey showcaseKey;
-
-  static final _sharedStore = locator<SharedStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +38,11 @@ class GridPageBody extends StatelessWidget {
                   ),
                   child: GridItem(
                     list: list,
-                    sharedStore: _sharedStore,
                     itemIndex: 0,
                   ),
                 )
               : GridItem(
                   list: list,
-                  sharedStore: _sharedStore,
                   itemIndex: index,
                 );
         },
@@ -61,13 +55,11 @@ class GridItem extends StatelessWidget {
   const GridItem({
     Key? key,
     required this.list,
-    required SharedStore sharedStore,
     required this.itemIndex,
-  })  : _sharedStore = sharedStore,
-        super(key: key);
+  }) : super(key: key);
 
   final List<Media> list;
-  final SharedStore _sharedStore;
+  static final utils = Utils();
   final int itemIndex;
 
   @override
@@ -90,7 +82,7 @@ class GridItem extends StatelessWidget {
                     style: AppTextStyles.bodySmall(fontSize: 12),
                   ),
                   Text(
-                    _sharedStore.dateFormat.format(list[itemIndex].date),
+                    utils.dateFormat.format(list[itemIndex].date),
                     style: AppTextStyles.bodySmallest(),
                   ),
                 ],

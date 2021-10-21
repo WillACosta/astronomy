@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../../utils/utils.dart' show AppTextStyles;
+import '../../utils/exports.dart' show AppTextStyles;
 
 import '../../../external/dependency_injection/locator.dart';
 import '../../../application/showcase/showcase_store.dart';
@@ -68,7 +67,7 @@ class _GridPageState extends State<GridPage> {
             title: Observer(
               builder: (_) {
                 return Text(
-                  '${AppLocalizations.of(context)!.viewing} ${_store.getDateRangeLabel}',
+                  _store.getDateRangeLabel,
                   style: AppTextStyles.body(
                     color: Theme.of(context).accentColor,
                   ),

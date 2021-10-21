@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../utils/utils.dart' show AppImages, AppTextStyles;
+import '../../utils/exports.dart' show AppImages, AppTextStyles;
 
 class ErrorStateWidget extends StatelessWidget {
   const ErrorStateWidget({

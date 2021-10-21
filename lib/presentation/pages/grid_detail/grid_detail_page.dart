@@ -6,7 +6,7 @@ import '../../../application/showcase/showcase_store.dart';
 import '../../../domain/entities/media.dart';
 import '../../routes/route_navigator.dart';
 import '../../widgets/widgets.dart';
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 
 import 'components/grid_scrollable_sheet.dart';
 import 'components/media_header.dart';

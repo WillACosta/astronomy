@@ -7,7 +7,7 @@ import '../../../../application/localization/localization_store.dart';
 import '../../../../external/dependency_injection/locator.dart';
 import '../../../routes/route_navigator.dart';
 import '../../../widgets/widgets.dart';
-import '../../../utils/utils.dart';
+import '../../../utils/exports.dart';
 
 class Body extends StatefulWidget {
   const Body({

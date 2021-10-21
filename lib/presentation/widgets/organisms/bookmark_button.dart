@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 
 class AnimatedBookmarkButton extends StatefulWidget {
   const AnimatedBookmarkButton({

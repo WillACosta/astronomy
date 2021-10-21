@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 import '../widgets.dart';
 
 class PlatformSwitchListButton extends PlatformWidget<Widget, Widget> {

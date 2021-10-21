@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 
 class SettingsListTile extends StatelessWidget {
   const SettingsListTile({

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../domain/entities/media.dart';
 import '../../../widgets/widgets.dart';
 import 'media_text_content.dart';
 
-import '../../../utils/utils.dart'
+import '../../../utils/exports.dart'
     show getProportionateScreenHeight, getProportionateScreenWidth;
 
 class BottomSheetModal extends StatelessWidget {
@@ -14,8 +13,6 @@ class BottomSheetModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat.yMEd();
-
     return Stack(
       children: [
         Padding(
@@ -28,7 +25,7 @@ class BottomSheetModal extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: getProportionateScreenHeight(55)),
           child: SheetContainer(
-            child: MediaTextContent(dateFormat: dateFormat, media: media),
+            child: MediaTextContent(media: media),
           ),
         ),
       ],

@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../domain/entities/media.dart';
-import '../../../utils/utils.dart';
+import '../../../utils/exports.dart'
+    show AppColors, AppTextStyles, Utils, getProportionateScreenHeight;
 
 class MediaTextContent extends StatelessWidget {
   const MediaTextContent({
     Key? key,
-    required this.dateFormat,
     required this.media,
   }) : super(key: key);
 
-  final DateFormat dateFormat;
+  static final utils = Utils();
   final Media media;
 
   @override
@@ -22,17 +20,12 @@ class MediaTextContent extends StatelessWidget {
       padding: const EdgeInsets.all(30),
       children: [
         Text(
-          dateFormat.format(media.date),
-          style: AppTextStyles.bodySmall(color: AppColors.accent),
+          utils.dateFormat.format(media.date),
+          style: AppTextStyles.bodySmallest(color: AppColors.accent),
           textAlign: TextAlign.center,
           semanticsLabel: 'Today date',
         ),
         SizedBox(height: getProportionateScreenHeight(10)),
-        // MediaTranslationText(
-        //   isTitleShimmerTile: true,
-        //   englishTextChild: Text(media.title, style: AppTextStyles.bodyHead()),
-        //   textToTranslate: media.title,
-        // ),
         Text(
           media.title,
           style: AppTextStyles.bodyHead(),

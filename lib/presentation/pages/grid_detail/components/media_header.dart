@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../external/dependency_injection/locator.dart';
-import '../../../../application/shared/shared_store.dart';
 import '../../../../domain/entities/media.dart';
 
-import '../../../utils/utils.dart'
+import '../../../utils/exports.dart'
     show
         AppColors,
         AppTextStyles,
+        Utils,
         blurFilter,
         getProportionateScreenHeight,
         getProportionateScreenWidth;
@@ -17,7 +16,7 @@ class MediaHeader extends StatelessWidget {
 
   final Media media;
 
-  static final _sharedStore = locator<SharedStore>();
+  static final utils = Utils();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class MediaHeader extends StatelessWidget {
               semanticsLabel: 'Media title',
             ),
             Text(
-              _sharedStore.dateFormat.format(media.date),
+              utils.dateFormat.format(media.date),
               style: AppTextStyles.bodySmallest(color: AppColors.accent),
               semanticsLabel: 'Media date',
             ),

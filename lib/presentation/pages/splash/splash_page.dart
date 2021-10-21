@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 import 'components/body.dart';
 
 class SplashPage extends StatelessWidget {

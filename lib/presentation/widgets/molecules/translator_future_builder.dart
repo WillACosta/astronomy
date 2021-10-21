@@ -1,7 +1,7 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 import '../widgets.dart';
 
 class TranslatorFutureBuilder extends StatefulWidget {

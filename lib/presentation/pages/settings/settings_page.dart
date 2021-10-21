@@ -13,7 +13,7 @@ import '../../../application/settings/settings_store.dart';
 import '../../../application/shared/shared_store.dart';
 import '../../routes/route_navigator.dart';
 import '../../widgets/widgets.dart';
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 
 import 'components/alert_dialog_widget.dart';
 

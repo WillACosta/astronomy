@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/media.dart';
 import '../widgets/widgets.dart';
 import '../pages/pages.dart';
-import '../utils/utils.dart';
+import '../utils/exports.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

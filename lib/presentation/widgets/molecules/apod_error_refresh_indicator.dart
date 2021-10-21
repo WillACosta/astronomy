@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import '../../utils/exports.dart';
 import 'error_state_widget.dart';
 
 class ApodErrorRefreshIndicator extends StatelessWidget {

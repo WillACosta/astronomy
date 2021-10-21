@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../domain/entities/media.dart';
-import '../../../utils/utils.dart';
+import '../../../utils/exports.dart';
 
 import 'bottom_sheet_modal.dart';
 

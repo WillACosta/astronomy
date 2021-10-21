@@ -3,11 +3,10 @@ import 'package:injectable/injectable.dart';
 
 import 'package:mobx/mobx.dart';
 
-import '../../external/dependency_injection/locator.dart';
 import '../../domain/usecases/grid/grid_usecase.dart';
 import '../../domain/entities/grid_page_dto.dart';
+import '../../presentation/utils/exports.dart' show Utils;
 import '../../domain/entities/media.dart';
-import '../shared/shared_store.dart';
 import 'grid_page_state.dart';
 
 part 'grid_page_store.g.dart';
@@ -19,7 +18,7 @@ abstract class _GridPageStoreBase with Store {
   final GridUseCase _usecase;
   List<ReactionDisposer>? _disposers;
 
-  static final _sharedStore = locator<SharedStore>();
+  static final utils = Utils();
 
   _GridPageStoreBase(this._usecase) {
     getMediaList();
@@ -47,7 +46,7 @@ abstract class _GridPageStoreBase with Store {
 
   @computed
   String get getDateRangeLabel =>
-      '${_sharedStore.dateFormat.format(getDateRange.start)} - ${_sharedStore.dateFormat.format(getDateRange.end)}';
+      '${utils.dateFormat.format(getDateRange.start)} - ${utils.dateFormat.format(getDateRange.end)}';
 
   @action
   void setDateRange(DateTimeRange value) => _dateTimeRange = value;

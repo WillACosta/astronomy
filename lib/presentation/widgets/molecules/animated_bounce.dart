@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart' show animationDuration;
+import '../../utils/exports.dart' show animationDuration;
 
 class AnimatedBounce extends StatefulWidget {
   const AnimatedBounce({
