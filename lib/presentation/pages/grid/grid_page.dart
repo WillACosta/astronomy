@@ -68,7 +68,7 @@ class _GridPageState extends State<GridPage> {
               builder: (_) {
                 return Text(
                   _store.getDateRangeLabel,
-                  style: AppTextStyles.body(
+                  style: AppTextStyles.bodySmall(
                     color: Theme.of(context).accentColor,
                   ),
                   textAlign: TextAlign.start,

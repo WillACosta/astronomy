@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../domain/entities/media.dart';
+
 import '../../../utils/exports.dart'
-    show AppColors, AppTextStyles, Utils, getProportionateScreenHeight;
+    show AppTextStyles, Utils, getProportionateScreenHeight;
+
+import '../../../widgets/widgets.dart' show ApodMediaTitle;
 
 class MediaTextContent extends StatelessWidget {
   const MediaTextContent({
@@ -19,31 +22,14 @@ class MediaTextContent extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(30),
       children: [
-        Text(
-          utils.dateFormat.format(media.date),
-          style: AppTextStyles.bodySmallest(color: AppColors.accent),
-          textAlign: TextAlign.center,
-          semanticsLabel: 'Today date',
-        ),
-        SizedBox(height: getProportionateScreenHeight(10)),
-        Text(
-          media.title,
-          style: AppTextStyles.bodyHead(),
-          textAlign: TextAlign.center,
-          semanticsLabel: 'Media title',
+        ApodMediaTitle(
+          media: media,
+          crossAxisAlignment: CrossAxisAlignment.center,
         ),
         SizedBox(height: getProportionateScreenHeight(25)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // MediaTranslationText(
-            //   isTitleShimmerTile: false,
-            //   englishTextChild: Text(
-            //     media.explanation,
-            //     style: AppTextStyles.body(),
-            //   ),
-            //   textToTranslate: media.explanation,
-            // ),
             Text(
               media.explanation,
               style: AppTextStyles.body(),

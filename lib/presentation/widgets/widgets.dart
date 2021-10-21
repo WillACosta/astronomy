@@ -6,6 +6,7 @@ export './atoms/settings_list_tile.dart';
 export './atoms/switch_list_button.dart';
 export './atoms/app_pages_padding.dart';
 export './atoms/platform_scaffold.dart';
+export './atoms/apod_media_title.dart';
 export './atoms/primary_button.dart';
 export './atoms/appbar_title.dart';
 export './atoms/sheet_handle.dart';

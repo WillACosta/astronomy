@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
 
+import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../domain/usecases/grid/grid_usecase.dart';
 import '../../domain/entities/grid_page_dto.dart';
-import '../../presentation/utils/exports.dart' show Utils;
+import '../../presentation/utils/date_apis.dart';
 import '../../domain/entities/media.dart';
 import 'grid_page_state.dart';
+
+import '../../presentation/utils/exports.dart' show Utils;
 
 part 'grid_page_store.g.dart';
 
@@ -42,11 +44,17 @@ abstract class _GridPageStoreBase with Store {
     end: DateTime.now(),
   );
 
+  @computed
   DateTimeRange get getDateRange => _dateTimeRange;
 
   @computed
-  String get getDateRangeLabel =>
-      '${utils.dateFormat.format(getDateRange.start)} - ${utils.dateFormat.format(getDateRange.end)}';
+  String get getDateRangeLabel {
+    if (_dateTimeRange.end.isSameDate(DateTime.now())) {
+      return '${utils.dateFormat.format(getDateRange.start)} to today';
+    }
+
+    return '${utils.dateFormat.format(getDateRange.start)} to ${utils.dateFormat.format(getDateRange.end)}';
+  }
 
   @action
   void setDateRange(DateTimeRange value) => _dateTimeRange = value;

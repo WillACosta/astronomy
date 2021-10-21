@@ -9,6 +9,13 @@ part of 'grid_page_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$GridPageStore on _GridPageStoreBase, Store {
+  Computed<DateTimeRange>? _$getDateRangeComputed;
+
+  @override
+  DateTimeRange get getDateRange => (_$getDateRangeComputed ??=
+          Computed<DateTimeRange>(() => super.getDateRange,
+              name: '_GridPageStoreBase.getDateRange'))
+      .value;
   Computed<String>? _$getDateRangeLabelComputed;
 
   @override
@@ -100,6 +107,7 @@ mixin _$GridPageStore on _GridPageStoreBase, Store {
     return '''
 state: ${state},
 mediaList: ${mediaList},
+getDateRange: ${getDateRange},
 getDateRangeLabel: ${getDateRangeLabel}
     ''';
   }
