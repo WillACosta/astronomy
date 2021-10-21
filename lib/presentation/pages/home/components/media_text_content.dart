@@ -1,3 +1,4 @@
+import 'package:astronomy/presentation/utils/app_size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -20,7 +21,9 @@ class MediaTextContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(30),
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(30),
+      ),
       children: [
         ApodMediaTitle(
           media: media,
@@ -53,7 +56,7 @@ class MediaTextContent extends StatelessWidget {
                       ),
                     ],
                   )
-                : Container(),
+                : Row(),
             SizedBox(height: getProportionateScreenHeight(10)),
           ],
         ),
