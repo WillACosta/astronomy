@@ -17,7 +17,7 @@ class MediaHeader extends StatelessWidget {
 
   final Media media;
 
-  static final _sharedStore = locator<SharedStore>();
+  static final _sharedStore = serviceLocator<SharedStore>();
 
   @override
   Widget build(BuildContext context) {

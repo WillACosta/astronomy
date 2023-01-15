@@ -6,7 +6,7 @@ part of 'container_page_store.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$ContainerPageStore on _ContainerPageStoreBase, Store {
   Computed<dynamic>? _$currentPageComputed;
@@ -17,7 +17,8 @@ mixin _$ContainerPageStore on _ContainerPageStoreBase, Store {
               name: '_ContainerPageStoreBase.currentPage'))
           .value;
 
-  final _$_currentPageAtom = Atom(name: '_ContainerPageStoreBase._currentPage');
+  late final _$_currentPageAtom =
+      Atom(name: '_ContainerPageStoreBase._currentPage', context: context);
 
   @override
   int get _currentPage {
@@ -32,8 +33,8 @@ mixin _$ContainerPageStore on _ContainerPageStoreBase, Store {
     });
   }
 
-  final _$_ContainerPageStoreBaseActionController =
-      ActionController(name: '_ContainerPageStoreBase');
+  late final _$_ContainerPageStoreBaseActionController =
+      ActionController(name: '_ContainerPageStoreBase', context: context);
 
   @override
   void setCurrentPage(int value) {

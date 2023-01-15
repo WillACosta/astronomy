@@ -13,7 +13,7 @@ class ApodNetworkImage extends StatelessWidget {
   }) : super(key: key);
 
   final Media media;
-  static final _settingsStore = locator<SettingsStore>();
+  static final _settingsStore = serviceLocator<SettingsStore>();
 
   @override
   Widget build(BuildContext context) {

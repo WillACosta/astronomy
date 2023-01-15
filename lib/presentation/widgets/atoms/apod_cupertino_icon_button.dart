@@ -17,7 +17,7 @@ class ApodCupertinoIconButton extends StatelessWidget {
   final void Function()? onPressed;
   final bool isDarkIcons;
 
-  static final _settingsStore = locator<SettingsStore>();
+  static final _settingsStore = serviceLocator<SettingsStore>();
 
   @override
   Widget build(BuildContext context) {

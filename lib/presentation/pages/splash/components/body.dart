@@ -19,7 +19,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  static final _localizationStore = locator<LocalizationStore>();
+  static final _localizationStore = serviceLocator<LocalizationStore>();
 
   @override
   void initState() {

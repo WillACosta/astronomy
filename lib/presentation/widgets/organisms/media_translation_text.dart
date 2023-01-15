@@ -17,8 +17,8 @@ class MediaTranslationText extends StatelessWidget {
   final String textToTranslate;
   final bool isTitleShimmerTile;
 
-  static final _translatorStore = locator<TranslatorStore>();
-  static final _localizationStore = locator<LocalizationStore>();
+  static final _translatorStore = serviceLocator<TranslatorStore>();
+  static final _localizationStore = serviceLocator<LocalizationStore>();
 
   @override
   Widget build(BuildContext context) {

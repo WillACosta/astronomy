@@ -14,7 +14,7 @@ import 'components/favorites_empty_state.dart';
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({Key? key}) : super(key: key);
 
-  static final _store = locator<FavoriteStore>();
+  static final _store = serviceLocator<FavoriteStore>();
 
   @override
   Widget build(BuildContext context) {

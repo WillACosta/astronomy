@@ -1,45 +1,19 @@
 import 'dart:convert';
 
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/domain/services/local_notification_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:open_file/open_file.dart';
 
-import '../../application/localization/localization_store.dart';
-import '../../domain/services/local_notification_service.dart';
-
-@Singleton(as: LocalNotificationService)
+@Injectable(as: LocalNotificationService)
 class CLocalNotificationService implements LocalNotificationService {
-  late FlutterLocalNotificationsPlugin notificationsPlugin;
+  final LocalizationStore _localizationStore;
+  late FlutterLocalNotificationsPlugin _localNotificationsPlugin;
 
-  static final _localizationStore = locator<LocalizationStore>();
-
-  CLocalNotificationService() {
-    _initialize();
-  }
-
-  _initialize() {
-    notificationsPlugin = FlutterLocalNotificationsPlugin();
-
-    const android = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const iOS = IOSInitializationSettings();
-
-    const initSettings = InitializationSettings(android: android, iOS: iOS);
-
-    notificationsPlugin.initialize(
-      initSettings,
-      onSelectNotification: _onSelectNotification,
-    );
-  }
-
-  Future<void> _onSelectNotification(String? json) async {
-    dynamic notificationObject;
-
-    if (json != null) notificationObject = jsonDecode(json);
-
-    if (notificationObject['isSuccess']) {
-      OpenFile.open(notificationObject['filePath']);
-    }
+  CLocalNotificationService(this._localizationStore) {
+    _localNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    _setUp();
   }
 
   @override
@@ -49,12 +23,11 @@ class CLocalNotificationService implements LocalNotificationService {
     const android = AndroidNotificationDetails(
       'channel id',
       'channel name',
-      'channel description',
       priority: Priority.high,
       importance: Importance.max,
     );
 
-    const iOS = IOSNotificationDetails();
+    const iOS = DarwinNotificationDetails();
     const platform = NotificationDetails(android: android, iOS: iOS);
     final json = jsonEncode(downloadStatus);
     final isSuccess = downloadStatus['isSuccess'];
@@ -74,12 +47,39 @@ class CLocalNotificationService implements LocalNotificationService {
         ? 'Aconteceu um erro ao baixar sua imagem.'
         : 'There was an error while downloading your image.';
 
-    await notificationsPlugin.show(
+    await _localNotificationsPlugin.show(
       0,
       isSuccess ? successMessage : failureMessage,
       isSuccess ? contentMessage : errorMessage,
       platform,
       payload: json,
     );
+  }
+
+  Future<void> _setUp() async {
+    const androidSetting = AndroidInitializationSettings('@mipmap/ic_launcher');
+    const iosSetting = DarwinInitializationSettings();
+
+    const initSettings = InitializationSettings(
+      android: androidSetting,
+      iOS: iosSetting,
+    );
+
+    await _localNotificationsPlugin.initialize(
+      initSettings,
+      onDidReceiveNotificationResponse: _onReceivedNotification,
+    );
+  }
+
+  Future<void> _onReceivedNotification(NotificationResponse response) async {
+    dynamic notificationObject;
+
+    if (notificationObject != null) {
+      notificationObject = jsonDecode(notificationObject);
+    }
+
+    if (notificationObject['isSuccess']) {
+      OpenFile.open(notificationObject['filePath']);
+    }
   }
 }

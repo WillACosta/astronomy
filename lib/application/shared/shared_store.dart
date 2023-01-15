@@ -22,7 +22,7 @@ abstract class _SharedStoreBase with Store {
   @observable
   bool isDownloadingImage = false;
 
-  static final _localizationStore = locator<LocalizationStore>();
+  static final _localizationStore = serviceLocator<LocalizationStore>();
 
   final dateFormat = DateFormat(
     'yMd',

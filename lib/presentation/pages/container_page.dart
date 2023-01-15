@@ -15,11 +15,11 @@ import 'pages.dart';
 class ContainerPage extends StatelessWidget {
   const ContainerPage({Key? key}) : super(key: key);
 
-  static final _showcaseStore = locator<ShowCaseStore>();
+  static final _showcaseStore = serviceLocator<ShowCaseStore>();
 
   @override
   Widget build(BuildContext context) {
-    final _store = locator<ContainerPageStore>();
+    final _store = serviceLocator<ContainerPageStore>();
 
     return Scaffold(
       extendBody: true,

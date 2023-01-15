@@ -18,7 +18,7 @@ class GridPageBody extends StatelessWidget {
   final List<Media> list;
   final GlobalKey showcaseKey;
 
-  static final _sharedStore = locator<SharedStore>();
+  static final _sharedStore = serviceLocator<SharedStore>();
 
   @override
   Widget build(BuildContext context) {

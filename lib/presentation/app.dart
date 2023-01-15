@@ -15,8 +15,8 @@ import 'utils/app_routes.dart';
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  static final settingsStore = locator<SettingsStore>();
-  static final localizationStore = locator<LocalizationStore>();
+  static final settingsStore = serviceLocator<SettingsStore>();
+  static final localizationStore = serviceLocator<LocalizationStore>();
 
   @override
   Widget build(BuildContext context) {

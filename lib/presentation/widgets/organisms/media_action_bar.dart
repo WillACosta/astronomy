@@ -30,9 +30,9 @@ class MediaActionBar extends StatelessWidget {
   final bool isDetailScreen;
   final Media media;
 
-  static final _store = locator<SharedStore>();
-  static final _settingsStore = locator<SettingsStore>();
-  static final _favoriteStore = locator<FavoriteStore>();
+  static final _store = serviceLocator<SharedStore>();
+  static final _settingsStore = serviceLocator<SettingsStore>();
+  static final _favoriteStore = serviceLocator<FavoriteStore>();
 
   @override
   Widget build(BuildContext context) {

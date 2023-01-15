@@ -25,9 +25,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _key1 = GlobalKey();
 
-  final _store = locator<HomeStore>();
-  final _containerStore = locator<ContainerPageStore>();
-  final _showcaseStore = locator<ShowCaseStore>();
+  final _store = serviceLocator<HomeStore>();
+  final _containerStore = serviceLocator<ContainerPageStore>();
+  final _showcaseStore = serviceLocator<ShowCaseStore>();
 
   @override
   void initState() {
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
         const Duration(milliseconds: 800),
         () {
           if (_showcaseStore.displayHomeShowcase) {
-            ShowCaseWidget.of(context)!.startShowCase([_key1]);
+            ShowCaseWidget.of(context).startShowCase([_key1]);
           }
         },
       );

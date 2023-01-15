@@ -20,7 +20,7 @@ class GridDetailPage extends StatefulWidget {
 }
 
 class _GridDetailPageState extends State<GridDetailPage> {
-  final _showcaseStore = locator<ShowCaseStore>();
+  final _showcaseStore = serviceLocator<ShowCaseStore>();
 
   final _bottomSheetKey = GlobalKey();
 

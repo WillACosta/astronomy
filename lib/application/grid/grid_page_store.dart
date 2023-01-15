@@ -19,7 +19,7 @@ abstract class _GridPageStoreBase with Store {
   final GridUseCase _usecase;
   List<ReactionDisposer>? _disposers;
 
-  static final _sharedStore = locator<SharedStore>();
+  static final _sharedStore = serviceLocator<SharedStore>();
 
   _GridPageStoreBase(this._usecase) {
     getMediaList();

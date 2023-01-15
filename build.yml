@@ -1,0 +1,24 @@
+targets:
+  $default:
+    builders:
+      mobx_codegen|mobx_generator:
+        generate_for:
+          - "lib/**_store.dart"
+
+      freezed:
+        options:
+          union_key: type
+          union_value_case: snake
+        generate_for:
+          - "lib/**.freezed.dart"
+
+      json_serializable:
+        options:
+          explicit_to_json: true
+          field_rename: snake
+        generate_for:
+          - "lib/**.g.dart"
+
+      chopper:
+        generate_for:
+          - "lib/**.chopper.dart"

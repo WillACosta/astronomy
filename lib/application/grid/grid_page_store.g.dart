@@ -6,7 +6,7 @@ part of 'grid_page_store.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$GridPageStore on _GridPageStoreBase, Store {
   Computed<String>? _$getDateRangeLabelComputed;
@@ -17,7 +17,8 @@ mixin _$GridPageStore on _GridPageStoreBase, Store {
               name: '_GridPageStoreBase.getDateRangeLabel'))
       .value;
 
-  final _$stateAtom = Atom(name: '_GridPageStoreBase.state');
+  late final _$stateAtom =
+      Atom(name: '_GridPageStoreBase.state', context: context);
 
   @override
   GridPageState get state {
@@ -32,7 +33,8 @@ mixin _$GridPageStore on _GridPageStoreBase, Store {
     });
   }
 
-  final _$mediaListAtom = Atom(name: '_GridPageStoreBase.mediaList');
+  late final _$mediaListAtom =
+      Atom(name: '_GridPageStoreBase.mediaList', context: context);
 
   @override
   List<Media> get mediaList {
@@ -47,7 +49,8 @@ mixin _$GridPageStore on _GridPageStoreBase, Store {
     });
   }
 
-  final _$_dateTimeRangeAtom = Atom(name: '_GridPageStoreBase._dateTimeRange');
+  late final _$_dateTimeRangeAtom =
+      Atom(name: '_GridPageStoreBase._dateTimeRange', context: context);
 
   @override
   DateTimeRange get _dateTimeRange {
@@ -62,16 +65,16 @@ mixin _$GridPageStore on _GridPageStoreBase, Store {
     });
   }
 
-  final _$getMediaListAsyncAction =
-      AsyncAction('_GridPageStoreBase.getMediaList');
+  late final _$getMediaListAsyncAction =
+      AsyncAction('_GridPageStoreBase.getMediaList', context: context);
 
   @override
   Future getMediaList() {
     return _$getMediaListAsyncAction.run(() => super.getMediaList());
   }
 
-  final _$_GridPageStoreBaseActionController =
-      ActionController(name: '_GridPageStoreBase');
+  late final _$_GridPageStoreBaseActionController =
+      ActionController(name: '_GridPageStoreBase', context: context);
 
   @override
   void setDateRange(DateTimeRange value) {

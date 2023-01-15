@@ -18,8 +18,8 @@ import 'widgets/molecules/platform_widget.dart';
 class PlatformApp extends PlatformWidget<Observer, Observer> {
   const PlatformApp({Key? key}) : super(key: key);
 
-  static final settingsStore = locator<SettingsStore>();
-  static final localizationStore = locator<LocalizationStore>();
+  static final settingsStore = serviceLocator<SettingsStore>();
+  static final localizationStore = serviceLocator<LocalizationStore>();
 
   @override
   Observer createAndroidWidget(BuildContext context) {

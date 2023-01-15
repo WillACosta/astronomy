@@ -25,8 +25,8 @@ class GridPage extends StatefulWidget {
 }
 
 class _GridPageState extends State<GridPage> {
-  final _store = locator<GridPageStore>();
-  final _showcaseStore = locator<ShowCaseStore>();
+  final _store = serviceLocator<GridPageStore>();
+  final _showcaseStore = serviceLocator<ShowCaseStore>();
 
   final _calendarStepKey = GlobalKey();
   final _gridItemStepKey = GlobalKey();

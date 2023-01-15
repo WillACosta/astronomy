@@ -20,9 +20,9 @@ import 'components/alert_dialog_widget.dart';
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
-  static final store = locator<SettingsStore>();
-  static final sharedStore = locator<SharedStore>();
-  static final localizationStore = locator<LocalizationStore>();
+  static final store = serviceLocator<SettingsStore>();
+  static final sharedStore = serviceLocator<SharedStore>();
+  static final localizationStore = serviceLocator<LocalizationStore>();
 
   @override
   Widget build(BuildContext context) {
