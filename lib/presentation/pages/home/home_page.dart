@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../../../application/container_page/container_page_store.dart';
-import '../../../external/dependency_injection/locator.dart';
-import '../../../application/showcase/showcase_store.dart';
-import '../../../application/home/home_state.dart';
-import '../../../application/home/home_store.dart';
-import '../../widgets/widgets.dart';
+import 'package:astronomy/application/container_page/container_page_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/showcase/showcase_store.dart';
+import 'package:astronomy/application/home/home_state.dart';
+import 'package:astronomy/application/home/home_store.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
-import '../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
-import 'components/shimmer_loader.dart';
-import 'components/show_sheet_modal.dart';
-import 'components/bottom_sheet_button.dart';
+import 'package:astronomy/presentation/pages/home/components/shimmer_loader.dart';
+import 'package:astronomy/presentation/pages/home/components/show_sheet_modal.dart';
+import 'package:astronomy/presentation/pages/home/components/bottom_sheet_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

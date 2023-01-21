@@ -1,9 +1,9 @@
 import 'package:astronomy/core/types/types.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../domain/repositories/favorites_repository.dart';
-import '../datasources/local_data_source.dart';
-import '../../domain/entities/media.dart';
+import 'package:astronomy/domain/repositories/favorites_repository.dart';
+import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
+import 'package:astronomy/domain/entities/media.dart';
 
 @Injectable(as: FavoritesRepository)
 class CFavoritesRepository implements FavoritesRepository {

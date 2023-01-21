@@ -1,21 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../../utils/utils.dart' show AppTextStyles;
+import 'package:astronomy/presentation/utils/utils.dart' show AppTextStyles;
 
-import '../../../external/dependency_injection/locator.dart';
-import '../../../application/showcase/showcase_store.dart';
-import '../../../application/grid/grid_page_state.dart';
-import '../../../application/grid/grid_page_store.dart';
-import '../../widgets/widgets.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/showcase/showcase_store.dart';
+import 'package:astronomy/application/grid/grid_page_state.dart';
+import 'package:astronomy/application/grid/grid_page_store.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
-import 'components/grid_page_body.dart';
-import 'components/platform_date_picker_button.dart';
-import 'components/shimmer_loader.dart';
+import 'package:astronomy/presentation/pages/grid/components/grid_page_body.dart';
+import 'package:astronomy/presentation/pages/grid/components/platform_date_picker_button.dart';
+import 'package:astronomy/presentation/pages/grid/components/shimmer_loader.dart';
 
 class GridPage extends StatefulWidget {
   const GridPage({Key? key}) : super(key: key);
@@ -36,13 +35,13 @@ class _GridPageState extends State<GridPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         Future.delayed(
           const Duration(milliseconds: 400),
           () {
             if (_showcaseStore.displayGridShowcase) {
-              ShowCaseWidget.of(showCaseContext!)!.startShowCase([
+              ShowCaseWidget.of(showCaseContext!).startShowCase([
                 _calendarStepKey,
                 _gridItemStepKey,
               ]);
@@ -70,7 +69,7 @@ class _GridPageState extends State<GridPage> {
                 return Text(
                   '${AppLocalizations.of(context)!.viewing} ${_store.getDateRangeLabel}',
                   style: AppTextStyles.body(
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                   textAlign: TextAlign.start,
                   semanticsLabel: 'Date range view',

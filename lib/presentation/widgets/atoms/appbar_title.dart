@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class AppBarTitle extends StatelessWidget {
   const AppBarTitle({
@@ -14,7 +14,7 @@ class AppBarTitle extends StatelessWidget {
     return Text(
       title,
       style: AppTextStyles.head(
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

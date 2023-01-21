@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../domain/usecases/home/home_usecase.dart';
-import 'home_state.dart';
+import 'package:astronomy/domain/usecases/home/home_usecase.dart';
+import 'package:astronomy/application/home/home_state.dart';
 
 part 'home_store.g.dart';
 

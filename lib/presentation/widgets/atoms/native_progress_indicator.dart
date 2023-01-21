@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../molecules/platform_widget.dart';
+import 'package:astronomy/presentation/widgets/molecules/platform_widget.dart';
 
 class NativeProgressIndicator extends PlatformWidget<CupertinoActivityIndicator,
     CircularProgressIndicator> {
@@ -14,7 +14,7 @@ class NativeProgressIndicator extends PlatformWidget<CupertinoActivityIndicator,
   CircularProgressIndicator createAndroidWidget(BuildContext context) {
     return CircularProgressIndicator(
       strokeWidth: 1,
-      color: Theme.of(context).accentColor,
+      color: Theme.of(context).colorScheme.secondary,
       semanticsLabel: 'Circular progress indicator',
     );
   }

@@ -6,11 +6,11 @@ import 'package:injectable/injectable.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:dio/dio.dart';
 
-import '../../domain/services/local_notification_service.dart';
-import '../../domain/services/permissions_service.dart';
-import '../../domain/services/download_service.dart';
-import '../../core/exception/service_failure.dart';
-import '../../core/types/types.dart';
+import 'package:astronomy/domain/services/local_notification_service.dart';
+import 'package:astronomy/domain/services/permissions_service.dart';
+import 'package:astronomy/domain/services/download_service.dart';
+import 'package:astronomy/core/exception/service_failure.dart';
+import 'package:astronomy/core/types/types.dart';
 
 @Injectable(as: DownloadService)
 class CDownloadService implements DownloadService {

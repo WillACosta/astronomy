@@ -2,8 +2,8 @@ import 'package:injectable/injectable.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-import '../infraestructure/models/media_model.dart';
-import '../infraestructure/datasources/apod_data_source.dart';
+import 'package:astronomy/infraestructure/models/media_model.dart';
+import 'package:astronomy/infraestructure/datasources/apod_data_source.dart';
 
 @Injectable(as: ApodDataSource)
 class CApodDataSource implements ApodDataSource {

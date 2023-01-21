@@ -1,10 +1,9 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class AlertDialogWidget extends StatelessWidget {
   const AlertDialogWidget({

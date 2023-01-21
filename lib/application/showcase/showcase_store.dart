@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../domain/usecases/showcase/showcase_usecase.dart';
-import '../../domain/adapters/showcase.dart';
+import 'package:astronomy/domain/usecases/showcase/showcase_usecase.dart';
+import 'package:astronomy/domain/adapters/showcase.dart';
 
 part 'showcase_store.g.dart';
 

@@ -3,12 +3,12 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../../application/container_page/container_page_store.dart';
-import '../../external/dependency_injection/locator.dart';
-import '../../application/showcase/showcase_store.dart';
-import '../utils/utils.dart';
+import 'package:astronomy/application/container_page/container_page_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/showcase/showcase_store.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
-import 'pages.dart';
+import 'package:astronomy/presentation/pages/pages.dart';
 
 class ContainerPage extends StatelessWidget {
   const ContainerPage({Key? key}) : super(key: key);
@@ -17,13 +17,13 @@ class ContainerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _store = serviceLocator<ContainerPageStore>();
+    final store = serviceLocator<ContainerPageStore>();
 
     return Scaffold(
       extendBody: true,
       body: PageView(
-        controller: _store.pageController,
-        onPageChanged: _store.setCurrentPage,
+        controller: store.pageController,
+        onPageChanged: store.setCurrentPage,
         children: [
           ShowCaseWidget(
             onComplete: (__, _) => _showcaseStore.closeShowCase(
@@ -49,13 +49,13 @@ class ContainerPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    onPressed: () => _store.toPage(0),
+                    onPressed: () => store.toPage(0),
                     icon: const Icon(
                       FeatherIcons.home,
                       size: 25,
                     ),
-                    color: _store.currentPage == 0
-                        ? Theme.of(context).accentColor
+                    color: store.currentPage == 0
+                        ? Theme.of(context).colorScheme.secondary
                         : AppColors.accent,
                   ),
                   Padding(
@@ -64,13 +64,13 @@ class ContainerPage extends StatelessWidget {
                       right: getProportionateScreenWidth(20),
                     ),
                     child: IconButton(
-                      onPressed: () => _store.toPage(1),
+                      onPressed: () => store.toPage(1),
                       icon: const Icon(
                         FeatherIcons.grid,
                         size: 25,
                       ),
-                      color: _store.currentPage == 1
-                          ? Theme.of(context).accentColor
+                      color: store.currentPage == 1
+                          ? Theme.of(context).colorScheme.secondary
                           : AppColors.accent,
                     ),
                   ),
@@ -79,24 +79,24 @@ class ContainerPage extends StatelessWidget {
                       right: getProportionateScreenWidth(20),
                     ),
                     child: IconButton(
-                      onPressed: () => _store.toPage(2),
+                      onPressed: () => store.toPage(2),
                       icon: const Icon(
                         FeatherIcons.bookmark,
                         size: 25,
                       ),
-                      color: _store.currentPage == 2
-                          ? Theme.of(context).accentColor
+                      color: store.currentPage == 2
+                          ? Theme.of(context).colorScheme.secondary
                           : AppColors.accent,
                     ),
                   ),
                   IconButton(
-                    onPressed: () => _store.toPage(3),
+                    onPressed: () => store.toPage(3),
                     icon: const Icon(
                       FeatherIcons.settings,
                       size: 25,
                     ),
-                    color: _store.currentPage == 3
-                        ? Theme.of(context).accentColor
+                    color: store.currentPage == 3
+                        ? Theme.of(context).colorScheme.secondary
                         : AppColors.accent,
                   ),
                 ],

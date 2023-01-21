@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
 
-import '../../repositories/showcase_repository.dart';
-import '../../adapters/showcase.dart';
+import 'package:astronomy/domain/repositories/showcase_repository.dart';
+import 'package:astronomy/domain/adapters/showcase.dart';
 
-import 'showcase_usecase.dart';
+import 'package:astronomy/domain/usecases/showcase/showcase_usecase.dart';
 
 @Injectable(as: ShowcaseUseCase)
 class CShowcaseUsecase implements ShowcaseUseCase {

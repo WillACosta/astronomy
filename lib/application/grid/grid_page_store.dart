@@ -3,12 +3,12 @@ import 'package:injectable/injectable.dart';
 
 import 'package:mobx/mobx.dart';
 
-import '../../external/dependency_injection/locator.dart';
-import '../../domain/usecases/grid/grid_usecase.dart';
-import '../../domain/entities/grid_page_dto.dart';
-import '../../domain/entities/media.dart';
-import '../shared/shared_store.dart';
-import 'grid_page_state.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/domain/usecases/grid/grid_usecase.dart';
+import 'package:astronomy/domain/entities/grid_page_dto.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/application/shared/shared_store.dart';
+import 'package:astronomy/application/grid/grid_page_state.dart';
 
 part 'grid_page_store.g.dart';
 

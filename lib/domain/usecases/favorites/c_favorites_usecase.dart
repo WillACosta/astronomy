@@ -1,10 +1,10 @@
 import 'package:injectable/injectable.dart';
 
-import '../../repositories/favorites_repository.dart';
-import '../../../core/types/types.dart';
-import '../../entities/media.dart';
+import 'package:astronomy/domain/repositories/favorites_repository.dart';
+import 'package:astronomy/core/types/types.dart';
+import 'package:astronomy/domain/entities/media.dart';
 
-import 'favorites_usecase.dart';
+import 'package:astronomy/domain/usecases/favorites/favorites_usecase.dart';
 
 @Injectable(as: FavoritesUseCase)
 class CFavoritesUsecase implements FavoritesUseCase {

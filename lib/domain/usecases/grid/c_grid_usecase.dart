@@ -1,11 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 
-import '../../repositories/apod_repository.dart';
-import '../../../core/types/types.dart';
-import '../../entities/grid_page_dto.dart';
+import 'package:astronomy/domain/repositories/apod_repository.dart';
+import 'package:astronomy/core/types/types.dart';
+import 'package:astronomy/domain/entities/grid_page_dto.dart';
 
-import 'grid_usecase.dart';
+import 'package:astronomy/domain/usecases/grid/grid_usecase.dart';
 
 @Injectable(as: GridUseCase)
 class CGridUseCase implements GridUseCase {

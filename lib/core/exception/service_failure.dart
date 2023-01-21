@@ -1,4 +1,4 @@
-import 'failure.exception.dart';
+import 'package:astronomy/core/exception/failure.exception.dart';
 
 class ServiceFailure extends Failure {
   ServiceFailure({required String message}) : super(message: message);

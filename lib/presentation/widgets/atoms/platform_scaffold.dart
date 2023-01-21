@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
 class PlatformScaffold extends PlatformWidget<Widget, Widget> {
   final Widget body;
@@ -30,7 +29,7 @@ class PlatformScaffold extends PlatformWidget<Widget, Widget> {
         title: title,
         actions: actionWidget != null ? [actionWidget!] : null,
         iconTheme: IconThemeData(
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
       body: body,

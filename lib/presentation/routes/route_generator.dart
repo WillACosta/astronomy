@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/media.dart';
-import '../widgets/widgets.dart';
-import '../pages/pages.dart';
-import '../utils/utils.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
+import 'package:astronomy/presentation/pages/pages.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

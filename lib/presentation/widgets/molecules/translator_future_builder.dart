@@ -1,8 +1,8 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
-import '../widgets.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
 class TranslatorFutureBuilder extends StatefulWidget {
   const TranslatorFutureBuilder({
