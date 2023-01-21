@@ -1,5 +1,3 @@
-[![Build Status](https://app.travis-ci.com/WillACosta/astronomy.svg?branch=main)](https://app.travis-ci.com/WillACosta/astronomy)
-
 Language: [English](https://github.com/WillACosta/astronomy) | [Português](https://github.com/WillACosta/astronomy/tree/main/docs/translations/pt-BR)
 
 <div align="center" border-radius="100px">
@@ -8,10 +6,10 @@ Language: [English](https://github.com/WillACosta/astronomy) | [Português](http
 
 ##
 
-Astronomy is a mobile app made in Flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites, animations and much more.
+Astronomy is a mobile app made in Flutter to display awesome pictures and videos of the universe every day using NASA's public APOD API, containing features such as downloading, gallery usage, state management, saving favorites, animations and more.
 
-<a href='https://play.google.com/store/apps/details?id=com.application.astronomy&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-  <img alt='Get it on Google Play' src='https://play.google.com/intl/pt-BR/badges/static/images/badges/en_badge_web_generic.png' height="80" />
+<a href='https://play.google.com/store/apps/details?id=com.application.astronomy'>
+  <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="70" />
 </a>
 
 ## Content
@@ -19,7 +17,6 @@ Astronomy is a mobile app made in Flutter to display awesome pictures and videos
 - **[Design](#design)**
 - **[Features](#features)**
 - **[Technical Resources](#technical-resources)**
-- **[Roadmap](#roadmap)**
 - **[How to Use](#how-to-use)**
 - **[Contributing](#contributing)**
 - **[App Flow Sample](#app-flow-sample)**
@@ -48,37 +45,26 @@ The app has a clean and minimalist proposal and also a style guide. You can copy
 - Animations and custom widgets
 - Local storage with Hive
 - Shimmer loading effect
-- NASA'S APOD API requests
-
-## Roadmap
-
-- [ ] System Theme Mode
-- [ ] Hide the `bottomBar` to get an immersive vision of APOD
-- [ ] Hide the `appBar` abd `bottomBar` in Grid View Screen
-- [ ] Aditional Glassmorphism Theme
-- [ ] Accessibility options
-- [ ] Push notifications about the image of the day
-- [ ] Set image as Wallpaper
-- [ ] Responsive Design
+- API Request using NASA'S APOD
 
 ## How to Use
 
 ```bash
-## Clone this repo
+## clone this repo
 $ git clone https://github.com/WillACosta/astronomy
 
-## Go to the directory
+## go to the directory
 $ cd astronomy
 
-## Install the dependencies
+## install the dependencies
 $ flutter pub get
 
-## Rename the '.env-example' file to '.env' in the root directory with
+## rename the '.env-example' file to '.env' in the root directory with
 $ mv .env-example .env
 
-## Open the file and add your API KEY (Get on https://api.nasa.gov/)
+## open the file and add your API KEY (Get on https://api.nasa.gov/)
 
-## Run the app
+## run the app
 $ flutter run
 ```
 
