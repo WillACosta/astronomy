@@ -29,13 +29,13 @@ class _GridDetailPageState extends State<GridDetailPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         Future.delayed(
           const Duration(milliseconds: 400),
           () {
             if (_showcaseStore.displayGridDetailShowcase) {
-              ShowCaseWidget.of(showCaseContext!)!
+              ShowCaseWidget.of(showCaseContext!)
                   .startShowCase([_bottomSheetKey]);
             }
           },

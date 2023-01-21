@@ -1,7 +1,5 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
@@ -39,13 +37,9 @@ class ContainerPage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(getProportionateScreenHeight(15)),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(40),
-            topRight: Radius.circular(40),
-          ),
         ),
         child: SafeArea(
           top: false,
@@ -56,10 +50,8 @@ class ContainerPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => _store.toPage(0),
-                    icon: Icon(
-                      Platform.isAndroid
-                          ? Icons.home_outlined
-                          : CupertinoIcons.home,
+                    icon: const Icon(
+                      FeatherIcons.home,
                       size: 25,
                     ),
                     color: _store.currentPage == 0
@@ -73,10 +65,8 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(1),
-                      icon: Icon(
-                        Platform.isAndroid
-                            ? Icons.grid_view_outlined
-                            : CupertinoIcons.rectangle_grid_2x2,
+                      icon: const Icon(
+                        FeatherIcons.grid,
                         size: 25,
                       ),
                       color: _store.currentPage == 1
@@ -90,10 +80,8 @@ class ContainerPage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => _store.toPage(2),
-                      icon: Icon(
-                        Platform.isAndroid
-                            ? Icons.bookmark_border_outlined
-                            : CupertinoIcons.bookmark,
+                      icon: const Icon(
+                        FeatherIcons.bookmark,
                         size: 25,
                       ),
                       color: _store.currentPage == 2
@@ -103,10 +91,8 @@ class ContainerPage extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () => _store.toPage(3),
-                    icon: Icon(
-                      Platform.isAndroid
-                          ? Icons.settings_outlined
-                          : CupertinoIcons.settings,
+                    icon: const Icon(
+                      FeatherIcons.settings,
                       size: 25,
                     ),
                     color: _store.currentPage == 3

@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(
         const Duration(milliseconds: 800),
         () {
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Observer(
         builder: (context) {
-          var state = _store.state;
+          final state = _store.state;
 
           if (state is ErrorState) {
             return ApodErrorRefreshIndicator(onRefresh: _store.refresh);
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
             );
           }
 
-          return Row();
+          return const SizedBox.shrink();
         },
       ),
     );

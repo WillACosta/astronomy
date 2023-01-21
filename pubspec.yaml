@@ -42,6 +42,7 @@ dependencies:
   showcaseview: ^2.0.0+1
   animations: ^2.0.1
   animated_check: ^1.0.4
+  flutter_feather_icons: ^2.0.0+1
 
 flutter_native_splash:
   color: "#0d0d0d"

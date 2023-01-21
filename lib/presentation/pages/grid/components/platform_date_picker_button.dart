@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 import '../../../widgets/widgets.dart';
 
@@ -24,7 +25,7 @@ class PlatformDatePickerButton
         showcaseKey: stepKey,
         disposeOnTap: false,
         child: const Icon(
-          Icons.calendar_today,
+          FeatherIcons.calendar,
           semanticLabel: 'Calendar button',
         ),
       ),
@@ -41,7 +42,7 @@ class PlatformDatePickerButton
         showcaseKey: stepKey,
         disposeOnTap: false,
         child: Icon(
-          CupertinoIcons.calendar,
+          FeatherIcons.calendar,
           color: Theme.of(context).accentColor,
           semanticLabel: 'Calendar button',
         ),

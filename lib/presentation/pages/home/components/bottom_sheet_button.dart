@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 import '../../../../domain/entities/media.dart';
 import '../../../utils/utils.dart';
@@ -27,10 +28,8 @@ class BottomSheetButton extends StatelessWidget {
           isDismissible: true,
           builder: (_) => BottomSheetModal(media: media),
         ),
-        child: Icon(
-          Platform.isAndroid
-              ? Icons.expand_less_outlined
-              : CupertinoIcons.chevron_up,
+        child: const Icon(
+          FeatherIcons.chevronUp,
           color: AppColors.secondary,
           size: 25,
           semanticLabel: 'Arrow up media details button',
