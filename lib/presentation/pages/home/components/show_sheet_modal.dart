@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/presentation/pages/home/components/bottom_sheet_modal.dart';
 
 void showSheetModal(BuildContext context, Media media) {

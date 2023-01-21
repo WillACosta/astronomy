@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:astronomy/storage/entities/media_entity.dart';
 import 'package:flutter/material.dart';
 
 import 'package:path_provider/path_provider.dart';
@@ -9,7 +10,6 @@ import 'package:astronomy/domain/adapters/user_preferences.dart';
 import 'package:astronomy/external/init_configurations.dart';
 import 'package:astronomy/domain/adapters/user_locale.dart';
 import 'package:astronomy/domain/adapters/showcase.dart';
-import 'package:astronomy/domain/entities/media.dart';
 import 'package:astronomy/presentation/app.dart';
 
 void main() async {
@@ -18,7 +18,7 @@ void main() async {
   Directory dir = await getApplicationDocumentsDirectory();
   Hive.registerAdapter(UserPreferencesAdapter());
   Hive.registerAdapter(UserLocaleAdapter());
-  Hive.registerAdapter(MediaAdapter());
+  Hive.registerAdapter(MediaEntityAdapter());
   Hive.registerAdapter(ShowcaseAdapter());
 
   await Hive.initFlutter(dir.path);

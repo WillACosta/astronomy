@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 import 'package:astronomy/domain/repositories/apod_repository.dart';
 import 'package:astronomy/core/types/types.dart';
-import 'package:astronomy/domain/entities/grid_page_dto.dart';
+import 'package:astronomy/domain/models/grid_page_dto.dart';
 
 import 'package:astronomy/domain/usecases/grid/grid_usecase.dart';
 

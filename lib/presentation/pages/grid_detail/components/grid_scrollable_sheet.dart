@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/presentation/widgets/widgets.dart';
 
 import 'package:astronomy/presentation/utils/utils.dart'

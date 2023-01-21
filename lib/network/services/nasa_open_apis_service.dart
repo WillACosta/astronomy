@@ -20,7 +20,7 @@ abstract class NASAOpenAPIsService extends ChopperService {
   AsyncResponse<MediaModel> getMediaOfTheDay();
 
   @Get(path: NasaOpenAPISEndpoints.apodEndpoint)
-  AsyncResponse<List<MediaModel>> getMedia(
+  AsyncResponse<List<MediaModel>> getMediaList(
     @Query('start_date') String startDate,
     @Query('end_date') String endDate,
   );

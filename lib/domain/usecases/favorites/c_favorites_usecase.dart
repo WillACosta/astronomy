@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import 'package:astronomy/domain/repositories/favorites_repository.dart';
 import 'package:astronomy/core/types/types.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 
 import 'package:astronomy/domain/usecases/favorites/favorites_usecase.dart';
 

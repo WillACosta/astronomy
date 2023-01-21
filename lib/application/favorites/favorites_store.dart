@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
 import 'package:astronomy/domain/usecases/favorites/favorites_usecase.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 
 part 'favorites_store.g.dart';
 

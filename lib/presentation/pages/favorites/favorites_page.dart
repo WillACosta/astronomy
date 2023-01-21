@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'package:astronomy/application/favorites/favorites_store.dart';
 import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/presentation/widgets/widgets.dart';
 import 'package:astronomy/presentation/utils/utils.dart';
 

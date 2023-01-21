@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/presentation/widgets/widgets.dart';
 import 'package:astronomy/presentation/pages/home/components/media_text_content.dart';
 

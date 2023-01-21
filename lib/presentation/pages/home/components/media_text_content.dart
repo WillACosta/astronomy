@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/presentation/utils/utils.dart';
 
 class MediaTextContent extends StatelessWidget {

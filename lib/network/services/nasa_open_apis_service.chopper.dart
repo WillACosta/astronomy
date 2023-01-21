@@ -28,7 +28,7 @@ class _$NASAOpenAPIsService extends NASAOpenAPIsService {
   }
 
   @override
-  Future<Response<List<MediaModel>>> getMedia(
+  Future<Response<List<MediaModel>>> getMediaList(
     String startDate,
     String endDate,
   ) {

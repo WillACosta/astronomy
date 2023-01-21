@@ -1,15 +1,15 @@
+import 'package:astronomy/core/failures/service_failure.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:fpdart/fpdart.dart';
 
 import 'package:astronomy/domain/usecases/grid/c_grid_usecase.dart';
-import 'package:astronomy/core/exception/apod_server_failure.dart';
-import 'package:astronomy/core/exception/failure.exception.dart';
-import 'package:astronomy/domain/entities/grid_page_dto.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/core/failures/failure.exception.dart';
+import 'package:astronomy/domain/models/grid_page_dto.dart';
+import 'package:astronomy/domain/models/media.dart';
 
-import '../../../mocks/data.dart';
-import '../../../mocks/mocktail_class.dart';
+import '../../../fixtures/mocks/data.dart';
+import '../../../fixtures/mocks/mocktail_class.dart';
 
 void main() {
   late FakeApodRepository apodRepository;
@@ -53,9 +53,7 @@ void main() {
         ),
       ).thenAnswer(
         (_) async => Left(
-          ServerFailure(
-            message: 'An error occurred while requesting media!',
-          ),
+          ServiceFailure(),
         ),
       );
 

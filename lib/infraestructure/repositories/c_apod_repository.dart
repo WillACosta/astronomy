@@ -1,51 +1,28 @@
-import 'package:fpdart/fpdart.dart';
+import 'package:astronomy/network/utils/safe_api_call.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/core/exception/apod_server_failure.dart';
+import 'package:astronomy/network/services/nasa_open_apis_service.dart';
 import 'package:astronomy/domain/repositories/apod_repository.dart';
-import 'package:astronomy/infraestructure/datasources/apod_data_source.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/core/types/types.dart';
 
 @Injectable(as: ApodRepository)
 class CApodRepository implements ApodRepository {
-  final ApodDataSource _dataSource;
+  final NASAOpenAPIsService _service;
 
-  CApodRepository(this._dataSource);
+  CApodRepository(this._service);
 
   @override
-  MediaOfTheDayType getMediaOfTheDay() async {
-    try {
-      final response = await _dataSource.getMediaOfTheDay();
-      return Right(response);
-    } catch (e) {
-      return Left(
-        ServerFailure(
-          message: 'An error as occurred!',
-          error: e,
-        ),
-      );
-    }
+  AsyncEither<List<Media>> getMediaList({
+    required String startDate,
+    required String endDate,
+  }) {
+    // TODO: implement getMediaList
+    throw UnimplementedError();
   }
 
   @override
-  ListOfMediaType getMediaList({
-    required String startDate,
-    required String endDate,
-  }) async {
-    try {
-      final response = await _dataSource.getMediaList(
-        startDate: startDate,
-        endDate: endDate,
-      );
-
-      return Right(response);
-    } catch (e) {
-      return Left(
-        ServerFailure(
-          message: 'An error as occurred!',
-          error: e,
-        ),
-      );
-    }
+  AsyncEither<Media> getMediaOfTheDay() {
+    return safeApiCall<Media>(_service.getMediaOfTheDay);
   }
 }

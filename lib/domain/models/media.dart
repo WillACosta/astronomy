@@ -1,31 +1,15 @@
-import 'package:hive/hive.dart';
+import 'package:equatable/equatable.dart';
 
-part 'media.g.dart';
-
-@HiveType(typeId: 2)
-class Media extends HiveObject{
-  @HiveField(0)
+class Media extends Equatable {
   final String? copyright;
-
-  @HiveField(1)
   final String? hdurl;
-
-  @HiveField(2)
   final DateTime date;
-
-  @HiveField(3)
   final String explanation;
-
-  @HiveField(4)
   final String mediaType;
-
-  @HiveField(5)
   final String title;
-
-  @HiveField(6)
   final String url;
 
-  Media({
+  const Media({
     this.copyright,
     this.hdurl,
     required this.date,
@@ -34,4 +18,15 @@ class Media extends HiveObject{
     required this.title,
     required this.url,
   });
+
+  @override
+  List<Object?> get props => [
+        copyright,
+        hdurl,
+        date,
+        explanation,
+        mediaType,
+        title,
+        url,
+      ];
 }

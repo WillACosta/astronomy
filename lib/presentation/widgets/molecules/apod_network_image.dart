@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:astronomy/application/settings/settings_store.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 
 class ApodNetworkImage extends StatelessWidget {
   const ApodNetworkImage({

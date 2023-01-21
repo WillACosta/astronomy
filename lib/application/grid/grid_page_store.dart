@@ -5,8 +5,8 @@ import 'package:mobx/mobx.dart';
 
 import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:astronomy/domain/usecases/grid/grid_usecase.dart';
-import 'package:astronomy/domain/entities/grid_page_dto.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/grid_page_dto.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/application/shared/shared_store.dart';
 import 'package:astronomy/application/grid/grid_page_state.dart';
 

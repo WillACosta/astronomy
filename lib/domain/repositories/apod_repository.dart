@@ -1,9 +1,10 @@
 import 'package:astronomy/core/types/types.dart';
+import 'package:astronomy/domain/models/media.dart';
 
 abstract class ApodRepository {
-  MediaOfTheDayType getMediaOfTheDay();
+  AsyncEither<Media> getMediaOfTheDay();
 
-  ListOfMediaType getMediaList({
+  AsyncEither<List<Media>> getMediaList({
     required String startDate,
     required String endDate,
   });

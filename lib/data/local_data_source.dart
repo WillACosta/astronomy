@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
 import 'package:astronomy/domain/adapters/user_preferences.dart';
 import 'package:astronomy/domain/adapters/showcase.dart';
-import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:astronomy/core/types/types.dart';
 
 const preferencesKey = 'user_preferences';

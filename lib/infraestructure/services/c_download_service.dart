@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 import 'package:astronomy/domain/services/local_notification_service.dart';
 import 'package:astronomy/domain/services/permissions_service.dart';
 import 'package:astronomy/domain/services/download_service.dart';
-import 'package:astronomy/core/exception/service_failure.dart';
+import 'package:astronomy/core/failures/service_failure.dart';
 import 'package:astronomy/core/types/types.dart';
 
 @Injectable(as: DownloadService)
@@ -52,12 +52,12 @@ class CDownloadService implements DownloadService {
 
         return Right(result);
       } catch (e) {
-        return Left(ServiceFailure(message: 'Sorry! Something went wrong.'));
+        return Left(ServiceFailure('Sorry! Something went wrong.'));
       }
     } else {
       return Left(
         DeniedPermissionFailure(
-          message: "Couldn't download the image! We need storage permissions.",
+          "Couldn't download the image! We need storage permissions.",
         ),
       );
     }
