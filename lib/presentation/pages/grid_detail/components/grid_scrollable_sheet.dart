@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../domain/entities/media.dart';
-import '../../../widgets/widgets.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
-import '../../../utils/utils.dart'
+import 'package:astronomy/presentation/utils/utils.dart'
     show
         AppTextStyles,
         getProportionateScreenHeight,

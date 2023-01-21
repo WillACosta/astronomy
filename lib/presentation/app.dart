@@ -4,13 +4,13 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../application/localization/localization_store.dart';
-import '../external/dependency_injection/locator.dart';
-import '../application/settings/settings_store.dart';
-import '../app_theme.dart';
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/settings/settings_store.dart';
+import 'package:astronomy/app_theme.dart';
 
-import 'routes/route_generator.dart';
-import 'utils/app_routes.dart';
+import 'package:astronomy/presentation/routes/route_generator.dart';
+import 'package:astronomy/presentation/utils/app_routes.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

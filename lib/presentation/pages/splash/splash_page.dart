@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
-import 'components/body.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
+import 'package:astronomy/presentation/pages/splash/components/body.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);

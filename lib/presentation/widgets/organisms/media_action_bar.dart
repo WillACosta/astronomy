@@ -5,20 +5,19 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:social_share/social_share.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
-import '../../../application/favorites/favorites_store.dart';
-import '../../../external/dependency_injection/locator.dart';
-import '../../../application/settings/settings_store.dart';
-import '../../../application/shared/shared_store.dart';
-import '../../../domain/entities/media.dart';
-import '../../routes/route_navigator.dart';
-import '../../utils/utils.dart';
-import '../widgets.dart';
+import 'package:astronomy/application/favorites/favorites_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/settings/settings_store.dart';
+import 'package:astronomy/application/shared/shared_store.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/presentation/routes/route_navigator.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
-import 'animated_check_icon.dart';
-import 'bookmark_button.dart';
+import 'package:astronomy/presentation/widgets/organisms/animated_check_icon.dart';
+import 'package:astronomy/presentation/widgets/organisms/bookmark_button.dart';
 
 class MediaActionBar extends StatelessWidget {
   const MediaActionBar({

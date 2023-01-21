@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
 
-import '../../domain/repositories/showcase_repository.dart';
-import '../datasources/local_data_source.dart';
-import '../../domain/adapters/showcase.dart';
+import 'package:astronomy/domain/repositories/showcase_repository.dart';
+import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
+import 'package:astronomy/domain/adapters/showcase.dart';
 
 @Injectable(as: ShowcaseRepository)
 class CShowcaseRepository implements ShowcaseRepository {

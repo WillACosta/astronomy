@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
+  sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
   cupertino_icons: ^1.0.2
@@ -20,6 +20,7 @@ dependencies:
   dio: ^4.0.0
   flutter_dotenv: ^5.0.2
   flutter_local_notifications: ^12.0.4
+  mobx: ^2.1.3
   flutter_mobx: ^2.0.2
   fluttertoast: ^8.0.8
   fpdart: ^0.4.0
@@ -43,20 +44,6 @@ dependencies:
   animations: ^2.0.1
   animated_check: ^1.0.4
   flutter_feather_icons: ^2.0.0+1
-
-flutter_native_splash:
-  color: "#0d0d0d"
-  image: "assets/app/splash.png"
-  android: true
-  ios: true
-
-flutter_icons:
-  image_path: "assets/app/icon.png"
-  ios: true
-  remove_alpha_ios: true
-  android: "launcher_icon"
-  adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/app/icon-android.png"
 
 dev_dependencies:
   flutter_test:

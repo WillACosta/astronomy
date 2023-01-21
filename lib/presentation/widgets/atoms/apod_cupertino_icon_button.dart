@@ -1,9 +1,8 @@
 import 'package:astronomy/application/settings/settings_store.dart';
 import 'package:astronomy/external/dependency_injection/locator.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-import '../../utils/app_colors.dart';
+import 'package:astronomy/presentation/utils/app_colors.dart';
 
 class ApodCupertinoIconButton extends StatelessWidget {
   const ApodCupertinoIconButton({
@@ -22,6 +21,7 @@ class ApodCupertinoIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
+      onPressed: onPressed,
       child: Icon(
         icon,
         color:
@@ -29,7 +29,6 @@ class ApodCupertinoIconButton extends StatelessWidget {
                 ? AppColors.primary
                 : AppColors.secondary,
       ),
-      onPressed: onPressed,
     );
   }
 }

@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../application/localization/localization_store.dart';
-import '../../../../external/dependency_injection/locator.dart';
-import '../../../routes/route_navigator.dart';
-import '../../../widgets/widgets.dart';
-import '../../../utils/utils.dart';
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/presentation/routes/route_navigator.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class Body extends StatefulWidget {
   const Body({
@@ -25,7 +25,7 @@ class _BodyState extends State<Body> {
   void initState() {
     super.initState();
 
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
 
     Future.delayed(const Duration(seconds: 4)).then((_) {
       navigateTo(

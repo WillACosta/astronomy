@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
-import 'error_state_widget.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
+import 'package:astronomy/presentation/widgets/molecules/error_state_widget.dart';
 
 class ApodErrorRefreshIndicator extends StatelessWidget {
   const ApodErrorRefreshIndicator({

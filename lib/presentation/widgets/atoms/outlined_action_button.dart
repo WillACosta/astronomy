@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class OutlinedActionButton extends StatelessWidget {
   const OutlinedActionButton({
@@ -23,10 +22,9 @@ class OutlinedActionButton extends StatelessWidget {
       label: semanticLabel,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          primary: isDark != null && isDark == true
+          foregroundColor: isDark != null && isDark == true
               ? AppColors.primary
-              : AppColors.secondary,
-          side: BorderSide(
+              : AppColors.secondary, side: BorderSide(
             color: isDark != null && isDark == true
                 ? AppColors.primary
                 : AppColors.secondary,

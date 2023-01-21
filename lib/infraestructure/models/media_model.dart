@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../../domain/entities/media.dart';
+import 'package:astronomy/domain/entities/media.dart';
 
 class MediaModel extends Media {
   MediaModel({

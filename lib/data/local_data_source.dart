@@ -2,11 +2,11 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 
-import '../infraestructure/datasources/local_data_source.dart';
-import '../domain/adapters/user_preferences.dart';
-import '../domain/adapters/showcase.dart';
-import '../domain/entities/media.dart';
-import '../core/types/types.dart';
+import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
+import 'package:astronomy/domain/adapters/user_preferences.dart';
+import 'package:astronomy/domain/adapters/showcase.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/core/types/types.dart';
 
 const preferencesKey = 'user_preferences';
 const userFavoritesKey = 'user_favorites';

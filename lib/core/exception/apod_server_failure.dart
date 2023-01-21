@@ -1,4 +1,4 @@
-import 'failure.exception.dart';
+import 'package:astronomy/core/exception/failure.exception.dart';
 
 class ServerFailure extends Failure {
   ServerFailure({

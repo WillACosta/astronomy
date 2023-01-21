@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
 
-import '../../domain/repositories/settings_repository.dart';
-import '../../domain/adapters/user_preferences.dart';
-import '../datasources/local_data_source.dart';
+import 'package:astronomy/domain/repositories/settings_repository.dart';
+import 'package:astronomy/domain/adapters/user_preferences.dart';
+import 'package:astronomy/infraestructure/datasources/local_data_source.dart';
 
 
 @Injectable(as: SettingsRepository)

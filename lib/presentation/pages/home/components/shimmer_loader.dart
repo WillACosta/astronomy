@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/widgets.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
 
 class ShimmerLoader extends StatelessWidget {
   const ShimmerLoader({

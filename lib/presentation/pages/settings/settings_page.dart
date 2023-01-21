@@ -7,15 +7,15 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 // import 'package:astronomy/l10n/l10n.dart';
 
-import '../../../application/localization/localization_store.dart';
-import '../../../external/dependency_injection/locator.dart';
-import '../../../application/settings/settings_store.dart';
-import '../../../application/shared/shared_store.dart';
-import '../../routes/route_navigator.dart';
-import '../../widgets/widgets.dart';
-import '../../utils/utils.dart';
+import 'package:astronomy/application/localization/localization_store.dart';
+import 'package:astronomy/external/dependency_injection/locator.dart';
+import 'package:astronomy/application/settings/settings_store.dart';
+import 'package:astronomy/application/shared/shared_store.dart';
+import 'package:astronomy/presentation/routes/route_navigator.dart';
+import 'package:astronomy/presentation/widgets/widgets.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
-import 'components/alert_dialog_widget.dart';
+import 'package:astronomy/presentation/pages/settings/components/alert_dialog_widget.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);

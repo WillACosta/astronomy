@@ -2,7 +2,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../domain/services/translator_service.dart';
+import 'package:astronomy/domain/services/translator_service.dart';
 
 part 'translator_store.g.dart';
 

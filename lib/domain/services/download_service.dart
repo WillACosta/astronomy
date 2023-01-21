@@ -1,4 +1,4 @@
-import '../../core/types/types.dart';
+import 'package:astronomy/core/types/types.dart';
 
 abstract class DownloadService {
   DownloadServiceType downloadFile({

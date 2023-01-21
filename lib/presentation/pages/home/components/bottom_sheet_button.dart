@@ -1,13 +1,11 @@
-import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-import '../../../../domain/entities/media.dart';
-import '../../../utils/utils.dart';
+import 'package:astronomy/domain/entities/media.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
-import 'bottom_sheet_modal.dart';
+import 'package:astronomy/presentation/pages/home/components/bottom_sheet_modal.dart';
 
 class BottomSheetButton extends StatelessWidget {
   final Media media;

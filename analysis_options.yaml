@@ -2,9 +2,28 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
-    - prefer_single_quotes
-    - parameter_assignments
+    prefer_single_quotes: true
+    parameter_assignments: true
+    avoid_print: true
+    cancel_subscriptions: true
+    always_use_package_imports: true
+    empty_constructor_bodies: true
+    empty_catches: true
+    unnecessary_new: true
+    unnecessary_this: true
+
+    comment_references: false
+    directives_ordering: false
+    prefer_relative_imports: false
+    library_private_types_in_public_api: false
 
 analyzer:
   errors:
     prefer_single_quotes: error
+    always_use_package_imports: error
+    invalid_annotation_target: ignore
+  exclude:
+    - "**/*.mocks.dart"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"

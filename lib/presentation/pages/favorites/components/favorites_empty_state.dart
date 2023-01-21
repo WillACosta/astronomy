@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class FavoritesEmptyState extends StatelessWidget {
   const FavoritesEmptyState({
@@ -20,7 +20,7 @@ class FavoritesEmptyState extends StatelessWidget {
           const Spacer(),
           Text(
             AppLocalizations.of(context)!.noFavorites,
-            style: AppTextStyles.bodyHead(color: Theme.of(context).accentColor),
+            style: AppTextStyles.bodyHead(color: Theme.of(context).colorScheme.secondary),
             semanticsLabel: 'No favorites text',
           ),
           SizedBox(height: getProportionateScreenHeight(5)),

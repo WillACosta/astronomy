@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({

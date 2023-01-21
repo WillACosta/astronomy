@@ -65,7 +65,7 @@ class _AnimatedCheckIconState extends State<AnimatedCheckIcon>
       child: AnimatedCheck(
         progress: _animation,
         size: 30,
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

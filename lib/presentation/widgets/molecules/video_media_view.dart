@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../utils/utils.dart';
+import 'package:astronomy/presentation/utils/utils.dart';
 
 class VideoMediaView extends StatelessWidget {
   const VideoMediaView({Key? key, this.showLabel}) : super(key: key);
@@ -17,7 +17,7 @@ class VideoMediaView extends StatelessWidget {
           width: 55,
           height: 55,
           decoration: BoxDecoration(
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(

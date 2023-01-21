@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'presentation/utils/app_colors.dart';
+import 'package:astronomy/presentation/utils/app_colors.dart';
 
 final darkTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColor: AppColors.primary,
-  accentColor: AppColors.secondary,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: AppColors.primary,
   backgroundColor: AppColors.primary,
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
-      primary: AppColors.secondary,
+      foregroundColor: AppColors.secondary,
     ),
   ),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      primary: AppColors.secondary,
-      side: const BorderSide(
+      foregroundColor: AppColors.secondary, side: const BorderSide(
         color: AppColors.secondary,
         width: 1,
       ),
@@ -43,25 +42,23 @@ final darkTheme = ThemeData(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),
     ),
-  ),
+  ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: AppColors.secondary),
 );
 
 final lightTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColor: AppColors.secondary,
-  accentColor: AppColors.primary,
   brightness: Brightness.light,
   scaffoldBackgroundColor: AppColors.secondary,
   backgroundColor: AppColors.secondary,
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
-      primary: AppColors.secondary,
+      foregroundColor: AppColors.secondary,
     ),
   ),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      primary: AppColors.secondary,
-      side: const BorderSide(
+      foregroundColor: AppColors.secondary, side: const BorderSide(
         color: AppColors.primary,
         width: 1,
       ),
@@ -79,8 +76,7 @@ final lightTheme = ThemeData(
     iconTheme: IconThemeData(
       color: AppColors.secondary,
     ),
-    brightness: Brightness.dark,
-    color: AppColors.primary,
+    color: AppColors.primary, systemOverlayStyle: SystemUiOverlayStyle.light,
   ),
   iconTheme: const IconThemeData(
     color: AppColors.secondary,
@@ -91,5 +87,5 @@ final lightTheme = ThemeData(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),
     ),
-  ),
+  ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: AppColors.primary),
 );
