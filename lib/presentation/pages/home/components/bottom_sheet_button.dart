@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../../../domain/models/media.dart';
+import '../../../utils/utils.dart';
 
-import 'package:astronomy/presentation/pages/home/components/bottom_sheet_modal.dart';
+import 'bottom_sheet_modal.dart';
 
 class BottomSheetButton extends StatelessWidget {
   final Media media;

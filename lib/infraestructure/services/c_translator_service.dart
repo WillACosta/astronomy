@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'package:translator/translator.dart';
 
-import 'package:astronomy/domain/services/translator_service.dart';
+import '../../domain/services/translator_service.dart';
 
 @Injectable(as: TranslatorService)
 class CTranslatorService implements TranslatorService {

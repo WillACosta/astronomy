@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'package:astronomy/presentation/widgets/molecules/platform_widget.dart';
+import '../molecules/platform_widget.dart';
 
 class NativeProgressIndicator extends PlatformWidget<CupertinoActivityIndicator,
     CircularProgressIndicator> {

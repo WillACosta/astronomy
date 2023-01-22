@@ -1,10 +1,11 @@
-import 'package:astronomy/network/utils/safe_api_call.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/network/services/nasa_open_apis_service.dart';
-import 'package:astronomy/domain/repositories/apod_repository.dart';
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/core/types/types.dart';
+import '../extensions/media_model_extensions.dart';
+import '../../network/services/nasa_open_apis_service.dart';
+import '../../domain/repositories/apod_repository.dart';
+import '../../network/utils/safe_api_call.dart';
+import '../../domain/models/media.dart';
+import '../../core/types/types.dart';
 
 @Injectable(as: ApodRepository)
 class CApodRepository implements ApodRepository {
@@ -16,13 +17,17 @@ class CApodRepository implements ApodRepository {
   AsyncEither<List<Media>> getMediaList({
     required String startDate,
     required String endDate,
-  }) {
-    // TODO: implement getMediaList
-    throw UnimplementedError();
+  }) async {
+    final foldable = await safeApiCall(
+      () => _service.getMediaList(startDate, endDate),
+    );
+
+    return foldable.map((r) => r.toMediaList());
   }
 
   @override
-  AsyncEither<Media> getMediaOfTheDay() {
-    return safeApiCall<Media>(_service.getMediaOfTheDay);
+  AsyncEither<Media> getMediaOfTheDay() async {
+    final foldable = await safeApiCall(() => _service.getMediaOfTheDay());
+    return foldable.map((r) => r.toMedia());
   }
 }

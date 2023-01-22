@@ -48,6 +48,7 @@ dependencies:
   equatable: ^2.0.5
   freezed_annotation: ^2.2.0
   http: ^0.13.5
+  freezed: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,6 @@ dev_dependencies:
   mobx_codegen: ^2.0.2
   mocktail: ^0.3.0
   chopper_generator: ^6.0.0
-  freezed: ^2.2.0
 
 flutter:
   uses-material-design: true

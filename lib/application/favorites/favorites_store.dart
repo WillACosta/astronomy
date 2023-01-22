@@ -2,8 +2,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:astronomy/domain/usecases/favorites/favorites_usecase.dart';
-import 'package:astronomy/domain/models/media.dart';
+import '../../domain/usecases/favorites/favorites_usecase.dart';
+import '../../domain/models/media.dart';
 
 part 'favorites_store.g.dart';
 

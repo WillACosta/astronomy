@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:astronomy/application/localization/localization_store.dart';
-import 'package:astronomy/domain/services/local_notification_service.dart';
+import '../../application/localization/localization_store.dart';
+import '../../domain/services/local_notification_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:injectable/injectable.dart';
 import 'package:open_file/open_file.dart';

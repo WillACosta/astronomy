@@ -6,7 +6,7 @@ linter:
     parameter_assignments: true
     avoid_print: true
     cancel_subscriptions: true
-    always_use_package_imports: true
+    prefer_relative_imports: true
     empty_constructor_bodies: true
     empty_catches: true
     unnecessary_new: true
@@ -14,7 +14,6 @@ linter:
 
     comment_references: false
     directives_ordering: false
-    prefer_relative_imports: false
     library_private_types_in_public_api: false
 
 analyzer:

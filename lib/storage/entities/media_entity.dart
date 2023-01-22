@@ -1,4 +1,4 @@
-import 'package:astronomy/domain/models/media.dart';
+import '../../domain/models/media.dart';
 import 'package:hive/hive.dart';
 
 part 'media_entity.g.dart';

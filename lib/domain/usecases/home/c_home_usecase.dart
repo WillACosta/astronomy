@@ -1,8 +1,8 @@
-import 'package:astronomy/domain/repositories/apod_repository.dart';
+import '../../repositories/apod_repository.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/domain/usecases/home/home_usecase.dart';
-import 'package:astronomy/core/types/types.dart';
+import 'home_usecase.dart';
+import '../../../core/types/types.dart';
 
 @Injectable(as: HomeUseCase)
 class CHomeUseCase implements HomeUseCase {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/application/localization/localization_store.dart';
-import 'package:astronomy/application/translator/translator_store.dart';
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
+import '../../../application/localization/localization_store.dart';
+import '../../../application/translator/translator_store.dart';
+import '../../../external/dependency_injection/locator.dart';
+import '../widgets.dart';
 
 class MediaTranslationText extends StatelessWidget {
   const MediaTranslationText({

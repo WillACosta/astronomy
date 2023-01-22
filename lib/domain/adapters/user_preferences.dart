@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:astronomy/domain/adapters/user_locale.dart';
+import 'user_locale.dart';
 
 part 'user_preferences.g.dart';
 

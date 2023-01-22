@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/application/showcase/showcase_store.dart';
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/routes/route_navigator.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../../external/dependency_injection/locator.dart';
+import '../../../application/showcase/showcase_store.dart';
+import '../../../domain/models/media.dart';
+import '../../routes/route_navigator.dart';
+import '../../widgets/widgets.dart';
+import '../../utils/utils.dart';
 
-import 'package:astronomy/presentation/pages/grid_detail/components/grid_scrollable_sheet.dart';
-import 'package:astronomy/presentation/pages/grid_detail/components/media_header.dart';
+import 'components/grid_scrollable_sheet.dart';
+import 'components/media_header.dart';
 
 class GridDetailPage extends StatefulWidget {
   const GridDetailPage({Key? key, required this.media}) : super(key: key);

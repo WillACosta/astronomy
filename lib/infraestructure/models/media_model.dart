@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:astronomy/domain/models/media.dart';
+import '../../domain/models/media.dart';
 
 class MediaModel extends Media {
-  MediaModel({
+  const MediaModel({
     String? copyright,
     required DateTime date,
     required String explanation,

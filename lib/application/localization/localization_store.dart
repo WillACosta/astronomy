@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:astronomy/l10n/l10n.dart';
+import '../../l10n/l10n.dart';
 
 part 'localization_store.g.dart';
 

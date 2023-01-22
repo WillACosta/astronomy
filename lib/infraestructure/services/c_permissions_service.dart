@@ -1,7 +1,7 @@
 import 'package:permission_handler/permission_handler.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/domain/services/permissions_service.dart';
+import '../../domain/services/permissions_service.dart';
 
 @Injectable(as: PermissionsService)
 class CPermissionsService implements PermissionsService {

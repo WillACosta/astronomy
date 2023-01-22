@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
-import 'package:astronomy/presentation/pages/home/components/media_text_content.dart';
+import '../../../../domain/models/media.dart';
+import '../../../widgets/widgets.dart';
+import 'media_text_content.dart';
 
-import 'package:astronomy/presentation/utils/utils.dart'
+import '../../../utils/utils.dart'
     show getProportionateScreenHeight, getProportionateScreenWidth;
 
 class BottomSheetModal extends StatelessWidget {

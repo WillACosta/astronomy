@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
+import '../../../domain/models/media.dart';
+import '../../widgets/widgets.dart';
 
 class ImageView extends StatelessWidget {
   const ImageView({Key? key, required this.media}) : super(key: key);

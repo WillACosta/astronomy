@@ -1,4 +1,4 @@
-import 'package:astronomy/domain/adapters/user_preferences.dart';
+import '../adapters/user_preferences.dart';
 
 abstract class SettingsRepository {
   Future<UserPreferences> getPreferences();

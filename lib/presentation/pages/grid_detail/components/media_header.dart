@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/application/shared/shared_store.dart';
-import 'package:astronomy/domain/models/media.dart';
+import '../../../../external/dependency_injection/locator.dart';
+import '../../../../application/shared/shared_store.dart';
+import '../../../../domain/models/media.dart';
 
-import 'package:astronomy/presentation/utils/utils.dart'
+import '../../../utils/utils.dart'
     show
         AppColors,
         AppTextStyles,

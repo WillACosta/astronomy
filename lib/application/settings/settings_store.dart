@@ -2,9 +2,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:astronomy/domain/usecases/settings/settings_usecase.dart';
-import 'package:astronomy/domain/adapters/user_preferences.dart';
-import 'package:astronomy/domain/adapters/user_locale.dart';
+import '../../domain/usecases/settings/settings_usecase.dart';
+import '../../domain/adapters/user_preferences.dart';
+import '../../domain/adapters/user_locale.dart';
 
 part 'settings_store.g.dart';
 

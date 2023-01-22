@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:astronomy/presentation/utils/app_colors.dart';
+import 'app_colors.dart';
 
 class AppTextStyles {
   static final logo = GoogleFonts.poiretOne(

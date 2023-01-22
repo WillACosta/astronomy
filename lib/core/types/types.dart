@@ -1,7 +1,7 @@
 import 'package:fpdart/fpdart.dart';
 
-import 'package:astronomy/core/failures/failure.exception.dart';
-import 'package:astronomy/domain/models/media.dart';
+import '../../domain/models/media.dart';
+import '../core.dart';
 
 typedef MediaOfTheDayType = Future<Either<Failure, Media>>;
 typedef ListOfMediaType = Future<Either<Failure, List<Media>>>;

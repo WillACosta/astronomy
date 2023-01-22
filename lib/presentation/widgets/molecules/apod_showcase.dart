@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../utils/utils.dart';
 
 class ApodShowcase extends StatelessWidget {
   const ApodShowcase({

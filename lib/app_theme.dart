@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:astronomy/presentation/utils/app_colors.dart';
+import 'presentation/utils/app_colors.dart';
 
 final darkTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,

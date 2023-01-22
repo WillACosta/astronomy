@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:animations/animations.dart';
 
-import 'package:astronomy/presentation/pages/grid_detail/grid_detail_page.dart';
-import 'package:astronomy/domain/models/media.dart';
+import '../../pages/grid_detail/grid_detail_page.dart';
+import '../../../domain/models/media.dart';
 
-import 'package:astronomy/presentation/widgets/widgets.dart'
+import '../widgets.dart'
     show ApodNetworkImage, VideoMediaView;
 
 class GridItemInkWell extends StatelessWidget {

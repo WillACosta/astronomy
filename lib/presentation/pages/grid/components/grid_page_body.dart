@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/presentation/routes/route_navigator.dart';
+import '../../../routes/route_navigator.dart';
 
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/application/shared/shared_store.dart';
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../../../external/dependency_injection/locator.dart';
+import '../../../../application/shared/shared_store.dart';
+import '../../../../domain/models/media.dart';
+import '../../../widgets/widgets.dart';
+import '../../../utils/utils.dart';
 
 class GridPageBody extends StatelessWidget {
   const GridPageBody({

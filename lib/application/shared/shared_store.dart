@@ -3,11 +3,11 @@ import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/domain/services/download_service.dart';
-import 'package:astronomy/application/localization/localization_store.dart';
+import '../../external/dependency_injection/locator.dart';
+import '../../domain/services/download_service.dart';
+import '../localization/localization_store.dart';
 
-import 'package:astronomy/application/shared/flutter_toast.dart';
+import 'flutter_toast.dart';
 
 part 'shared_store.g.dart';
 
@@ -36,7 +36,7 @@ abstract class _SharedStoreBase with Store {
 
     errorOrResult.fold((l) {
       isDownloadingImage = false;
-      FlutterToast().showToast(message: l.message, kind: 'error');
+      FlutterToast().showToast(message: '', kind: 'error');
     }, (r) {
       isDownloadingImage = false;
     });

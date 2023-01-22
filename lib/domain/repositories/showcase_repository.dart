@@ -1,4 +1,4 @@
-import 'package:astronomy/domain/adapters/showcase.dart';
+import '../adapters/showcase.dart';
 
 abstract class ShowcaseRepository {
   Future<void> setShowcase({required Showcase showcase});

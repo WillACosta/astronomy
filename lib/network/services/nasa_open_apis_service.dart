@@ -1,10 +1,10 @@
-import 'package:astronomy/core/types/network.dart';
+import '../../core/types/network.dart';
 import 'package:chopper/chopper.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:astronomy/network/utils/nasa_open_apis_endpoints.dart';
-import 'package:astronomy/infraestructure/models/media_model.dart';
-import 'package:astronomy/external/external.dart';
+import '../utils/nasa_open_apis_endpoints.dart';
+import '../../infraestructure/models/media_model.dart';
+import '../../external/external.dart';
 
 part 'nasa_open_apis_service.chopper.dart';
 

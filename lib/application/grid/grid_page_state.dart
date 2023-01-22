@@ -1,5 +1,5 @@
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/core/failures/failure.exception.dart';
+import '../../core/core.dart';
+import '../../domain/models/media.dart';
 
 abstract class GridPageState {}
 

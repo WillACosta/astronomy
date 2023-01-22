@@ -3,12 +3,12 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import 'package:astronomy/application/container_page/container_page_store.dart';
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/application/showcase/showcase_store.dart';
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../application/container_page/container_page_store.dart';
+import '../../external/dependency_injection/locator.dart';
+import '../../application/showcase/showcase_store.dart';
+import '../utils/utils.dart';
 
-import 'package:astronomy/presentation/pages/pages.dart';
+import 'pages.dart';
 
 class ContainerPage extends StatelessWidget {
   const ContainerPage({Key? key}) : super(key: key);

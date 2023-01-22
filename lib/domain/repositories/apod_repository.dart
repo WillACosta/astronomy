@@ -1,5 +1,5 @@
-import 'package:astronomy/core/types/types.dart';
-import 'package:astronomy/domain/models/media.dart';
+import '../../core/types/types.dart';
+import '../models/media.dart';
 
 abstract class ApodRepository {
   AsyncEither<Media> getMediaOfTheDay();

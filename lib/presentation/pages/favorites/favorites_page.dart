@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:astronomy/application/favorites/favorites_store.dart';
-import 'package:astronomy/external/dependency_injection/locator.dart';
-import 'package:astronomy/domain/models/media.dart';
-import 'package:astronomy/presentation/widgets/widgets.dart';
-import 'package:astronomy/presentation/utils/utils.dart';
+import '../../../application/favorites/favorites_store.dart';
+import '../../../external/dependency_injection/locator.dart';
+import '../../../domain/models/media.dart';
+import '../../widgets/widgets.dart';
+import '../../utils/utils.dart';
 
-import 'package:astronomy/presentation/pages/favorites/components/favorites_empty_state.dart';
+import 'components/favorites_empty_state.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({Key? key}) : super(key: key);

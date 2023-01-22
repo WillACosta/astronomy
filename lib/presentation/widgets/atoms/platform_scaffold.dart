@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:astronomy/presentation/widgets/widgets.dart';
+import '../widgets.dart';
 
 class PlatformScaffold extends PlatformWidget<Widget, Widget> {
   final Widget body;
