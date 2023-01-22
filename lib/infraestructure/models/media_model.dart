@@ -21,18 +21,6 @@ class MediaModel extends Media {
           url: url,
         );
 
-  Map<String, dynamic> toMap() {
-    return {
-      'copyright': copyright,
-      'date': date.millisecondsSinceEpoch,
-      'explanation': explanation,
-      'hdurl': hdurl,
-      'mediaType': mediaType,
-      'title': title,
-      'url': url,
-    };
-  }
-
   factory MediaModel.fromMap(Map<String, dynamic> map) {
     return MediaModel(
       copyright: map['copyright'],
@@ -44,8 +32,6 @@ class MediaModel extends Media {
       url: map['url'],
     );
   }
-
-  String toJson() => json.encode(toMap());
 
   factory MediaModel.fromJson(String source) =>
       MediaModel.fromMap(json.decode(source));

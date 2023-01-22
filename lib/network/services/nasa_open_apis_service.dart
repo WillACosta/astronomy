@@ -1,10 +1,10 @@
-import '../../core/types/network.dart';
 import 'package:chopper/chopper.dart';
 import 'package:injectable/injectable.dart';
 
 import '../utils/nasa_open_apis_endpoints.dart';
 import '../../infraestructure/models/media_model.dart';
 import '../../external/external.dart';
+import '../../core/types/network.dart';
 
 part 'nasa_open_apis_service.chopper.dart';
 
