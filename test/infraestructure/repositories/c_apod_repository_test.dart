@@ -1,4 +1,5 @@
 import 'package:astronomy/core/core.dart';
+import 'package:astronomy/domain/models/media.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
@@ -31,7 +32,7 @@ void main() {
         () async {
           setUpServiceResponseOf(
             () => service.getMediaOfTheDay(),
-            body: MockMedia.media,
+            body: MockMedia.mediaModel,
             statusCode: 200,
           );
 
@@ -61,16 +62,18 @@ void main() {
         () async {
           setUpServiceResponseOf(
             () => service.getMediaList(any(), any()),
-            body: MockMedia.mediaList,
+            body: MockMedia.mediaModelList,
             statusCode: 200,
           );
 
+          final actual = await repository.getMediaList(
+            startDate: MockMedia.mediaDate,
+            endDate: MockMedia.mediaDate,
+          );
+
           expect(
-            await service.getMediaList(
-              MockMedia.mediaDate,
-              MockMedia.mediaDate,
-            ),
-            Right(MockMedia.mediaList),
+            actual,
+            isA<Right<Failure, List<Media>>>(),
           );
 
           verify(() => service.getMediaList(any(), any()));
